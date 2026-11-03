@@ -1,0 +1,43 @@
+# 密钥：契约/DEPLOY.md §3 明确「.env 不入 Git，仓库里放 .env.example」
+.env
+
+# Docker 运行时数据（etcd / MinIO / Milvus 的内部字节，262 MB）
+# 全部可由 `docker compose -f docker-compose.milvus.yml up -d` + `脚本/ingest.py` 重建，
+# 且每次重灌都会整体翻新，进版本库只会把历史撑爆。
+volumes/
+
+# ---- 下面这条是**有争议的**，团队按需翻转 ----
+# 产出/embeddings/parts/*.npy 是 8156×1024 的向量（9 个分片），31 MB，
+# 跑 embed.py 可重算（全量约 27 分钟；实测日志见 产出/日志/ 下两份「第7步-向量化-全量*」）。
+#
+# 不提交的理由：**语料还在长**（DB.md §3.1.4 那个缺口 2026-10-27 刚补上《商业银行资本管理办法》，
+# 目录 3 还有 18 份没采）—— 每加一份文件，它之后的分片全部错位、必须重编，
+# 每次都往历史里塞一个全新的 31 MB blob。
+# 提交的理由：队友不用等半小时就能直接 ingest.py。
+#
+# 暂定**不提交**，只留 manifest.json（记录条数/维度/分片数）。
+# 要翻转就删掉下面这行 —— 只删 .npy 那行，别把 manifests 也一起提交成大文件。
+产出/embeddings/parts/*.npy
+
+# 产出/ 下的 `_` 前缀中间文件（契约/DEPLOY.md §4「临时产物」表就是这张清单）。
+# 三类：source_url 待查清单、六个子代理的查证原始结果、写表前的整表备份。
+# 前者两类是**查证过程的原始记录**，第 4 周还要拿来回答「这个 URL 凭什么填」，
+# 但它们是过程件不是交付件，别让 159 行的 xlsx 旁边躺着一堆过程 JSON。
+# ★ 这条规则原先只写在 DEPLOY.md 里，.gitignore 里其实没有 —— 文档说了、配置没做，补上。
+产出/_*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 临时从镜像里抽出来做比对的配置文件（DEPLOY.md §2.1 用过一次，结论已入库）
+_milvus*.yaml
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

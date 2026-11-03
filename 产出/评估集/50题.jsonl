@@ -1,0 +1,50 @@
+{"qid":"Q01","type":"fact","question":"存款人在哪些情况下可以要求存款保险基金管理机构偿付被保险存款？","expect":["GOV-001-A19"],"filter":null}
+{"qid":"Q02","type":"fact","question":"申请设立经营个人征信业务的征信机构，监管部门审查的法定时限是多久？","expect":["GOV-002-A7"],"filter":null}
+{"qid":"Q03","type":"fact","question":"经营企业征信业务的征信机构，完成工商登记后多久要去办理备案？","expect":["GOV-002-A10"],"filter":null}
+{"qid":"Q04","type":"fact","question":"征信机构记录的信息如果有错误或者遗漏，信息主体可以怎么办？","expect":["GOV-002-A25"],"filter":null}
+{"qid":"Q05","type":"fact","question":"信息主体向征信业监督管理部门的派出机构投诉，受理机构多久要给出书面答复？","expect":["GOV-002-A26"],"filter":null}
+{"qid":"Q06","type":"fact","question":"设立融资担保公司，注册资本的最低要求是多少？","expect":["GOV-005-A7"],"filter":null}
+{"qid":"Q07","type":"fact","question":"融资担保公司想到外省去设立分支机构，需要满足什么条件？","expect":["GOV-005-A10"],"filter":null}
+{"qid":"Q08","type":"fact","question":"融资担保公司的担保责任余额相对净资产有什么上限？","expect":["GOV-005-A15"],"filter":null}
+{"qid":"Q09","type":"fact","question":"融资担保公司对同一个被担保人及其关联方的担保集中度是怎么限制的？","expect":["GOV-005-A16"],"filter":null}
+{"qid":"Q10","type":"fact","question":"融资担保公司能不能给自己的控股股东提供融资担保？","expect":["GOV-005-A17"],"filter":null}
+{"qid":"Q11","type":"fact","question":"外商独资银行和中外合资银行的注册资本最低限额是多少？","expect":["GOV-010-A8"],"filter":null}
+{"qid":"Q12","type":"fact","question":"在北京证券交易所申请公开发行并上市，发行人需要在全国股转系统挂牌多长时间？","expect":["BSE-001-2.1.2"],"filter":null}
+{"qid":"Q13","type":"fact","question":"北交所上市对发行人的预计市值和净利润有什么财务标准？","expect":["BSE-001-2.1.3"],"filter":null}
+{"qid":"Q14","type":"fact","question":"北交所收到完整的上市申请材料后，多久决定是否同意上市？","expect":["BSE-001-2.1.8"],"filter":null}
+{"qid":"Q15","type":"fact","question":"发行人要在股票上市前提前几个交易日披露上市公告书？","expect":["BSE-001-2.1.9"],"filter":null}
+{"qid":"Q16","type":"fact","question":"暂时闲置的募集资金能不能拿去补充流动资金？有什么限制？","expect":["BSE-001-2.3.5"],"filter":null}
+{"qid":"Q17","type":"fact","question":"出现哪些情况时保荐机构要对北交所上市公司做专项现场核查，时限是多长？","expect":["BSE-001-3.2.14"],"filter":null}
+{"qid":"Q18","type":"fact","question":"保荐机构披露持续督导跟踪报告的时限是多久？","expect":["BSE-001-3.2.15"],"filter":null}
+{"qid":"Q19","type":"fact","question":"北交所上市公司的股东提出临时提案，持股比例和时间上有什么要求？","expect":["BSE-001-4.1.8"],"filter":null}
+{"qid":"Q20","type":"fact","question":"北交所上市公司董事会里，兼任高级管理人员的董事和职工代表董事最多能占多大比例？","expect":["BSE-001-4.2.3"],"filter":null}
+{"qid":"Q21","type":"fact","question":"北交所上市公司修改公司章程，需要多少表决权通过？","expect":["BSE-001-4.5.6"],"filter":null}
+{"qid":"Q22","type":"fact","question":"农业保险达成赔偿协议后，保险公司多久要把赔款付给被保险人？","expect":["GOV-012-A14"],"filter":null}
+{"qid":"Q23","type":"fact","question":"交强险合同在什么情况下保险公司才能解除？","expect":["GOV-013-A14"],"filter":null}
+{"qid":"Q24","type":"fact","question":"保险公司收到交强险索赔申请后，多久要告知被保险人需要提供哪些证明材料？","expect":["GOV-013-A28"],"filter":null}
+{"qid":"Q25","type":"fact","question":"保险公司核定交强险是否属于保险责任的期限是多久？","expect":["GOV-013-A29"],"filter":null}
+{"qid":"Q26","type":"fact","question":"保险公司获批开业后，多久要把资本保证金存到银行？","expect":["NFRA-003-A10"],"filter":null}
+{"qid":"Q27","type":"fact","question":"保险公司每笔资本保证金存款的金额下限是多少？","expect":["NFRA-003-A13"],"filter":null}
+{"qid":"Q28","type":"fact","question":"合格投资者的名称发生变更后，多久要办理变更登记？","expect":["PBC-018-A7"],"filter":null}
+{"qid":"Q29","type":"fact","question":"银行办理结售汇业务管理办法里所说的「银行」包括哪些机构？","expect":["PBC-038-A3"],"filter":null}
+{"qid":"Q30","type":"fact","question":"银行停止办理即期结售汇业务，需要多久内向外汇局备案？","expect":["PBC-038-A12"],"filter":null}
+{"qid":"Q31","type":"fact","question":"银行间外汇市场的即期交易价格是怎么管理浮动幅度的？","expect":["PBC-048-A18"],"filter":null}
+{"qid":"Q32","type":"fact","question":"离岸转手买卖业务的收支结算，办理时有什么原则要求？","expect":["PBC-022-S5"],"filter":null}
+{"qid":"Q33","type":"fact","question":"银行为支付机构办理跨境人民币结算业务，需要向人民银行分支机构报告吗？多久？","expect":["PBC-066-S4"],"filter":null}
+{"qid":"Q34","type":"fact","question":"网络安全审查办公室收到申报材料后，多久决定是否需要开展审查？","expect":["CAC-001-A9"],"filter":null}
+{"qid":"Q35","type":"fact","question":"网络安全审查的初步审查要在多久内完成？","expect":["CAC-001-A11"],"filter":null}
+{"qid":"Q36","type":"fact","question":"网络安全审查工作机制成员单位回复审查意见的时限是多久？","expect":["CAC-001-A12"],"filter":null}
+{"qid":"Q37","type":"fact","question":"金融机构被撤销后，清算组通知债权人申报债权的期限是多久？","expect":["GOV-014-A14"],"filter":null}
+{"qid":"Q38","type":"fact","question":"公益信托终止后，受托人要在多久内向谁报告？","expect":["NPC-003-A70"],"filter":null}
+{"qid":"Q39","type":"fact","question":"客户对金融机构采取的洗钱风险管理措施有异议，金融机构多久要处理并答复？","expect":["NPC-005-A39"],"filter":null}
+{"qid":"Q40","type":"fact","question":"用人单位办理社会保险登记的期限是怎么规定的？","expect":["NPC-008-A57"],"filter":null}
+{"qid":"Q41","type":"filter","pair":"Q27","question":"保险公司每笔资本保证金存款的金额下限是多少？","expect":["NFRA-003-A13"],"filter":"domain == \"保险\""}
+{"qid":"Q42","type":"filter","pair":"Q24","question":"保险公司收到交强险索赔申请后，多久要告知被保险人需要提供哪些证明材料？","expect":["GOV-013-A28"],"filter":"domain == \"保险\""}
+{"qid":"Q43","type":"filter","pair":"Q30","question":"银行停止办理即期结售汇业务，需要多久内向外汇局备案？","expect":["PBC-038-A12"],"filter":"domain == \"外汇\""}
+{"qid":"Q44","type":"filter","pair":"Q31","question":"银行间外汇市场的即期交易价格是怎么管理浮动幅度的？","expect":["PBC-048-A18"],"filter":"domain == \"外汇\""}
+{"qid":"Q45","type":"filter","pair":"Q14","question":"北交所收到完整的上市申请材料后，多久决定是否同意上市？","expect":["BSE-001-2.1.8"],"filter":"domain == \"证券\""}
+{"qid":"Q46","type":"filter","pair":"Q35","question":"网络安全审查的初步审查要在多久内完成？","expect":["CAC-001-A11"],"filter":"domain == \"综合\""}
+{"qid":"Q47","type":"fact","question":"商业银行核心一级资本充足率的最低监管要求是多少？","expect":["NFRA-016-A26"],"filter":null}
+{"qid":"Q48","type":"abstain","question":"国债期货的保证金比例和持仓限额是怎么规定的？","expect":[],"filter":null}
+{"qid":"Q49","type":"abstain","question":"信托业保障基金的认购比例和缴纳方式是什么？","expect":[],"filter":null}
+{"qid":"Q50","type":"abstain","question":"私人银行客户的门槛和监管要求是什么？","expect":[],"filter":null}

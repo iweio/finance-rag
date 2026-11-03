@@ -1,0 +1,31 @@
+# 后端 Dockerfile：FastAPI + rag_core
+# 基础镜像 python:3.11-slim，锁小版本避免跨版本漂移。
+#
+# 构建：docker build -t rag-backend -f Dockerfile.backend .
+# 运行：docker run -p 8000:8000 --env-file .env rag-backend
+
+FROM python:3.11-slim AS base
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# rag_core 与 backend 是同级目录，一起拷进去
+COPY rag_core/ ./rag_core/
+COPY backend/ ./backend/
+
+# P2 的产出（chunks 用于 BM25 索引构建）
+COPY 产出/chunks/ ./产出/chunks/
+
+ENV PYTHONUNBUFFERED=1
+ENV TZ=Asia/Shanghai
+
+EXPOSE 8000
+
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,30 @@
+# ---- rag_core ----
+sentence-transformers>=3.0,<4.0
+torch>=2.0
+numpy>=1.24
+
+# ---- Milvus ----
+pymilvus>=2.5,<2.6
+
+# ---- BM25 ----
+rank-bm25>=0.2.2
+jieba>=0.42
+
+# ---- LLM ----
+dashscope>=1.20
+openai>=1.0
+
+# ---- FastAPI ----
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30
+pydantic>=2.0
+
+# ---- MySQL ----
+sqlalchemy>=2.0
+pymysql>=1.1
+cryptography>=42.0
+
+# ---- 数据处理（P2 脚本依赖，后端不直接用，但 Dockerfile 里一起装）----
+PyMuPDF>=1.24
+python-docx>=1.1
+openpyxl>=3.1

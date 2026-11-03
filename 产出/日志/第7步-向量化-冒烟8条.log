@@ -1,0 +1,17 @@
+C:\Users\22703\anaconda3\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\22703\.cache\huggingface\hub\models--BAAI--bge-m3. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Error while downloading from https://cas-bridge.xethub.hf.co/xet-bridge-us/65b53851e602b6c2c96e78da/61c2417ef33baa8496de69bd4394784d9b887a9027830afeac7e2ab8b4e1a6f1?Expires=1793072142&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYXMtYnJpZGdlLnhldGh1Yi5oZi5jby94ZXQtYnJpZGdlLXVzLzY1YjUzODUxZTYwMmI2YzJjOTZlNzhkYS82MWMyNDE3ZWYzM2JhYTg0OTZkZTY5YmQ0Mzk0Nzg0ZDliODg3YTkwMjc4MzBhZmVhYzdlMmFiOGI0ZTFhNmYxKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MzA3MjE0Mn19fV19&Signature=MEYCIQCOQPaXG6mA8eYm52nrFXCpfhIzHFmTlD0Rmqy%7EVw99zQIhAKOLsu%7EnFaL9UFsPVXZ%7EqSB4PaVxo-pvSTgg9T4dpgT2&Key-Pair-Id=K3EPXBYC3CKDRZ&X-Xet-Cas-Uid=62171e3b6a99db28e0b3159d&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27pytorch_model.bin%3B+filename%3D%22pytorch_model.bin%22%3B&xip=5HRBQJvxxbs&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=cas%2F20261027%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261027T023542Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dae12b4dd243a30aeaa4381ae4dfb72d40953e30ae6da905ce53eb34977d336b: The read operation timed out
+Trying to resume download...
+8 条待编码，模型 BAAI/bge-m3
+加载 BAAI/bge-m3 …（首次会下载约 2.3GB）
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 41334.13it/s]
+  分片 000  8 条  累计 8/8  4.1 条/秒  预计剩余 0.0 分钟
+
+向量 (8, 1024)  期望 (8, 1024)
+
+### 校验全过：8 条 × 1024 维，范数 [1.0000, 1.0000]，clause_id 顺序一致
+产物：C:\Users\22703\Desktop\RAG\产出\embeddings\parts
+      C:\Users\22703\Desktop\RAG\产出\embeddings\manifest.json
+耗时 0.0 分钟
+exit=0

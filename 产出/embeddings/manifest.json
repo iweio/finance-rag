@@ -1,0 +1,9 @@
+{
+  "model": "BAAI/bge-m3",
+  "dim": 1024,
+  "normalize": true,
+  "query_prefix_used": false,
+  "shard": 1000,
+  "shards": 9,
+  "total": 8156
+}

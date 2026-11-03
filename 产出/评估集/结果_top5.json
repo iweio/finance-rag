@@ -1,0 +1,766 @@
+{
+  "k": 5,
+  "ef": 256,
+  "metric": "COSINE",
+  "model": "BAAI/bge-m3",
+  "query_prefix": "为这个句子生成表示以用于检索相关文章：",
+  "default_filter": "status == \"有效\" and effective_date <= 20261027",
+  "hit_rate": 1.0,
+  "top1": 0.8297872340425532,
+  "mrr": 0.8950354609929079,
+  "n": 47,
+  "detail": [
+    {
+      "qid": "Q01",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-001-A19"
+      ],
+      "got": [
+        "GOV-001-A19",
+        "GOV-001-A18",
+        "GOV-001-A3",
+        "GOV-001-A13",
+        "GOV-001-A5"
+      ]
+    },
+    {
+      "qid": "Q02",
+      "type": "fact",
+      "ok": true,
+      "rank": 3,
+      "expect": [
+        "GOV-002-A7"
+      ],
+      "got": [
+        "GOV-002-A46",
+        "PBC-043-A51",
+        "GOV-002-A7",
+        "GOV-002-A10",
+        "NPC-012-A22"
+      ]
+    },
+    {
+      "qid": "Q03",
+      "type": "fact",
+      "ok": true,
+      "rank": 2,
+      "expect": [
+        "GOV-002-A10"
+      ],
+      "got": [
+        "GOV-002-A46",
+        "GOV-002-A10",
+        "PBC-043-A51",
+        "PBC-014-A65",
+        "PBC-043-A4"
+      ]
+    },
+    {
+      "qid": "Q04",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-002-A25"
+      ],
+      "got": [
+        "GOV-002-A25",
+        "PBC-043-A26",
+        "PBC-043-A18",
+        "GOV-002-A23",
+        "PBC-043-A19"
+      ]
+    },
+    {
+      "qid": "Q05",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-002-A26"
+      ],
+      "got": [
+        "GOV-002-A26",
+        "PBC-036-A10",
+        "PBC-036-A22",
+        "PBC-036-A23",
+        "PBC-036-A20"
+      ]
+    },
+    {
+      "qid": "Q06",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-005-A7"
+      ],
+      "got": [
+        "GOV-005-A7",
+        "GOV-005-A2",
+        "GOV-005-A10",
+        "NPC-002-A69",
+        "PBC-046-A8"
+      ]
+    },
+    {
+      "qid": "Q07",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-005-A10"
+      ],
+      "got": [
+        "GOV-005-A10",
+        "GOV-005-A7",
+        "NFRA-001-A23",
+        "NFRA-001-A4",
+        "GOV-005-A9"
+      ]
+    },
+    {
+      "qid": "Q08",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-005-A15"
+      ],
+      "got": [
+        "GOV-005-A15",
+        "GOV-005-A16",
+        "GOV-005-A14",
+        "GOV-007-A54",
+        "NPC-002-A101"
+      ]
+    },
+    {
+      "qid": "Q09",
+      "type": "fact",
+      "ok": true,
+      "rank": 2,
+      "expect": [
+        "GOV-005-A16"
+      ],
+      "got": [
+        "GOV-005-A17",
+        "GOV-005-A16",
+        "GOV-005-A15",
+        "GOV-005-A2",
+        "GOV-005-A14"
+      ]
+    },
+    {
+      "qid": "Q10",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-005-A17"
+      ],
+      "got": [
+        "GOV-005-A17",
+        "GOV-005-A2",
+        "GOV-005-A21",
+        "SZSE-002-9.5",
+        "BSE-001-7.2.7"
+      ]
+    },
+    {
+      "qid": "Q11",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-010-A8"
+      ],
+      "got": [
+        "GOV-010-A8",
+        "NPC-006-A13",
+        "GOV-010-A45",
+        "GOV-010-A40",
+        "PBC-046-A8"
+      ]
+    },
+    {
+      "qid": "Q12",
+      "type": "fact",
+      "ok": true,
+      "rank": 3,
+      "expect": [
+        "BSE-001-2.1.2"
+      ],
+      "got": [
+        "BSE-001-2.1.8",
+        "BSE-001-2.1.9",
+        "BSE-001-2.1.2",
+        "BSE-001-2.1.4",
+        "BSE-001-2.1.5"
+      ]
+    },
+    {
+      "qid": "Q13",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-2.1.3"
+      ],
+      "got": [
+        "BSE-001-2.1.3",
+        "SSE-005-3.1.2",
+        "SZSE-002-2.1.2",
+        "SZSE-002-2.1.5",
+        "SSE-005-3.1.6"
+      ]
+    },
+    {
+      "qid": "Q14",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-2.1.8"
+      ],
+      "got": [
+        "BSE-001-2.1.8",
+        "BSE-001-10.6.2",
+        "SZSE-002-2.1.8",
+        "BSE-001-2.1.9",
+        "BSE-001-3.1.2"
+      ]
+    },
+    {
+      "qid": "Q15",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-2.1.9"
+      ],
+      "got": [
+        "BSE-001-2.1.9",
+        "SZSE-002-2.1.9",
+        "SSE-005-3.1.12",
+        "SSE-005-3.2.8",
+        "SZSE-002-2.2.4"
+      ]
+    },
+    {
+      "qid": "Q16",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-2.3.5"
+      ],
+      "got": [
+        "BSE-001-2.3.5",
+        "BSE-001-2.3.3",
+        "CSRC-011-A28",
+        "CSRC-010-A21-2",
+        "PBC-008-S11"
+      ]
+    },
+    {
+      "qid": "Q17",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-3.2.14"
+      ],
+      "got": [
+        "BSE-001-3.2.14",
+        "SZSE-002-3.2.7",
+        "SSE-005-12.2.10",
+        "BSE-001-3.2.3",
+        "BSE-001-3.2.15"
+      ]
+    },
+    {
+      "qid": "Q18",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-3.2.15"
+      ],
+      "got": [
+        "BSE-001-3.2.15",
+        "BSE-001-3.2.16",
+        "SSE-005-12.2.15",
+        "SZSE-002-3.2.8",
+        "SZSE-002-3.2.12"
+      ]
+    },
+    {
+      "qid": "Q19",
+      "type": "fact",
+      "ok": true,
+      "rank": 2,
+      "expect": [
+        "BSE-001-4.1.8"
+      ],
+      "got": [
+        "SSE-005-4.2.7",
+        "BSE-001-4.1.8",
+        "BSE-001-4.5.9",
+        "BSE-001-4.4.10",
+        "SZSE-002-4.4.6"
+      ]
+    },
+    {
+      "qid": "Q20",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-4.2.3"
+      ],
+      "got": [
+        "BSE-001-4.2.3",
+        "BSE-001-4.2.9",
+        "BSE-001-4.2.11",
+        "BSE-001-4.4.10",
+        "BSE-001-4.2.23"
+      ]
+    },
+    {
+      "qid": "Q21",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-4.5.6"
+      ],
+      "got": [
+        "BSE-001-4.5.6",
+        "SSE-005-4.6.11",
+        "SZSE-002-4.4.10",
+        "SSE-005-4.6.4",
+        "BSE-001-4.5.5"
+      ]
+    },
+    {
+      "qid": "Q22",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-012-A14"
+      ],
+      "got": [
+        "GOV-012-A14",
+        "GOV-013-A29",
+        "NPC-002-A25",
+        "NPC-002-A23",
+        "GOV-012-A15"
+      ]
+    },
+    {
+      "qid": "Q23",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-013-A14"
+      ],
+      "got": [
+        "GOV-013-A14",
+        "GOV-013-A16",
+        "GOV-013-A17",
+        "GOV-013-A15",
+        "NPC-002-A89"
+      ]
+    },
+    {
+      "qid": "Q24",
+      "type": "fact",
+      "ok": true,
+      "rank": 5,
+      "expect": [
+        "GOV-013-A28"
+      ],
+      "got": [
+        "GOV-013-A29",
+        "NPC-002-A22",
+        "NPC-002-A25",
+        "NPC-002-A24",
+        "GOV-013-A28"
+      ]
+    },
+    {
+      "qid": "Q25",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-013-A29"
+      ],
+      "got": [
+        "GOV-013-A29",
+        "NPC-002-A26",
+        "NPC-002-A24",
+        "GOV-013-A20",
+        "GOV-013-A17"
+      ]
+    },
+    {
+      "qid": "Q26",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "NFRA-003-A10"
+      ],
+      "got": [
+        "NFRA-003-A10",
+        "NFRA-003-A17",
+        "NFRA-003-A12",
+        "NFRA-003-A6",
+        "NFRA-003-A8"
+      ]
+    },
+    {
+      "qid": "Q27",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "NFRA-003-A13"
+      ],
+      "got": [
+        "NFRA-003-A13",
+        "NFRA-003-A5",
+        "NPC-002-A69",
+        "NFRA-003-A14",
+        "NFRA-003-A3"
+      ]
+    },
+    {
+      "qid": "Q28",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-018-A7"
+      ],
+      "got": [
+        "PBC-018-A7",
+        "PBC-044-A14",
+        "PBC-018-A8",
+        "CSRC-017-A17",
+        "CSRC-024-A18"
+      ]
+    },
+    {
+      "qid": "Q29",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-038-A3"
+      ],
+      "got": [
+        "PBC-038-A3",
+        "PBC-038-A30",
+        "PBC-038-A2",
+        "PBC-038-A31",
+        "PBC-038-A5"
+      ]
+    },
+    {
+      "qid": "Q30",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-038-A12"
+      ],
+      "got": [
+        "PBC-038-A12",
+        "PBC-038-A10",
+        "PBC-018-A20",
+        "PBC-038-A9",
+        "PBC-018-A26"
+      ]
+    },
+    {
+      "qid": "Q31",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-048-A18"
+      ],
+      "got": [
+        "PBC-048-A18",
+        "PBC-048-A22",
+        "PBC-048-A23",
+        "PBC-048-A13",
+        "PBC-048-A19"
+      ]
+    },
+    {
+      "qid": "Q32",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-022-S5"
+      ],
+      "got": [
+        "PBC-022-S5",
+        "PBC-022-S7",
+        "PBC-022-S3",
+        "PBC-066-S1",
+        "PBC-022-S4"
+      ]
+    },
+    {
+      "qid": "Q33",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-066-S4"
+      ],
+      "got": [
+        "PBC-066-S4",
+        "PBC-042-A46",
+        "PBC-064-A15",
+        "PBC-064-A9",
+        "PBC-066-S5"
+      ]
+    },
+    {
+      "qid": "Q34",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "CAC-001-A9"
+      ],
+      "got": [
+        "CAC-001-A9",
+        "CAC-001-A11",
+        "CAC-001-A12",
+        "CAC-001-A15",
+        "CAC-001-A14"
+      ]
+    },
+    {
+      "qid": "Q35",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "CAC-001-A11"
+      ],
+      "got": [
+        "CAC-001-A11",
+        "CAC-001-A14",
+        "CAC-001-A9",
+        "CAC-001-A12",
+        "CAC-001-A16"
+      ]
+    },
+    {
+      "qid": "Q36",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "CAC-001-A12"
+      ],
+      "got": [
+        "CAC-001-A12",
+        "CAC-001-A11",
+        "CAC-001-A9",
+        "CAC-001-A15",
+        "CAC-001-A14"
+      ]
+    },
+    {
+      "qid": "Q37",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "GOV-014-A14"
+      ],
+      "got": [
+        "GOV-014-A14",
+        "GOV-014-A16",
+        "GOV-014-A15",
+        "GOV-014-A11",
+        "GOV-014-A18"
+      ]
+    },
+    {
+      "qid": "Q38",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "NPC-003-A70"
+      ],
+      "got": [
+        "NPC-003-A70",
+        "NPC-003-A71",
+        "NPC-003-A67",
+        "NPC-003-A72",
+        "NPC-003-A41"
+      ]
+    },
+    {
+      "qid": "Q39",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "NPC-005-A39"
+      ],
+      "got": [
+        "NPC-005-A39",
+        "PBC-062-A14",
+        "NPC-005-A30",
+        "PBC-047-A34",
+        "NPC-005-A53"
+      ]
+    },
+    {
+      "qid": "Q40",
+      "type": "fact",
+      "ok": true,
+      "rank": 2,
+      "expect": [
+        "NPC-008-A57"
+      ],
+      "got": [
+        "NPC-008-A58",
+        "NPC-008-A57",
+        "NPC-008-A84",
+        "NPC-008-A63",
+        "NPC-008-A86"
+      ]
+    },
+    {
+      "qid": "Q41",
+      "type": "filter",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "NFRA-003-A13"
+      ],
+      "got": [
+        "NFRA-003-A13",
+        "NFRA-003-A5",
+        "NPC-002-A69",
+        "NFRA-003-A14",
+        "NFRA-003-A3"
+      ]
+    },
+    {
+      "qid": "Q42",
+      "type": "filter",
+      "ok": true,
+      "rank": 5,
+      "expect": [
+        "GOV-013-A28"
+      ],
+      "got": [
+        "GOV-013-A29",
+        "NPC-002-A22",
+        "NPC-002-A25",
+        "NPC-002-A24",
+        "GOV-013-A28"
+      ]
+    },
+    {
+      "qid": "Q43",
+      "type": "filter",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-038-A12"
+      ],
+      "got": [
+        "PBC-038-A12",
+        "PBC-038-A10",
+        "PBC-018-A20",
+        "PBC-038-A9",
+        "PBC-018-A26"
+      ]
+    },
+    {
+      "qid": "Q44",
+      "type": "filter",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "PBC-048-A18"
+      ],
+      "got": [
+        "PBC-048-A18",
+        "PBC-048-A22",
+        "PBC-048-A23",
+        "PBC-048-A13",
+        "PBC-048-A19"
+      ]
+    },
+    {
+      "qid": "Q45",
+      "type": "filter",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "BSE-001-2.1.8"
+      ],
+      "got": [
+        "BSE-001-2.1.8",
+        "BSE-001-10.6.2",
+        "SZSE-002-2.1.8",
+        "BSE-001-2.1.9",
+        "BSE-001-3.1.2"
+      ]
+    },
+    {
+      "qid": "Q46",
+      "type": "filter",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "CAC-001-A11"
+      ],
+      "got": [
+        "CAC-001-A11",
+        "CAC-001-A14",
+        "CAC-001-A9",
+        "CAC-001-A12",
+        "CAC-001-A16"
+      ]
+    },
+    {
+      "qid": "Q47",
+      "type": "fact",
+      "ok": true,
+      "rank": 1,
+      "expect": [
+        "NFRA-016-A26"
+      ],
+      "got": [
+        "NFRA-016-A26",
+        "NFRA-016-A181-1",
+        "NFRA-016-A178",
+        "NFRA-016-A5",
+        "NFRA-016-A30"
+      ]
+    }
+  ]
+}

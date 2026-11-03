@@ -1,0 +1,10 @@
+闸门 1 过：14 个 VARCHAR 字段均在 DB.md 的 max_length 内（按 UTF-8 字节）
+闸门 2 过：7949 条，向量与 chunk 的 clause_id 顺序一致
+已连 Milvus localhost:19530
+已删旧 finance_clause
+建表 finance_clause：21 个字段
+已插入 7949 条并 flush
+已建索引：HNSW(COSINE) + 3 个 INVERTED，并 load
+
+落库 count(*) = 7949，期望 7949
+### 三道闸门全过，知识库就位

@@ -1,0 +1,22 @@
+8156 条待编码，模型 BAAI/bge-m3
+加载 BAAI/bge-m3 …（首次会下载约 2.3GB）
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 58281.14it/s]
+  分片 000 已有（1000 条），跳过
+  分片 001 已有（1000 条），跳过
+  分片 002  1000 条  累计 3000/8156  18.2 条/秒  预计剩余 4.7 分钟
+  分片 003  1000 条  累计 4000/8156  12.7 条/秒  预计剩余 5.4 分钟
+  分片 004  1000 条  累计 5000/8156  9.0 条/秒  预计剩余 5.8 分钟
+  分片 005  1000 条  累计 6000/8156  8.0 条/秒  预计剩余 4.5 分钟
+  分片 006  1000 条  累计 7000/8156  7.2 条/秒  预计剩余 2.7 分钟
+  分片 007  1000 条  累计 8000/8156  6.8 条/秒  预计剩余 0.4 分钟
+  分片 008  156 条  累计 8156/8156  6.6 条/秒  预计剩余 0.0 分钟
+
+向量 (8156, 1024)  期望 (8156, 1024)
+
+### 校验全过：8156 条 × 1024 维，范数 [1.0000, 1.0000]，clause_id 顺序一致
+产物：C:\Users\22703\Desktop\RAG\产出\embeddings\parts
+      C:\Users\22703\Desktop\RAG\产出\embeddings\manifest.json
+耗时 20.5 分钟
+
+[exited with code 0]

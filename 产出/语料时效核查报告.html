@@ -1,0 +1,956 @@
+<title>金融语料时效核查</title>
+<style>
+  :root {
+    --ground: #F5F6F8;
+    --surface: #FFFFFF;
+    --surface-2: #EDEFF3;
+    --ink: #1A1E26;
+    --ink-2: #5A6270;
+    --ink-3: #868E9C;
+    --rule: #DCE0E7;
+    --rule-2: #C4CAD4;
+    --accent: #21456E;
+    --accent-soft: #E3EAF4;
+    --stop: #A82E28;
+    --stop-soft: #F7E4E3;
+    --pend: #1B6560;
+    --pend-soft: #DEF0EE;
+    --stale: #8E6108;
+    --stale-soft: #F7EBD4;
+    --dup: #5E6673;
+    --dup-soft: #E8EAEE;
+    --ok: #2A6240;
+    --ok-soft: #E1EFE6;
+    --doubt: #6F5C42;
+    --doubt-soft: #F0E9DF;
+    --shadow: 0 1px 2px rgba(26, 30, 38, .06), 0 8px 24px -16px rgba(26, 30, 38, .28);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #11151A;
+      --surface: #191E25;
+      --surface-2: #212831;
+      --ink: #E5E9EF;
+      --ink-2: #A2ABB8;
+      --ink-3: #79828F;
+      --rule: #2A323C;
+      --rule-2: #3A434F;
+      --accent: #86AFDD;
+      --accent-soft: #1D2A3B;
+      --stop: #E0857E;
+      --stop-soft: #33201F;
+      --pend: #63BDB5;
+      --pend-soft: #16302E;
+      --stale: #D6A44B;
+      --stale-soft: #33290F;
+      --dup: #99A2AF;
+      --dup-soft: #242A32;
+      --ok: #74BC90;
+      --ok-soft: #172A1F;
+      --doubt: #BFA783;
+      --doubt-soft: #2C2519;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #11151A;
+    --surface: #191E25;
+    --surface-2: #212831;
+    --ink: #E5E9EF;
+    --ink-2: #A2ABB8;
+    --ink-3: #79828F;
+    --rule: #2A323C;
+    --rule-2: #3A434F;
+    --accent: #86AFDD;
+    --accent-soft: #1D2A3B;
+    --stop: #E0857E;
+    --stop-soft: #33201F;
+    --pend: #63BDB5;
+    --pend-soft: #16302E;
+    --stale: #D6A44B;
+    --stale-soft: #33290F;
+    --dup: #99A2AF;
+    --dup-soft: #242A32;
+    --ok: #74BC90;
+    --ok-soft: #172A1F;
+    --doubt: #BFA783;
+    --doubt-soft: #2C2519;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 28px 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead { display: flex; flex-direction: column; gap: 18px; }
+
+  .eyebrow {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: "Songti SC", "SimSun", "Noto Serif SC", Georgia, serif;
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 700;
+    letter-spacing: .01em;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--ink-2);
+    font-size: 15.5px;
+  }
+
+  .scope {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    padding-top: 4px;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12.5px;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .scope b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- tally ---------- */
+  .tally {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .cell {
+    background: var(--surface);
+    padding: 16px 16px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cell .n {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .cell .l { font-size: 12.5px; color: var(--ink-2); }
+  .cell.s-stop .n { color: var(--stop); }
+  .cell.s-pend .n { color: var(--pend); }
+  .cell.s-stale .n { color: var(--stale); }
+  .cell.s-dup .n { color: var(--dup); }
+  .cell.s-doubt .n { color: var(--doubt); }
+  .cell.s-ok .n { color: var(--ok); }
+
+  /* ---------- sections ---------- */
+  section { display: flex; flex-direction: column; gap: 18px; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .sec-head .num {
+    font-family: "Songti SC", "SimSun", "Noto Serif SC", Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .sec-head h2 {
+    margin: 0;
+    font-family: "Songti SC", "SimSun", "Noto Serif SC", Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    flex: 1;
+  }
+  .sec-head .count {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12.5px;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    color: var(--ink-2);
+  }
+
+  .tablewrap {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    min-width: 640px;
+  }
+  thead th {
+    position: sticky;
+    top: 0;
+    background: var(--surface-2);
+    text-align: left;
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--rule-2);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--surface-2); }
+
+  td.doc { font-weight: 500; min-width: 210px; }
+  td.ver {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12px;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  td.note { color: var(--ink-2); font-size: 13px; min-width: 220px; }
+
+  code {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: .88em;
+    background: var(--surface-2);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: var(--ink);
+  }
+  a { color: var(--accent); }
+
+  .dl { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+  .dl a {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule-2);
+    word-break: break-all;
+    max-width: 100%;
+  }
+  .dl a:hover { border-bottom-color: var(--accent); border-bottom-style: solid; }
+  .dl a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .chip {
+    display: inline-block;
+    padding: 2px 8px 3px;
+    border-radius: 2px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+  .c-stop  { background: var(--stop-soft);  color: var(--stop); }
+  .c-pend  { background: var(--pend-soft);  color: var(--pend); }
+  .c-stale { background: var(--stale-soft); color: var(--stale); }
+  .c-dup   { background: var(--dup-soft);   color: var(--dup); }
+  .c-ok    { background: var(--ok-soft);    color: var(--ok); }
+  .c-doubt { background: var(--doubt-soft); color: var(--doubt); }
+
+  /* ---------- callout ---------- */
+  .callout {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--stop);
+    background: var(--surface);
+    border-radius: 3px;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .callout h3 { color: var(--stop); }
+  .callout ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+  .callout li { color: var(--ink-2); }
+  .callout li b { color: var(--ink); font-weight: 600; }
+
+  .method {
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+  .method h3 { color: var(--ink); }
+  .method p { margin: 0; max-width: 78ch; }
+  .method code {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12px;
+    background: var(--surface-2);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 36px 18px 64px; gap: 34px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">语料合规核查 · 2026-10-19</div>
+    <h1>金融语料时效核查</h1>
+    <p class="standfirst">
+      对知识库已采集的 61 份金融法规文件逐份核实现行效力。核查结论：<b>5 份已废止或失效</b>，
+      2 份已发布但尚未施行，9 份语料所存为旧版；其余现行有效。
+    </p>
+    <div class="scope">
+      <span>核查日期 <b>2026-10-19</b></span>
+      <span>文件总数 <b>61</b></span>
+      <span>目录 <b>四 · 国家金融监督管理总局 / 五 · 中国证监会</b></span>
+      <span>方法 <b>本地 PDF 原文 + 联网权威源双向比对</b></span>
+    </div>
+  </header>
+
+  <div class="tally">
+    <div class="cell s-stop"><span class="n">5</span><span class="l">已废止 / 失效</span></div>
+    <div class="cell s-pend"><span class="n">2</span><span class="l">已发布未施行</span></div>
+    <div class="cell s-stale"><span class="n">9</span><span class="l">语料版本滞后</span></div>
+    <div class="cell s-doubt"><span class="n">1</span><span class="l">实质失效 · 形式存疑</span></div>
+    <div class="cell s-dup"><span class="n">2</span><span class="l">重复采集</span></div>
+    <div class="cell s-ok"><span class="n">41</span><span class="l">现行有效</span></div>
+  </div>
+
+  <div class="callout">
+    <h3>必须处理的 5 份</h3>
+    <ol>
+      <li><b>上市公司证券发行管理办法</b> —— 2023-02-17 被证监会令第206号《上市公司证券发行注册管理办法》第八十九条废止。</li>
+      <li><b>中国证券监督管理委员会发行审核委员会办法</b> —— 2023-08-10 被证监会令第221号废止。</li>
+      <li><b>行政和解试点实施办法</b> —— 2022-01-01 被《证券期货行政执法当事人承诺制度实施规定》第二十三条废止，替代新规为国务院令第749号。</li>
+      <li><b>证券业从业人员资格管理办法</b> —— 2022-04-01 被证监会令第195号第五十八条废止。</li>
+      <li><b>全国人大常委会关于中国银行业监督管理委员会履行原由中国人民银行履行的监督管理职责的决定</b> —— 2025-12-27 经法律清理宣告失效。</li>
+    </ol>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <span class="num">四</span>
+      <h2>国家金融监督管理总局</h2>
+      <span class="count">31 份</span>
+    </div>
+
+    <h3>法律 · 行政法规 —— 17 份</h3>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>文件</th><th>状态</th><th>语料所存版本</th><th>官方最新 / 依据</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="doc">全国人大常委会关于中国银行业监督管理委员会履行原由中国人民银行履行的监督管理职责的决定</td>
+            <td><span class="chip c-stop">已失效</span></td>
+            <td class="ver">2003-04-26</td>
+            <td class="note">2025-12-27 十四届全国人大常委会第十九次会议宣告失效（104 件之一）</td>
+          </tr>
+          <tr>
+            <td class="doc">国有重点金融机构监事会暂行条例</td>
+            <td><span class="chip c-doubt">形式存疑</span></td>
+            <td class="ver">2000-03-15 令282号</td>
+            <td class="note">未检索到明文废止的国务院令。注意三套「监事会」不是一回事：2018-03《国务院机构改革方案》划入审计署的是国资委<b>国有重点大型企业</b>监事会（对象是企业）；2025 年六大行撤销的是依2024 年新《公司法》设的<b>公司内部</b>监事会；令282号设的是国务院向国有重点金融机构<b>外派</b>的监事会，制度已实质停摆，但无明文废止依据</td>
+          </tr>
+          <tr>
+            <td class="doc">中华人民共和国反洗钱法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2024 修订版</td>
+            <td class="note">2025-01-01 施行，语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">中华人民共和国保险法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2015-04-24 第三次修正</td>
+            <td class="note">语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">中华人民共和国商业银行法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2015-08-29 修正</td>
+            <td class="note">全面修订草案仍在立法程序中，未通过</td>
+          </tr>
+          <tr>
+            <td class="doc">中华人民共和国银行业监督管理法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2006-10-31 修正</td>
+            <td class="note">大修草案 2026-08 二审，尚未表决</td>
+          </tr>
+          <tr>
+            <td class="doc">中华人民共和国票据法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2004-08-28 修正</td>
+            <td class="note">语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">中华人民共和国信托法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2001-04-28 原版</td>
+            <td class="note">制定至今未修改</td>
+          </tr>
+          <tr>
+            <td class="doc">中华人民共和国外资银行管理条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2019-09-30 第 3 次修订</td>
+            <td class="note">PDF 抬头沿革已含 2014 年两次、2019 年第三次修订，语料即为现行版</td>
+          </tr>
+          <tr>
+            <td class="doc">储蓄管理条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2011-01-08 令588号修订</td>
+            <td class="note">PDF 抬头沿革已含该次修订，语料即为现行版</td>
+          </tr>
+          <tr>
+            <td class="doc">农业保险条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2012 年原版</td>
+            <td class="note">2016-02-06 令666号修订。2025 年清理废止的是引用它的保监发〔2013〕45号，条例本身未动</td>
+          </tr>
+          <tr>
+            <td class="doc">机动车交通事故责任强制保险条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2019-03-02 令709号修改</td>
+            <td class="note">正文「保监会」0 处、「国务院保险监督管理机构」17 处，已含 2019 年机构改革修改，为现行版（抬头沿革仅列至 2016 年，系公布文本未更新抬头）</td>
+          </tr>
+          <tr>
+            <td class="doc">融资担保公司监督管理条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2017-08-02 令683号</td>
+            <td class="note">未修订</td>
+          </tr>
+          <tr>
+            <td class="doc">金融机构撤销条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2001-11-23 令324号</td>
+            <td class="note">无修订 / 废止记录</td>
+          </tr>
+          <tr>
+            <td class="doc">金融资产管理公司条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2000-11-10 令297号</td>
+            <td class="note">无修订 / 废止记录</td>
+          </tr>
+          <tr>
+            <td class="doc">金融违法行为处罚办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">1999-02-22 令260号</td>
+            <td class="note">兜底性规定，2026 年罚单仍援引第二十二条</td>
+          </tr>
+          <tr>
+            <td class="doc">防范和处置非法集资条例</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2021-01-26 令737号</td>
+            <td class="note">未修订</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>行政规范性文件 —— 14 份</h3>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>文件</th><th>状态</th><th>文号</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="doc">信托公司开展房地产领域信托业务管理办法(试行)</td>
+            <td><span class="chip c-pend">未施行</span></td>
+            <td class="ver">金规〔2026〕8号</td>
+            <td class="note">PDF 第七十条：<b>2027-03-01 起施行</b>。多处转载误作「自印发之日起施行」</td>
+          </tr>
+          <tr>
+            <td class="doc">财产保险公司保险产品开发管理规定</td>
+            <td><span class="chip c-pend">未施行</span></td>
+            <td class="ver">金规〔2026〕9号</td>
+            <td class="note">PDF 第四十一条：<b>2026-11-01 起施行</b>；同时废止保监发〔2016〕115号、保监产险〔2014〕88号</td>
+          </tr>
+          <tr>
+            <td class="doc">个人住房贷款管理办法(试行)</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2026〕5号</td>
+            <td class="note">自印发之日（2026-08-28）施行；废止银发〔1998〕190号</td>
+          </tr>
+          <tr>
+            <td class="doc">商品住房开发贷款管理办法(试行)</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2026〕4号</td>
+            <td class="note">自印发之日施行</td>
+          </tr>
+          <tr>
+            <td class="doc">商业地产贷款管理办法(试行)</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2026〕6号</td>
+            <td class="note">自印发之日施行</td>
+          </tr>
+          <tr>
+            <td class="doc">城市更新项目贷款管理办法(试行)</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2026〕7号</td>
+            <td class="note">自印发之日施行</td>
+          </tr>
+          <tr>
+            <td class="doc">理财公司监管评级暂行办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2026〕1号</td>
+            <td class="note">自印发之日施行</td>
+          </tr>
+          <tr>
+            <td class="doc">保险公司资本保证金管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2025〕18号</td>
+            <td class="note">2025-08-29 印发施行；废止保监发〔2015〕37号</td>
+          </tr>
+          <tr>
+            <td class="doc">商业银行并购贷款管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2025〕27号</td>
+            <td class="note">2025-12-31 印发施行；第三十四条废止银监发〔2015〕5号</td>
+          </tr>
+          <tr>
+            <td class="doc">调整保险公司相关业务风险因子的通知</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2025〕24号</td>
+            <td class="note">未见 2026 年更晚文件再次调整</td>
+          </tr>
+          <tr>
+            <td class="doc">地方资产管理公司监督管理暂行办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2025〕16号</td>
+            <td class="note">自印发之日施行；未被正式办法取代。「暂行」未转正</td>
+          </tr>
+          <tr>
+            <td class="doc">关于部分规范性文件废止和宣布失效的通知</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2025〕17号</td>
+            <td class="note">2025 年第一批清理：废止 44 件、失效 7 件</td>
+          </tr>
+          <tr>
+            <td class="doc">关于部分规范性文件废止和宣布失效的通知</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2025〕22号</td>
+            <td class="note">第二批：废止 44 件、失效 10 件</td>
+          </tr>
+          <tr>
+            <td class="doc">关于部分规范性文件废止和宣布失效的通知</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">金规〔2025〕26号</td>
+            <td class="note">第三批：废止 32 件、失效 16 件。三批合计废止 120 件、失效 33 件</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="num">五</span>
+      <h2>中国证券监督管理委员会部门规章</h2>
+      <span class="count">30 份</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>文件</th><th>状态</th><th>语料所存版本</th><th>官方最新 / 依据</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="doc">上市公司证券发行管理办法</td>
+            <td><span class="chip c-stop">已废止</span></td>
+            <td class="ver">2020-02-14 令163号</td>
+            <td class="note">2023-02-17 被证监会令第206号《上市公司证券发行注册管理办法》第八十九条废止</td>
+          </tr>
+          <tr>
+            <td class="doc">中国证券监督管理委员会发行审核委员会办法</td>
+            <td><span class="chip c-stop">已废止</span></td>
+            <td class="ver">2017-07-07 令134号</td>
+            <td class="note">2023-08-10 被证监会令第221号废止</td>
+          </tr>
+          <tr>
+            <td class="doc">行政和解试点实施办法</td>
+            <td><span class="chip c-stop">已废止</span></td>
+            <td class="ver">2015-02-17 令114号</td>
+            <td class="note">2022-01-01 被《证券期货行政执法当事人承诺制度实施规定》第二十三条废止；替代新规：国务院令第749号</td>
+          </tr>
+          <tr>
+            <td class="doc">证券业从业人员资格管理办法</td>
+            <td><span class="chip c-stop">已废止</span></td>
+            <td class="ver">2002-12-16 令14号</td>
+            <td class="note">2022-04-01 被证监会令第195号第五十八条废止（替代新规见本表末行）</td>
+          </tr>
+          <tr>
+            <td class="doc">公开募集证券投资基金运作管理办法</td>
+            <td><span class="chip c-stale">即将失效</span></td>
+            <td class="ver">2014-07-07 令104号</td>
+            <td class="note">现行有效；但 2026-10-09 发布征求意见稿（截止 2026-11-08），施行即废止令104号</td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司信息披露管理办法</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2021-03-18 令182号</td>
+            <td class="note">2025 年修订，证监会令第226号，2025-07-01 施行</td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司收购管理办法</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2020-03-20 令166号</td>
+            <td class="note">2025-03-27 证监会令第227号修正</td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司股权激励管理办法</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2018-08-15 令148号</td>
+            <td class="note">2025-03-27 证监会令第227号修正</td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司重大资产重组管理办法</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2020-03-20 令166号</td>
+            <td class="note">2025 年修正，证监会令第230号，2025-05-16 施行</td>
+          </tr>
+          <tr>
+            <td class="doc">中国证监会派出机构监管职责规定</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2022-05-31 令199号</td>
+            <td class="note">2025 年修订，证监会令第229号，2025-05-19 施行</td>
+          </tr>
+          <tr>
+            <td class="doc">公司债券发行与交易管理办法</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2021-02-26 令180号</td>
+            <td class="note">证监会令第222号，2023-10-20 公布施行</td>
+          </tr>
+          <tr>
+            <td class="doc">外商投资证券公司管理办法</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2020-03-20 令166号</td>
+            <td class="note">2025-03-27 证监会令第227号修正</td>
+          </tr>
+          <tr>
+            <td class="doc">存托凭证发行与交易管理办法（试行）</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2018-06-06 令143号</td>
+            <td class="note">2023-02-17 证监会令第215号修订（改注册制、增先行赔付）</td>
+          </tr>
+          <tr>
+            <td class="doc">证券基金经营机构董事、监事、高级管理人员及从业人员监督管理办法</td>
+            <td><span class="chip c-stale">版本滞后</span></td>
+            <td class="ver">2022-04-01 令195号</td>
+            <td class="note">2025-03-27 证监会令第227号修正（落实新公司法，删「监事」、改「股东会」）</td>
+          </tr>
+          <tr>
+            <td class="doc">网络安全审查办法（国家互联网信息办公室）</td>
+            <td><span class="chip c-dup">重复采集</span></td>
+            <td class="ver">2022-02-15 施行</td>
+            <td class="note">与下一份正文完全相同，仅页脚来源与标点不同 —— 同一文件采了两次</td>
+          </tr>
+          <tr>
+            <td class="doc">网络安全审查办法（国家密码管理局）</td>
+            <td><span class="chip c-dup">重复采集</span></td>
+            <td class="ver">2022-02-15 施行</td>
+            <td class="note">经逐字比对确认与上一份为同一 2022 年版（13 部门令第8号）</td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司并购重组财务顾问业务管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2008-08-04 令54号</td>
+            <td class="note">未见修订或废止</td>
+          </tr>
+          <tr>
+            <td class="doc">中国证券监督管理委员会冻结、查封实施办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2020-03-20 令166号</td>
+            <td class="note">语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">全国中小企业股份转让系统有限责任公司管理暂行办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2017-12-07 令137号</td>
+            <td class="note">未见废止</td>
+          </tr>
+          <tr>
+            <td class="doc">公开募集证券投资基金信息披露管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2020-03-20 令166号</td>
+            <td class="note">语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">公开募集证券投资基金销售机构监督管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2020-10-01 令175号</td>
+            <td class="note">未见修订或废止</td>
+          </tr>
+          <tr>
+            <td class="doc">公开募集证券投资基金风险准备金监督管理暂行办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2014-01-01 令94号</td>
+            <td class="note">「暂行」未转正，仍现行有效</td>
+          </tr>
+          <tr>
+            <td class="doc">境外交易者和境外经纪机构从事境内特定品种期货交易管理暂行办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2015-08-01 令116号</td>
+            <td class="note">2026 年新增特定品种仍援引该办法</td>
+          </tr>
+          <tr>
+            <td class="doc">境外证券期货交易所驻华代表机构管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2019-07-25 令157号</td>
+            <td class="note">语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">外商投资期货公司管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2018-08-24 令149号</td>
+            <td class="note">未见修订或废止</td>
+          </tr>
+          <tr>
+            <td class="doc">客户交易结算资金管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2021-06-11 令184号</td>
+            <td class="note">语料即为最新版；第三方存管是配套制度，不构成失效理由</td>
+          </tr>
+          <tr>
+            <td class="doc">股票期权交易试点管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2015-01-09 令112号</td>
+            <td class="note">去「试点」的新版仅见于立法计划，未查到正式发布</td>
+          </tr>
+          <tr>
+            <td class="doc">证券交易所管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2021-10-30 令192号</td>
+            <td class="note">第 3 次修订，语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">证券公司和证券投资基金管理公司合规管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2020-03-20 令166号</td>
+            <td class="note">语料即为最新版</td>
+          </tr>
+          <tr>
+            <td class="doc">证券公司和证券投资基金管理公司境外设立、收购、参股经营机构管理办法</td>
+            <td><span class="chip c-ok">有效</span></td>
+            <td class="ver">2021-01-15 令179号</td>
+            <td class="note">语料即为最新版</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="num">替换</span>
+      <h2>版本替换清单 · 官方下载</h2>
+      <span class="count">9 份 · 已全部下载入库</span>
+    </div>
+
+    <div class="callout" style="border-left-color:var(--stale)">
+      <h3 style="color:var(--stale)">入库来源说明（重要）</h3>
+      <p style="margin:0;color:var(--ink-2)">
+        9 份现行版已下载并入 <code>五.中国证券管理委员会部门规章/有效文件/</code>，旧版移入 <code>五.中国证券管理委员会部门规章/旧版(已被修订)/</code>。来源：
+        <br>· <b>8 份为官方原始 PDF</b>：信息披露办法、派出机构监管职责规定、公司债券办法、存托凭证办法取自证监会官网令文页附件；
+        收购办法、股权激励办法、外商投资证券公司管理办法、董监高监督管理办法 4 份从证监会令第227号打包 PDF 中按页切出。
+        <br>· <b>1 份无官方独立 PDF —— 重大资产重组管理办法（令230号）</b>：证监会只发布「修改决定」，
+        合并全文仅以「重新公布」形式见于国务院公报 2025 年第 20 期 <b>P37–P50</b>。
+        该期公报为<b>扫描件（无文字层，0 可提取字符）</b>，不适合入库，故语料使用公报正文提取排版件（文末附来源 URL）；
+        原件扫描页另存于 <code>现行版下载_2026-10-19/</code> 备查。
+      </p>
+    </div>
+
+    <div class="callout">
+      <h3>下之前先看这条</h3>
+      <p style="margin:0;color:var(--ink-2)">
+        证监会官网法规库（<code>csrc.gov.cn/csrc/c106256</code> 栏目）的独立规章页面
+        <b>六份全部是旧版</b>——收购办法停在 2020 年令166号、股权激励停在 2018 年令148号、
+        外商投资证券停在 2020 年令166号、存托凭证停在 2018 年令143号、
+        董监高监督管理办法停在 2022 年令195号、公司债券办法停在 2021 年令180号。
+        从那里搜到的都是过时文本，请一律用下表链接。
+      </p>
+    </div>
+
+    <div class="callout" style="border-left-color:var(--accent)">
+      <h3 style="color:var(--accent)">一个文件拿四份</h3>
+      <p style="margin:0;color:var(--ink-2)">
+        证监会令第227号不是一份规章，而是一个 <b>394 页打包文件</b>，内含 21 部被修改规章的
+        <b>修正后完整正文</b>。下表 4 份规章都在里面，按页码取：
+        <br>外商投资证券公司管理办法 <b>P147</b> · 董监高及从业人员监督管理办法 <b>P171</b> ·
+        股权激励管理办法 <b>P258</b> · 收购管理办法 <b>P290</b>
+      </p>
+      <div class="dl">
+        <a href="https://www.csrc.gov.cn/csrc/c101953/c7547341/7547341/files/附件1：《关于修改部分证券期货规章的决定》.pdf">https://www.csrc.gov.cn/csrc/c101953/c7547341/7547341/files/附件1：《关于修改部分证券期货规章的决定》.pdf</a>
+      </div>
+      <p style="margin:0;color:var(--ink-2);font-size:12.5px">
+        发布页：<a href="https://www.csrc.gov.cn/csrc/c101953/c7547341/content.shtml">csrc.gov.cn/csrc/c101953/c7547341/content.shtml</a>
+        ｜国务院公报全文：<a href="https://www.gov.cn/gongbao/2025/issue_12026/202505/content_7022575.html">2025 年第 13 号公报</a>
+      </p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>待替换文件</th><th>应替换为</th><th>官方页面</th><th>直接下载</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="doc">上市公司信息披露管理办法</td>
+            <td class="note">证监会令第226号<br>2025-03-26 公布 / <b>2025-07-01 施行</b></td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7547359/content.shtml">csrc.gov.cn/csrc/c101953/c7547359</a></div></td>
+            <td><div class="dl">
+              <a href="https://www.csrc.gov.cn/csrc/c101953/c7547359/7547359/files/附件1：上市公司信息披露管理办法.pdf">附件1：上市公司信息披露管理办法.pdf</a>
+              <a href="https://www.gov.cn/gongbao/2025/issue_12026/202505/content_7022576.html">国务院公报 2025 年第 13 号（全文）</a>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司收购管理办法</td>
+            <td class="note">证监会令第227号修正<br>2025-03-27 施行<br>（P290 起）</td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7547341/content.shtml">csrc.gov.cn/csrc/c101953/c7547341</a></div></td>
+            <td class="note">见上方 227 号令打包 PDF · <b>第 290 页起</b></td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司股权激励管理办法</td>
+            <td class="note">证监会令第227号修正<br>2025-03-27 施行<br>（P258 起）</td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7547341/content.shtml">csrc.gov.cn/csrc/c101953/c7547341</a></div></td>
+            <td class="note">见上方 227 号令打包 PDF · <b>第 258 页起</b></td>
+          </tr>
+          <tr>
+            <td class="doc">外商投资证券公司管理办法</td>
+            <td class="note">证监会令第227号修正<br>2025-03-27 施行<br>（P147 起）</td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7547341/content.shtml">csrc.gov.cn/csrc/c101953/c7547341</a></div></td>
+            <td class="note">见上方 227 号令打包 PDF · <b>第 147 页起</b></td>
+          </tr>
+          <tr>
+            <td class="doc">证券基金经营机构董事、监事、高级管理人员及从业人员监督管理办法</td>
+            <td class="note">证监会令第227号修正<br>2025-03-27 施行<br>（P171 起）</td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7547341/content.shtml">csrc.gov.cn/csrc/c101953/c7547341</a></div></td>
+            <td class="note">见上方 227 号令打包 PDF · <b>第 171 页起</b></td>
+          </tr>
+          <tr>
+            <td class="doc">上市公司重大资产重组管理办法</td>
+            <td class="note">证监会令第230号<br>2025-05-16 公布施行</td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7558586/content.shtml">csrc.gov.cn/csrc/c101953/c7558586</a></div></td>
+            <td><div class="dl">
+              <a href="https://www.gov.cn/gongbao/2025/issue_12166/202507/content_7032496.html">国务院公报（含合并后完整正文）</a>
+              <a href="https://www.csrc.gov.cn/csrc/c101953/c7558586/7558586/files/附件1.关于修改《上市公司重大资产重组管理办法》的决定.pdf">官网附件1：修改决定.pdf（仅修改决定，非全文）</a>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="doc">中国证监会派出机构监管职责规定</td>
+            <td class="note">证监会令第229号<br>2025-04-18 公布 / <b>2025-05-19 施行</b></td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7552436/content.shtml">csrc.gov.cn/csrc/c101953/c7552436</a></div></td>
+            <td><div class="dl">
+              <a href="https://www.csrc.gov.cn/csrc/c101953/c7552436/7552436/files/附件1：中国证监会派出机构监管职责规定.pdf">附件1：中国证监会派出机构监管职责规定.pdf</a>
+              <a href="https://www.gov.cn/gongbao/2025/issue_12046/202505/content_7023968.html">国务院公报 2025 年第 14 号（全文）</a>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="doc">公司债券发行与交易管理办法</td>
+            <td class="note">证监会令第222号<br>2023-10-20 公布施行</td>
+            <td><div class="dl"><a href="https://www.csrc.gov.cn/csrc/c101953/c7438204/content.shtml">csrc.gov.cn/csrc/c101953/c7438204</a></div></td>
+            <td><div class="dl">
+              <a href="https://www.csrc.gov.cn/csrc/c101953/c7438204/7438204/files/附件1：公司债券发行与交易管理办法.pdf">附件1：公司债券发行与交易管理办法.pdf</a>
+              <a href="https://www.gov.cn/gongbao/2023/issue_10886/202312/content_6921380.html">国务院公报 2023 年第 35 号（全文）</a>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="doc">存托凭证发行与交易管理办法（试行）</td>
+            <td class="note">证监会令第215号<br><b>2023-02-17 修订</b>公布施行</td>
+            <td><div class="dl"><a href="https://www.gov.cn/gongbao/2023/issue_10506/202306/content_6885260.html">gov.cn/gongbao/2023/issue_10506（2023 年第 16 号公报）</a></div></td>
+            <td class="note">该公报仅提供 HTML 全文，<b>无现行版 PDF 直链</b>；证监会官网 PDF 为 2018 旧版，勿用</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin:0;color:var(--ink-2);font-size:13px">
+      以上链接均由本机 <code>curl</code> 实测返回 HTTP 200，PDF 附件经 Range 请求验证为
+      <code>application/pdf</code>。判断版本时读取的是页面或 PDF 上的原文文字，未凭记忆构造任何地址。
+    </p>
+  </section>
+
+  <div class="method">
+    <h3>核查方法</h3>
+    <p>
+      分两层：<b>本地层</b>直接解析 PDF 原文，抽取抬头沿革、附则施行日期、文号与索引号、以及「同时废止」条款 —— 这一层是权威原文，用于否决二手转载；
+      <b>联网层</b>对每份文件检索全国人大法律法规数据库、中国政府网、国务院政策文件库、证监会、金融监管总局等权威源，判定现行效力与最新版本。
+      两层冲突时以本地 PDF 原文为准。
+    </p>
+    <p>
+      <b>局限：</b>联网核查期间多数政务站点被网络策略拦截，部分结论依赖官方转载页与国务院公报间接印证；标注「形式存疑」的一项建议以
+      <code>flk.npc.gov.cn</code> 效力状态字段终核。本报告结论截至 2026-10-19。
+    </p>
+
+    <h3 style="margin-top:22px">目录约定</h3>
+    <p>
+      两部分结构已对齐 —— <b>顶层按时效状态分类</b>，仅第四部分因文档层级不同而多一层类型细分。
+    </p>
+    <pre style="font-family:ui-monospace,'Cascadia Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--rule-2);border-radius:3px;padding:14px 16px;overflow-x:auto;margin:12px 0 0">四.国家金融监督管理总局/
+  有效文件/
+    法律行政法规/        16 份 · 现行有效
+    行政规范性文件/      14 份 · 现行有效
+  废止及失效/             1 份 · 2025-12-27 宣告失效
+
+五.中国证券管理委员会部门规章/
+  有效文件/              25 份 · 现行有效
+  废止/                   4 份 · 已被明文废止
+  旧版(已被修订)/          9 份 · 现行版见「有效文件」同名文件</pre>
+    <p style="margin-top:12px">
+      「<b>废止</b>」是法规失效的法定表述（官方原文即用此词），「<b>失效</b>」指被法律清理宣告不再适用，二者分列以示区别；
+      「<b>旧版(已被修订)</b>」内的 9 份与 <code>有效文件/</code> 中的同名文件一一对应，仅供版本比对。
+    </p>
+  </div>
+
+</div>

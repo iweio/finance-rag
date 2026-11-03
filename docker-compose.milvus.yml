@@ -1,0 +1,93 @@
+# Milvus 单机版 —— P2 开发/演示用，**不是**最终交付的那份 `docker-compose.yml`。
+#
+# 为什么单独一份：契约/DEPLOY.md §2 说的 7 服务 `docker-compose.yml` 是 P1/P3 的交付物，
+# 里面还要接 MySQL / backend / frontend。P2 只需要「能把 8156 条灌进 Milvus」，
+# 单独起最小的三个容器，互不干扰。
+#
+# 文件名不是 `docker-compose.yml`，所以 `docker compose up` **不会**自动捡到它，必须显式 -f：
+#
+#     docker compose -f docker-compose.milvus.yml up -d      # 起
+#     docker compose -f docker-compose.milvus.yml down       # 停（保留数据）
+#     docker compose -f docker-compose.milvus.yml down -v    # 停并清空数据
+#
+# 起完自检：
+#     http://localhost:9091/healthz    Milvus 健康检查
+#     http://localhost:9001            MinIO 控制台（minioadmin / minioadmin）
+#
+# 数据落在 ./volumes/ 下（bind mount，不是 named volume）—— 想看、想删都直接。
+
+services:
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: rag-etcd
+    environment:
+      - ETCD_AUTO_COMPACTION_MODE=revision
+      - ETCD_AUTO_COMPACTION_RETENTION=1000
+      - ETCD_QUOTA_BACKEND_BYTES=4294967296   # 4GB
+      - ETCD_SNAPSHOT_COUNT=50000
+    volumes:
+      - ./volumes/etcd:/etcd
+    # 端口不对外暴露：只有 Milvus 在容器网络里连它，宿主机不需要
+    command: etcd -advertise-client-urls=http://etcd:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  minio:
+    # ⚠ 官方 `minio/minio` 的 Docker Hub 仓库已 **404**（MinIO 撤下了镜像），
+    # 所以走 Bitnami 的 legacy 仓库。MinIO 只是 S3 兼容对象存储，换个发行方不影响 Milvus。
+    # ★ 这个 legacy 仓库是临时性质的，会下架 —— 迁移预案见 契约/DEPLOY.md §2.1。
+    image: bitnamilegacy/minio:2025.7.23-debian-12-r5
+    container_name: rag-minio
+    environment:
+      # Bitnami 版用 ROOT_USER / ROOT_PASSWORD，**不是**官方版的 ACCESS_KEY / SECRET_KEY
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+      - MINIO_DEFAULT_BUCKETS=a-bucket   # Milvus 自己也会建这个桶，这里预建省一轮重试
+    ports:
+      - "9000:9000"   # S3 API，Milvus 连这个
+      - "9001:9001"   # 控制台，人看数据用
+    volumes:
+      # Bitnami 版的数据目录是 /bitnami/minio/data，**不是**官方版的 /data
+      - ./volumes/minio:/bitnami/minio/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  milvus:
+    # 2.5 不是 2.4 —— 见 契约/DB.md §3.1.2：
+    # pymilvus 2.4.x 的 FieldSchema 会把 `nullable` 静默吞掉（entity_helper 里
+    # `valid_data` 0 处），标了 nullable 的字段实际不可为空。2.5 线才实现空值位图。
+    # 所以服务端与客户端必须一起用 2.5。
+    image: milvusdb/milvus:v2.5.27
+    container_name: rag-milvus
+    command: ["milvus", "run", "standalone"]
+    security_opt:
+      - seccomp:unconfined          # 官方 compose 也带这行，去掉会在部分内核上起不来
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+      # 必须与上面 MINIO_ROOT_USER / MINIO_ROOT_PASSWORD 一致。
+      # 不一致时 Milvus 起不来，报的是 S3 认证失败，不会告诉你「账号写错了」。
+      MINIO_ACCESS_KEY_ID: minioadmin
+      MINIO_SECRET_ACCESS_KEY: minioadmin
+    volumes:
+      - ./volumes/milvus:/var/lib/milvus
+    ports:
+      - "19530:19530"   # gRPC —— pymilvus / 脚本/ingest.py 连这个
+      - "9091:9091"     # /healthz 与 metrics
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      start_period: 90s   # 首次启动要建内部 topic，给足 90 秒，别让它被判成不健康
+      timeout: 20s
+      retries: 3
+    depends_on:
+      etcd:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
