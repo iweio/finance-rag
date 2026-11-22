@@ -123,6 +123,20 @@ MILVUS_COLLECTION=finance_clause
 # ---- 后端 ----
 DATABASE_URL=mysql+pymysql://rag:rag_pwd@mysql:3306/rag_finance?charset=utf8mb4
 API_PREFIX=/api/v1
+# development | production。production 下 JWT_SECRET 缺失会启动失败
+APP_ENV=development
+# real | mock（mock 不要用于交付验收，/health 会自曝 "mode": "mock"）
+RAG_MODE=real
+# 容器内 产出 的挂载点（/meta/filters 读 语料元数据.xlsx）
+OUTPUT_DIR=/app/产出
+
+# ---- 认证（接口 8→10 的扩展，API.md §9）----
+JWT_SECRET=change-me-to-a-long-random-string
+JWT_EXPIRE_HOURS=24
+
+# ---- 知识图谱（M8，接口 10→13，API.md §10）----
+# /graph/* 只读这份目录（kg/export_serving.py 产出）；容器内是镜像里的 /app/kg/out/serving。
+KG_SERVING_DIR=./kg/out/serving
 
 # ---- embedding（与 DB.md / MODULE.md 联动）----
 EMBED_MODEL=BAAI/bge-m3

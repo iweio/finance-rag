@@ -41,3 +41,29 @@ _milvus*.yaml
 .DS_Store
 Thumbs.db
 desktop.ini
+# ---- 队友交付包（原件，不是本项目源码）----
+# rag-finance-kb_v1.1_*.zip / _v1.2_*.zip 解出来的两份完整交付包，111MB，
+# 内容与本仓库的 backend/ rag_core/ 脚本/ 产出/ 大面积重复。
+# 留在磁盘上当「队友原话」的对账依据（diff 靠它），进版本库就是把同一份代码存两遍。
+rag-finance-kb_v1.1_*/
+rag-finance-kb_v1.2_*/
+
+# ---- 本机 compose 覆盖层：不入 Git ----
+# 里面是这台机器的端口（80/3306 被占）与 ${DEEPSEEK_API_KEY:?} 这种只有本机能填的值。
+# compose 会自动合并同目录的 override —— 提交上去，干净机器 `up` 会被这些 `:?` 直接拦死。
+# 本机差异怎么抄一份，见 文档/有Docker机器部署清单.md §0。
+docker-compose.override.yml
+
+# ---- 图谱中间产物：可由 kg/build_graph.py 重算（6MB）----
+# 入 Git 的只有 kg/out/serving/（服务端读它）与 citation_edges.csv / graph_stats.json /
+# spotcheck_sample.csv / split/（论文与复现要用的证据，共 ~140KB）。
+kg/out/nodes.jsonl
+kg/out/edges.jsonl
+kg/out/features/
+kg/out/train/
+
+# 交付包的封面说明（写的是 zip 里有什么、怎么双击 文档/预览/index.html）。
+# 它是队友随包发的说明书，不是仓库文档：仓库侧的对应物是 文档/全流程说明.md，
+# 而且它引用的 文档/预览/ 我们没入库（真前端已能在 Docker 里构建运行）。
+# 需要它进版本库就删掉这一行，同时把 文档/预览/ 一起拷进来。
+交付说明.md
