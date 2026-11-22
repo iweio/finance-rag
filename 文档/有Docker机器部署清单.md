@@ -85,7 +85,7 @@ curl -s http://localhost/api/v1/graph/stats
 上面用 `http://localhost`（80）。本机这类脏机器要加 `:8080`，自检也可以一条命令跑完 13 个接口：
 
 ```bash
-python 脚本/_fullstack_check.py --base http://localhost:8080   # 45 项，全 PASS 退出码 0
+python 脚本/_fullstack_check.py --base http://localhost:8080   # 43 项，全 PASS 退出码 0
 ```
 
 > `import 产出/embeddings` 缺失时，第 ⑤ 步会报"向量文件不存在"。两条路：
@@ -132,7 +132,7 @@ Mock 自带 40 条检索结果、7 条条文详情、4 种关联关系；登录�
 | `ingest.py --recreate` 在容器里跑 | ✅ 早先跑过，`/health` 的 `row_count=8156` 一直在 |
 | 前端 `vite build` | ✅ 在镜像里构建通过（含 `GraphView.vue`，队友那版从未构建过） |
 | `pytest` | ✅ 38 项全过（宿主机跑；backend 镜像里没装 pytest，它是交付镜像不是 CI 镜像） |
-| 13 个接口逐个走 nginx | ✅ `脚本/_fullstack_check.py` 45 项全 PASS，含 `/chat` 真 LLM 的 SSE 事件顺序、`/graph` 三接口的 40401/40001 错误包 |
+| 13 个接口逐个走 nginx | ✅ `脚本/_fullstack_check.py` 43 项全 PASS，含 `/chat` 真 LLM 的 SSE 事件顺序、`/graph` 三接口的 40401/40001 错误包 |
 | 检索基线没动 | ✅ 合并图谱后重跑 `脚本/_eval_retrieval.py`：top-5 47/47=100%、top-1 83.0%、MRR 0.895，与 `产出/评估集/结果_top5.json` 逐项相同 |
 | 契约/数据一致性 | 🟡 `_contract_check.py` 只在合并前跑过；图谱不新增 Milvus 字段，预期不变 |
 
