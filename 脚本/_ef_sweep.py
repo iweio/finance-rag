@@ -25,7 +25,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "脚本"))
 
 from _eval_retrieval import (  # noqa: E402  判据口径只此一份
-    COLLECTION, DEFAULT_FILTER, EMBED_MODEL, QUERY_PREFIX, load_questions,
+    COLLECTION, DEFAULT_FILTER, EMBED_MODEL, MILVUS_HOST, MILVUS_PORT, QUERY_PREFIX,
+    load_questions,
 )
 
 # 0 = 不传 ef，走服务端默认。两边都要量：不传是**最容易犯的错**，
@@ -39,7 +40,7 @@ def main() -> None:
 
     qs = load_questions()
     scored = [q for q in qs if q["type"] != "abstain"]
-    client = MilvusClient(uri="http://localhost:19530")
+    client = MilvusClient(uri=f"http://{MILVUS_HOST}:{MILVUS_PORT}")
     if not client.has_collection(COLLECTION):
         sys.exit(f"Milvus 里没有集合 {COLLECTION}，先跑 脚本/ingest.py")
     n_rows = client.query(COLLECTION, filter="clause_id != ''",

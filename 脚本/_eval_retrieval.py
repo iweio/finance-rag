@@ -30,9 +30,14 @@
 
 用法：
 
+    set -a; source .env; set +a       # 模型/集合/Milvus 地址一律从 .env 来（宿主机必做）
     python 脚本/_eval_retrieval.py            # 默认 top-5
     python 脚本/_eval_retrieval.py --k 10
     python 脚本/_eval_retrieval.py --show-miss 20
+    docker compose exec backend python 脚本/_eval_retrieval.py   # 容器内（compose 已注入环境变量）
+
+不 source 也跑得动 —— 每个变量都留了和 `rag_core/retriever.py` 一致的默认值，
+但那等于赌 .env 和默认值恰好相同。
 """
 from __future__ import annotations
 
@@ -49,11 +54,20 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QS = os.path.join(ROOT, "产出", "评估集", "50题.jsonl")
 
-EMBED_MODEL = "BAAI/bge-m3"
-QUERY_PREFIX = "为这个句子生成表示以用于检索相关文章："  # ★ 只在 query 侧加
-COLLECTION = "finance_clause"
-# 与 ingest.py 的入库口径一致：有效件 + 已生效
-DEFAULT_FILTER = 'status == "有效" and effective_date <= 20261027'
+# 下面每一项都和 rag_core/retriever.py:27-33 同源（同一批变量名、同一份默认值）。
+# 原来这里写死字面量：.env 换了 EMBED_MODEL / MILVUS_COLLECTION，引擎跟着换、
+# 评测却还按老的算 —— 数字照样漂亮，量的却已经是另一套向量空间 / 另一个集合。
+# 宿主机跑之前先 `set -a; source .env; set +a`；容器里 compose 已经注入。
+EMBED_MODEL = os.environ.get("EMBED_MODEL", "BAAI/bge-m3")
+QUERY_PREFIX = os.environ.get("QUERY_PREFIX", "为这个句子生成表示以用于检索相关文章：")  # ★ 只在 query 侧加
+COLLECTION = os.environ.get("MILVUS_COLLECTION", "finance_clause")
+MILVUS_HOST = os.environ.get("MILVUS_HOST", "localhost")   # 容器里是 milvus
+MILVUS_PORT = os.environ.get("MILVUS_PORT", "19530")
+# 与 ingest.py 的入库口径一致：有效件 + 已生效。
+# 截止日 20261027 是当初定标那天，不是常量 —— 已经过了它，写死会让「已生效」的
+# 口径一天天变旧。给个 EVAL_ASOF 覆盖口，默认值保持与历史结果可比。
+DEFAULT_FILTER = 'status == "有效" and effective_date <= {}'.format(
+    os.environ.get("EVAL_ASOF", "20261027"))
 
 
 def load_questions() -> list[dict]:
@@ -99,7 +113,10 @@ def main() -> None:
     from pymilvus import MilvusClient
 
     qs = load_questions()
-    client = MilvusClient(uri="http://localhost:19530")
+    client = MilvusClient(uri=f"http://{MILVUS_HOST}:{MILVUS_PORT}")
+    # 把生效口径打在开头：读错/没 source .env 时这一行就能看出来，
+    # 不用等跑完 50 题再怀疑数字为什么和上次不一样。
+    print(f"Milvus {MILVUS_HOST}:{MILVUS_PORT} / {COLLECTION}　模型 {EMBED_MODEL}　过滤 {DEFAULT_FILTER}")
     if not client.has_collection(COLLECTION):
         sys.exit(f"Milvus 里没有集合 {COLLECTION}，先跑 脚本/ingest.py")
 
@@ -198,12 +215,18 @@ def main() -> None:
             print(f"  {q['qid']} {q['question']}")
 
     out = os.path.join(ROOT, "产出", "评估集", f"结果_top{args.k}.json")
-    with open(out, "w", encoding="utf-8") as f:
-        json.dump({"k": args.k, "ef": args.ef, "metric": "COSINE", "model": EMBED_MODEL,
-                   "query_prefix": QUERY_PREFIX, "default_filter": DEFAULT_FILTER,
-                   "hit_rate": rate, "top1": top1 / len(hits), "mrr": mrr,
-                   "n": len(hits), "detail": hits}, f, ensure_ascii=False, indent=2)
-    print(f"\n明细写入 {os.path.relpath(out, ROOT)}")
+    payload = {"k": args.k, "ef": args.ef, "metric": "COSINE", "model": EMBED_MODEL,
+               "query_prefix": QUERY_PREFIX, "default_filter": DEFAULT_FILTER,
+               "hit_rate": rate, "top1": top1 / len(hits), "mrr": mrr,
+               "n": len(hits), "detail": hits}
+    try:
+        with open(out, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        print(f"\n明细写入 {os.path.relpath(out, ROOT)}")
+    except OSError as exc:
+        # 容器里 ./产出 是 ro 挂载（compose D3），写不进去是设计如此，不是评测失败：
+        # 指标已经在 stdout 了。想留明细就在宿主机跑，或 -v 挂成可写。
+        print(f"\n明细没落盘（{exc}），指标见上")
 
 
 if __name__ == "__main__":

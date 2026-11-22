@@ -16,8 +16,9 @@
 1. **字节预检**：每个 VARCHAR 按 UTF-8 字节比对 DB.md 的 `max_length`。`org` 曾写 128
    而实测 174 字节，就是这道闸门要拦的（§3.1.1）。
 2. **对齐预检**：向量条数、clause_id 顺序、chunk 条数三者一致，错一个就整批串行。
-3. **落库复核**：插入后查 `count(*)`，必须 **8156**（[契约/DB.md](../契约/DB.md) §5）。
-   语料一变这个数就要跟着改（脚本 `_counts.py` 报的数），别当成恒定值。
+3. **落库复核**：插入后查 `count(*)`，必须等于重跑后的入库行数（[契约/DB.md](../契约/DB.md) §5）。
+   表格 chunk 加入后行数会变；先全量重跑 `pipeline.py` → `embed.py`，用 `_counts.py`
+   的新数通过 `--expect-rows` 或环境变量 `EXPECT_ROWS` 传入，别沿用旧 8156。
 
 用法：
 
@@ -41,7 +42,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "脚本"))
 from pipeline import load_meta  # 元数据表的唯一读法，别再写第二份
 
-EXPECT_ROWS = 8156  # 入库行数（锚点 8036 + 超长条二次切 120）
+# 旧口径：8156 = 锚点 8036 + 超长条二次切 120。
+# 表格独立成 chunk 后这个数必然变化；全量重跑后必须以 脚本/_counts.py 的新值覆盖。
+EXPECT_ROWS = int(os.environ.get("EXPECT_ROWS", "8156"))
 
 
 # ---------- schema：与 DB.md §3.1 逐字对应 ----------
@@ -61,6 +64,8 @@ def build_schema(dim: int):
         FieldSchema("doc_title",      V, max_length=256),
         FieldSchema("doc_type",       V, max_length=32),
         FieldSchema("clause_no",      V, max_length=64),
+        # clause=普通条文；table=整表 chunk。与 pipeline.py 的 chunk_type 逐字对应。
+        FieldSchema("chunk_type",     V, max_length=16),
         FieldSchema("chapter",        V, max_length=256, nullable=True),
         # org 是 256 不是 128：4 份联合发文实测 174 字节（§3.1.1）
         FieldSchema("org",            V, max_length=256),
@@ -132,6 +137,7 @@ def build_rows(chunks: list[dict], vecs: np.ndarray,
             "doc_title": c["doc_title"],
             "doc_type": m["doc_type"],
             "clause_no": c["clause_no"],
+            "chunk_type": c.get("chunk_type", "clause"),
             # 空 → None。这几个字段在 DB.md §3.1 里标了 nullable，Milvus 2.5 收 None
             "chapter": c["chapter"] or None,
             "org": m["org"],
@@ -160,7 +166,10 @@ def main() -> None:
     ap.add_argument("--host", default=os.environ.get("MILVUS_HOST", "localhost"))
     ap.add_argument("--port", default=os.environ.get("MILVUS_PORT", "19530"))
     ap.add_argument("--collection", default=os.environ.get("MILVUS_COLLECTION", "finance_clause"))
+    ap.add_argument("--expect-rows", type=int, default=None,
+                    help="覆盖 EXPECT_ROWS；表格 chunk 改造后填 _counts.py 的新入库行数")
     args = ap.parse_args()
+    expect_rows = args.expect_rows if args.expect_rows is not None else EXPECT_ROWS
     dim = int(os.environ.get("EMBED_DIM", "1024"))
 
     try:
@@ -202,8 +211,8 @@ def main() -> None:
         probs.append(f"条数不齐：chunk {len(chunks)} / 向量 {len(vecs)} / 向量 id {len(vec_ids)}")
     if vec_ids != [c["clause_id"] for c in chunks]:
         probs.append("clause_id 顺序与 chunk 不一致（会整批串行）")
-    if len(chunks) != EXPECT_ROWS:
-        probs.append(f"条数 {len(chunks)} != 期望 {EXPECT_ROWS}（DB.md §5）")
+    if len(chunks) != expect_rows:
+        probs.append(f"条数 {len(chunks)} != 期望 {expect_rows}（DB.md §5；表格改造后请用 --expect-rows 传新数）")
     if probs:
         sys.exit("### 闸门 2 未过：\n" + "\n".join("   - " + p for p in probs))
     print(f"闸门 2 过：{len(chunks)} 条，向量与 chunk 的 clause_id 顺序一致")
@@ -240,10 +249,10 @@ def main() -> None:
 
     # ---- 闸门 3：落库复核 ----
     n = coll.query(expr="clause_id != ''", output_fields=["count(*)"])[0]["count(*)"]
-    print(f"\n落库 count(*) = {n}，期望 {EXPECT_ROWS}")
-    if n != EXPECT_ROWS:
-        sys.exit(f"### 闸门 3 未过：库里 {n} 条，期望 {EXPECT_ROWS}。"
-                 f"差 {EXPECT_ROWS - n} 条说明有批次丢了或重复入库")
+    print(f"\n落库 count(*) = {n}，期望 {expect_rows}")
+    if n != expect_rows:
+        sys.exit(f"### 闸门 3 未过：库里 {n} 条，期望 {expect_rows}。"
+                 f"差 {expect_rows - n} 条说明有批次丢了或重复入库")
     print("### 三道闸门全过，知识库就位")
 
 
