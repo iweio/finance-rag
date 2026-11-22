@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--rag-bg);
+  color: var(--rag-text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--rag-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--rag-primary-600);
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+code,
+pre {
+  font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+}
+
+pre {
+  padding: 12px 14px;
+  overflow-x: auto;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: var(--rag-radius-sm);
+}
+
+:focus-visible {
+  outline: 2px solid var(--rag-primary);
+  outline-offset: 2px;
+}
+
+/* 条文正文可能很长、带表格；统一换行策略，避免撑破卡片 */
+.rag-text {
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 13.5px;
+  }
+}

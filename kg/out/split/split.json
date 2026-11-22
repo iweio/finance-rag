@@ -1,0 +1,191 @@
+{
+  "seed": 42,
+  "docs": {
+    "train": 127,
+    "val": 15,
+    "test": 17,
+    "total": 159
+  },
+  "edge_types": {
+    "Clause|IN_CHAPTER|Chapter": {
+      "src_type": "Clause",
+      "dst_type": "Chapter",
+      "total": 7024,
+      "by_split": {
+        "0": 5379,
+        "1": 422,
+        "2": 1223
+      },
+      "by_fold": {
+        "0": 1159,
+        "1": 1696,
+        "2": 1703,
+        "3": 1070,
+        "4": 1396
+      },
+      "negatives": 1645
+    },
+    "Clause|IN_DOC|Doc": {
+      "src_type": "Clause",
+      "dst_type": "Doc",
+      "total": 8156,
+      "by_split": {
+        "0": 6327,
+        "1": 542,
+        "2": 1287
+      },
+      "by_fold": {
+        "0": 1403,
+        "1": 1896,
+        "2": 1957,
+        "3": 1396,
+        "4": 1504
+      },
+      "negatives": 1829
+    },
+    "Clause|MENTIONS_DOC|Doc": {
+      "src_type": "Clause",
+      "dst_type": "Doc",
+      "total": 461,
+      "by_split": {
+        "0": 374,
+        "1": 38,
+        "2": 49
+      },
+      "by_fold": {
+        "0": 130,
+        "1": 71,
+        "2": 103,
+        "3": 78,
+        "4": 79
+      },
+      "negatives": 87
+    },
+    "Clause|MENTIONS_EXT|ExternalLaw": {
+      "src_type": "Clause",
+      "dst_type": "ExternalLaw",
+      "total": 765,
+      "by_split": {
+        "0": 634,
+        "1": 69,
+        "2": 62
+      },
+      "by_fold": {
+        "0": 143,
+        "1": 121,
+        "2": 252,
+        "3": 138,
+        "4": 111
+      },
+      "negatives": 131
+    },
+    "Clause|NEXT|Clause": {
+      "src_type": "Clause",
+      "dst_type": "Clause",
+      "total": 15994,
+      "by_split": {
+        "0": 12400,
+        "1": 1054,
+        "2": 2540
+      },
+      "by_fold": {
+        "0": 2742,
+        "1": 3728,
+        "2": 3850,
+        "3": 2728,
+        "4": 2946
+      },
+      "negatives": 3594
+    },
+    "Clause|CITES|Clause": {
+      "src_type": "Clause",
+      "dst_type": "Clause",
+      "total": 108,
+      "by_split": {
+        "0": 95,
+        "1": 1,
+        "2": 12
+      },
+      "by_fold": {
+        "0": 14,
+        "1": 8,
+        "2": 35,
+        "3": 25,
+        "4": 26
+      },
+      "negatives": 13
+    },
+    "Chapter|IN_DOC|Doc": {
+      "src_type": "Chapter",
+      "dst_type": "Doc",
+      "total": 858,
+      "by_split": {
+        "0": 672,
+        "1": 49,
+        "2": 137
+      },
+      "by_fold": {
+        "0": 133,
+        "1": 206,
+        "2": 205,
+        "3": 126,
+        "4": 188
+      },
+      "negatives": 186
+    },
+    "Doc|CITES_DOC|Doc": {
+      "src_type": "Doc",
+      "dst_type": "Doc",
+      "total": 203,
+      "by_split": {
+        "0": 162,
+        "1": 15,
+        "2": 26
+      },
+      "by_fold": {
+        "0": 50,
+        "1": 40,
+        "2": 42,
+        "3": 39,
+        "4": 32
+      },
+      "negatives": 41
+    },
+    "Doc|HAS_TAG|TopicTag": {
+      "src_type": "Doc",
+      "dst_type": "TopicTag",
+      "total": 206,
+      "by_split": {
+        "0": 164,
+        "1": 22,
+        "2": 20
+      },
+      "by_fold": {
+        "0": 38,
+        "1": 42,
+        "2": 44,
+        "3": 41,
+        "4": 41
+      },
+      "negatives": 42
+    },
+    "Doc|ISSUED_BY|Agency": {
+      "src_type": "Doc",
+      "dst_type": "Agency",
+      "total": 232,
+      "by_split": {
+        "0": 193,
+        "1": 20,
+        "2": 19
+      },
+      "by_fold": {
+        "0": 63,
+        "1": 43,
+        "2": 41,
+        "3": 37,
+        "4": 48
+      },
+      "negatives": 39
+    }
+  }
+}

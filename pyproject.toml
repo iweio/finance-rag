@@ -1,0 +1,21 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["backend", "rag_core"]
+omit = [
+    "*/rag_core/retriever.py",   # Milvus 分支要真库，本机/CI 跑不了（§6.3 口径）
+    "*/rag_core/mock_engine.py", # mock 不进覆盖率分母
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

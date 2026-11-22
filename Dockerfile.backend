@@ -1,30 +1,61 @@
-# 后端 Dockerfile：FastAPI + rag_core
+# 后端镜像：FastAPI + rag_core
 # 基础镜像 python:3.11-slim，锁小版本避免跨版本漂移。
+#
+# 与 v1 的差别（D4）：只装 requirements-backend.txt。
+# v1 直接装 requirements.txt，把 paddleocr / paddlepaddle / opencv 也带进后端镜像（≈1.5GB），
+# 而那些只有 P2 的解析脚本用得到。
 #
 # 构建：docker build -t rag-backend -f Dockerfile.backend .
 # 运行：docker run -p 8000:8000 --env-file .env rag-backend
 
-FROM python:3.11-slim AS base
+FROM python:3.11-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    curl \
+    build-essential curl \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# 先装依赖，利用层缓存：改代码不用重装依赖。
+#
+# torch 单独先装 **CPU 版**：直接 `pip install sentence-transformers` 会把 CUDA 版 torch 拉进来
+# （镜像 +2~3GB，纯 CPU 推理根本用不到）。
+#
+# 两个索引源做成 ARG，**默认仍是官方的**，交付/演示机上照默认走即可。
+# 本机实测（容器内 ranged GET）：
+#   download.pytorch.org   43 KB/s   -> 209MB 要 ~80 分钟
+#   SJTU pytorch-wheels   1.5 MB/s   -> 同一文件 ~2 分半
+#   pypi.org               慢        /  tuna 首字节 2.2s
+# 所以国内机器在 compose 的 build.args 里覆盖这两个变量，不改本文件。
+ARG TORCH_INDEX_URL=https://download.pytorch.org/whl/cpu
+ARG PIP_INDEX_URL=https://pypi.org/simple
 
-# rag_core 与 backend 是同级目录，一起拷进去
+COPY requirements-backend.txt .
+# --timeout/--retries 不是可有可无的保险：实测裸跑在 542 秒时
+# `download-r2.pytorch.org` Read timed out，整层失败重来（torch 209MB，pip 不续传）。
+RUN pip install --no-cache-dir --timeout 600 --retries 10 --index-url ${TORCH_INDEX_URL} torch \
+    && pip install --no-cache-dir --timeout 600 --retries 10 -i ${PIP_INDEX_URL} -r requirements-backend.txt
+
+# rag_core / backend 是同级目录，一起拷进去
 COPY rag_core/ ./rag_core/
 COPY backend/ ./backend/
 
-# P2 的产出（chunks 用于 BM25 索引构建）
+# 后端运行时真正需要读的两样产出：
+#   chunks      → BM25 索引（retriever._build_bm25）
+#   语料元数据.xlsx → /meta/filters 的文档级字典（B2）
 COPY 产出/chunks/ ./产出/chunks/
+COPY 产出/语料元数据.xlsx ./产出/
 
-ENV PYTHONUNBUFFERED=1
-ENV TZ=Asia/Shanghai
+# M8 知识图谱：backend/graph_service.py 只读 kg/out/serving/ 的三个 JSON。
+# 不装 torch —— 训练侧依赖（requirements-kg.txt）只在有 GPU 的机器上装，镜像里没有。
+# compose 可以把宿主机的 kg/out/serving 只读挂进来，改了产物不用重建镜像。
+COPY kg/ ./kg/
+
+# 认证密钥：**不要**在这里写死，由 compose/.env 注入；生产缺失会启动失败
+ENV PYTHONUNBUFFERED=1 \
+    TZ=Asia/Shanghai \
+    HF_HOME=/models \
+    OUTPUT_DIR=/app/产出
 
 EXPOSE 8000
 

@@ -1,0 +1,34 @@
+# 构建上下文瘦身（D8）。没有这个文件时，`docker build .` 会把 870MB 的语料和运行时卷一起打包。
+# 注意：**不要**排除 产出/chunks 和 产出/语料元数据.xlsx，后端镜像要 COPY 它们。
+
+数据源/
+volumes/
+docs/
+文档/
+题目/
+
+产出/clean/
+产出/embeddings/
+产出/日志/
+产出/评估集/
+产出/_*
+产出/_fetch/
+产出/*.html
+
+frontend/node_modules/
+frontend/dist/
+
+# M8 图谱：镜像只读 kg/out/serving/（6MB），中间产物可由 kg/build_graph.py 重算，别进上下文。
+kg/out/nodes.jsonl
+kg/out/edges.jsonl
+kg/out/features/
+kg/out/train/
+
+**/__pycache__/
+**/*.py[cod]
+.git/
+.idea/
+.vscode/
+.pytest_cache/
+.env
+*.log

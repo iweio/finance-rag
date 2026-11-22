@@ -1,0 +1,33 @@
+{
+  "version": "kg-v1",
+  "generated_at": "2026-11-21T16:10:10",
+  "node_counts": {
+    "Agency": 23,
+    "Clause": 8156,
+    "Chapter": 858,
+    "Doc": 159,
+    "ExternalLaw": 453,
+    "TopicTag": 22
+  },
+  "edge_counts": {
+    "IN_CHAPTER": 7024,
+    "IN_DOC": 9014,
+    "MENTIONS_DOC": 461,
+    "MENTIONS_EXT": 765,
+    "NEXT": 15994,
+    "CITES": 108,
+    "CITES_DOC": 203,
+    "HAS_TAG": 206,
+    "ISSUED_BY": 232
+  },
+  "dim": 1024,
+  "has_embeddings": false,
+  "node_index": {
+    "Clause": 8156,
+    "Chapter": 858,
+    "Doc": 159,
+    "Agency": 23,
+    "TopicTag": 22,
+    "ExternalLaw": 453
+  }
+}

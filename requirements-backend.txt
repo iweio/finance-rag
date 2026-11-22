@@ -1,0 +1,38 @@
+# 后端镜像专用依赖（D4）。OCR/解析那套在 requirements.txt 里，只为 P2 脚本环境准备，
+# 装进 backend 镜像会多出 ~1.5GB（paddlepaddle + opencv），启动也更慢。
+#
+# 构建：docker build -t rag-backend -f Dockerfile.backend .
+# 本地：pip install -r requirements-backend.txt
+
+# ---- Web ----
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30
+pydantic>=2.0
+
+# ---- rag_core ----
+numpy>=1.24
+sentence-transformers>=3.0,<4.0
+# torch 由 sentence-transformers 带入；CPU 镜像不需要额外装 CUDA 版
+
+# ---- 向量库（服务端与客户端必须同为 2.5 线，见 DB.md §3.1.2）----
+pymilvus>=2.5,<2.6
+
+# ---- 检索：BM25 + 中文分词 ----
+rank-bm25>=0.2.2
+jieba>=0.42
+
+# ---- LLM ----
+dashscope>=1.20
+openai>=1.0
+
+# ---- MySQL ----
+sqlalchemy>=2.0
+pymysql>=1.1
+cryptography>=42.0
+
+# ---- 认证（B20）----
+PyJWT>=2.8
+bcrypt>=4.1
+
+# ---- 筛选字典要读 xlsx ----
+openpyxl>=3.1

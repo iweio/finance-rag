@@ -1,0 +1,2798 @@
+{
+ "_meta": {
+  "generated_at": "2026-11-09",
+  "sources": [
+   "产出/chunks/*.jsonl",
+   "产出/语料元数据.xlsx"
+  ],
+  "chunk_total": 8156,
+  "doc_total": 159,
+  "note": "MOCK-XSS-1 是刻意造的 XSS 测试数据，只进 mock，不入库"
+ },
+ "doc_meta": {
+  "NPC-001": {
+   "doc_title": "中华人民共和国中国人民银行法",
+   "doc_type": "法律",
+   "domain": "银行",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20031227,
+   "effective_date": 20031227,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/2817256/index.html"
+  },
+  "NPC-002": {
+   "doc_title": "中华人民共和国保险法",
+   "doc_type": "法律",
+   "domain": "保险",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20150424,
+   "effective_date": 20091001,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?MmM5MDlmZGQ2NzhiZjE3OTAxNjc4YmY3YzQwNjA4MTE="
+  },
+  "NPC-003": {
+   "doc_title": "中华人民共和国信托法",
+   "doc_type": "法律",
+   "domain": "综合",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20010428,
+   "effective_date": 20011001,
+   "source_url": "https://www.gov.cn/gongbao/content/2001/content_60870.htm"
+  },
+  "NPC-004": {
+   "doc_title": "中华人民共和国军人保险法",
+   "doc_type": "法律",
+   "domain": "保险",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20120427,
+   "effective_date": 20120701,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?MmM5MDlmZGQ2NzhiZjE3OTAxNjc4YmY3M2UxNjA2NDU="
+  },
+  "NPC-005": {
+   "doc_title": "中华人民共和国反洗钱法",
+   "doc_type": "法律",
+   "domain": "综合",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20241108,
+   "effective_date": 20250101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/5548765/index.html"
+  },
+  "NPC-006": {
+   "doc_title": "中华人民共和国商业银行法",
+   "doc_type": "法律",
+   "domain": "银行",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20150829,
+   "effective_date": 20151001,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/2817252/index.html"
+  },
+  "NPC-007": {
+   "doc_title": "中华人民共和国期货和衍生品法",
+   "doc_type": "法律",
+   "domain": "证券",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20220420,
+   "effective_date": 20220801,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?ZmY4MDgxODE4MDJkMjg1MzAxODA0NGMxMmY5ZDA3MGM="
+  },
+  "NPC-008": {
+   "doc_title": "中华人民共和国社会保险法",
+   "doc_type": "法律",
+   "domain": "综合",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20181229,
+   "effective_date": 20110701,
+   "source_url": "https://www.gov.cn/guoqing/2021-10/29/content_5647616.htm"
+  },
+  "NPC-009": {
+   "doc_title": "中华人民共和国证券投资基金法",
+   "doc_type": "法律",
+   "domain": "证券",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20150424,
+   "effective_date": 20130601,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?MmM5MDlmZGQ2NzhiZjE3OTAxNjc4YmY3OTU4MDA3OTk="
+  },
+  "NPC-010": {
+   "doc_title": "中华人民共和国证券法",
+   "doc_type": "法律",
+   "domain": "证券",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20191228,
+   "effective_date": 20200301,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE3MWU5ZTE4MTAxNzI3ZTMyYjk0ZDdkZTY="
+  },
+  "SPC-001": {
+   "doc_title": "最高人民法院 最高人民检察院关于办理操纵证券、期货市场刑事案件适用法律若干问题的解释",
+   "doc_type": "司法解释",
+   "domain": "证券",
+   "org": "最高人民法院",
+   "status": "有效",
+   "publish_date": 20190627,
+   "effective_date": 20190701,
+   "source_url": "https://www.spp.gov.cn/spp/xwfbh/wsfbh/201906/t20190628_423372.shtml"
+  },
+  "SPC-002": {
+   "doc_title": "最高人民法院关于审理期货纠纷案件若干问题的规定",
+   "doc_type": "司法解释",
+   "domain": "证券",
+   "org": "最高人民法院",
+   "status": "有效",
+   "publish_date": 20201223,
+   "effective_date": 20030701,
+   "source_url": null
+  },
+  "SPC-003": {
+   "doc_title": "最高人民法院关于审理期货纠纷案件若干问题的规定（二）",
+   "doc_type": "司法解释",
+   "domain": "证券",
+   "org": "最高人民法院",
+   "status": "有效",
+   "publish_date": 20201223,
+   "effective_date": null,
+   "source_url": null
+  },
+  "SPC-004": {
+   "doc_title": "最高人民法院关于适用《中华人民共和国保险法》若干问题的解释（一）",
+   "doc_type": "司法解释",
+   "domain": "保险",
+   "org": "最高人民法院",
+   "status": "有效",
+   "publish_date": 20090921,
+   "effective_date": 20091001,
+   "source_url": "https://www.court.gov.cn/fabu/xiangqing/71.html"
+  },
+  "SPC-005": {
+   "doc_title": "最高人民法院关于适用《中华人民共和国保险法》若干问题的解释（三）",
+   "doc_type": "司法解释",
+   "domain": "保险",
+   "org": "最高人民法院",
+   "status": "有效",
+   "publish_date": 20201223,
+   "effective_date": 20151201,
+   "source_url": null
+  },
+  "SPC-006": {
+   "doc_title": "最高人民法院关于适用《中华人民共和国保险法》若干问题的解释（二）",
+   "doc_type": "司法解释",
+   "domain": "保险",
+   "org": "最高人民法院",
+   "status": "有效",
+   "publish_date": 20201223,
+   "effective_date": null,
+   "source_url": null
+  },
+  "SPC-007": {
+   "doc_title": "最高人民法院关于适用《中华人民共和国保险法》若干问题的解释（四）",
+   "doc_type": "司法解释",
+   "domain": "保险",
+   "org": "最高人民法院",
+   "status": "有效",
+   "publish_date": 20201223,
+   "effective_date": 20180901,
+   "source_url": null
+  },
+  "GOV-001": {
+   "doc_title": "存款保险条例",
+   "doc_type": "行政法规",
+   "domain": "银行",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20150217,
+   "effective_date": 20150501,
+   "source_url": "https://www.gov.cn/zhengce/2015-03/31/content_2840827.htm"
+  },
+  "GOV-002": {
+   "doc_title": "征信业管理条例",
+   "doc_type": "行政法规",
+   "domain": "银行",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20130121,
+   "effective_date": 20130315,
+   "source_url": "https://www.gov.cn/zwgk/2013-01/29/content_2322231.htm"
+  },
+  "GOV-003": {
+   "doc_title": "期货交易管理条例",
+   "doc_type": "行政法规",
+   "domain": "证券",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20170301,
+   "effective_date": 20070415,
+   "source_url": "https://www.gov.cn/gongbao/content/2017/content_5219123.htm"
+  },
+  "GOV-004": {
+   "doc_title": "私募投资基金监督管理条例",
+   "doc_type": "行政法规",
+   "domain": "证券",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20230703,
+   "effective_date": 20230901,
+   "source_url": "https://www.gov.cn/gongbao/2023/issue_10586/202307/content_6892998.html"
+  },
+  "GOV-005": {
+   "doc_title": "融资担保公司监督管理条例",
+   "doc_type": "行政法规",
+   "domain": "银行",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20170802,
+   "effective_date": 20171001,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/2017-08/21/content_5219204.htm"
+  },
+  "GOV-006": {
+   "doc_title": "证券、期货投资咨询管理暂行办法",
+   "doc_type": "行政法规",
+   "domain": "证券",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 19971225,
+   "effective_date": 19980401,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE2ZjNjYmIzYzAxNmY0MGUxMmMzYzA4ZGE="
+  },
+  "GOV-007": {
+   "doc_title": "证券公司监督管理条例",
+   "doc_type": "行政法规",
+   "domain": "证券",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20140729,
+   "effective_date": 20080601,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE2ZjNjYmIzYzAxNmY0MDg4Y2ZjMjAzZjI="
+  },
+  "GOV-008": {
+   "doc_title": "证券期货行政执法当事人承诺制度实施办法",
+   "doc_type": "行政法规",
+   "domain": "证券",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": 20220101,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-11/29/content_5654087.htm"
+  },
+  "GOV-009": {
+   "doc_title": "防范和处置非法集资条例",
+   "doc_type": "行政法规",
+   "domain": "综合",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20210126,
+   "effective_date": 20210501,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144953/4199555/index.html"
+  },
+  "PBC-001": {
+   "doc_title": "中国人民银行、中华人民共和国国家发展和改革委员会、中国证券监督管理委员会 公告〔2020〕第22号",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行、国家发展和改革委员会、中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20201225,
+   "effective_date": 20210501,
+   "source_url": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693545/4210888/index.html"
+  },
+  "PBC-002": {
+   "doc_title": "中国人民银行、中国证监会、国家外汇局 公告〔2025〕第21号",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、中国证券监督管理委员会、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20250915,
+   "effective_date": 20250915,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202509/content_7042464.htm"
+  },
+  "PBC-003": {
+   "doc_title": "金融基础设施监督管理办法",
+   "doc_type": "部门规章",
+   "domain": "综合",
+   "org": "中国人民银行、中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20250725,
+   "effective_date": 20251001,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/2025120610050660916/index.html"
+  },
+  "PBC-004": {
+   "doc_title": "中国人民银行、中国银行保险监督管理委员会、中国证券监督管理委员会、国家外汇管理局 公告〔2020〕第5号",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行、中国银行保险监督管理委员会、中国证券监督管理委员会、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20200624,
+   "effective_date": 20200803,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4050845/index.html"
+  },
+  "PBC-005": {
+   "doc_title": "全球系统重要性银行总损失吸收能力管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行、中国银行保险监督管理委员会、财政部",
+   "status": "有效",
+   "publish_date": 20211027,
+   "effective_date": 20211201,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/4373500/index.html"
+  },
+  "PBC-006": {
+   "doc_title": "系统重要性银行附加监管规定（试行）",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行、中国银行保险监督管理委员会",
+   "status": "有效",
+   "publish_date": 20210930,
+   "effective_date": 20211201,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/4361118/index.html"
+  },
+  "PBC-007": {
+   "doc_title": "商业汇票承兑、贴现与再贴现管理办法",
+   "doc_type": "部门规章",
+   "domain": "保险",
+   "org": "中国人民银行、中国银行保险监督管理委员会",
+   "status": "有效",
+   "publish_date": 20221111,
+   "effective_date": 20230101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/4715325/index.html"
+  },
+  "PBC-008": {
+   "doc_title": "中国人民银行 中国银行保险监督管理委员会关于保险公司发行无固定期限资本债券有关事项的通知",
+   "doc_type": "规范性文件",
+   "domain": "保险",
+   "org": "中国人民银行、中国银行保险监督管理委员会",
+   "status": "有效",
+   "publish_date": 20220810,
+   "effective_date": 20220909,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/3581332/4630598/index.html"
+  },
+  "PBC-009": {
+   "doc_title": "中国人民银行 中国银行保险监督管理委员会关于印发《系统重要性银行评估办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行、中国银行保险监督管理委员会",
+   "status": "有效",
+   "publish_date": 20201202,
+   "effective_date": 20210101,
+   "source_url": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693545/4153508/index.html"
+  },
+  "PBC-010": {
+   "doc_title": "中国人民银行 中国银行保险监督管理委员会关于建立银行业金融机构房地产贷款集中度管理制度的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行、中国银行保险监督管理委员会",
+   "status": "有效",
+   "publish_date": 20201228,
+   "effective_date": 20210101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4156267/index.html"
+  },
+  "PBC-011": {
+   "doc_title": "中国人民银行 中央网信办 最高人民法院 最高人民检察院 工业和信息化部 公安部 市场监管总局 银保监会 证监会 外汇局关于进一步防范和处置虚拟货币交易炒作风险的通知",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行、国家互联网信息办公室、最高人民法院、最高人民检察院、工业和信息化部、公安部、国家市场监督管理总局",
+   "status": "已废止",
+   "publish_date": 20210915,
+   "effective_date": null,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4348658/index.html"
+  },
+  "PBC-012": {
+   "doc_title": "中国人民银行 发展改革委 证监会关于印发《绿色债券支持项目目录（2021年版）》的通知",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行、国家发展和改革委员会、中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": null,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4239360/index.html"
+  },
+  "PBC-013": {
+   "doc_title": "中国人民银行 国家发展和改革委员会 商务部 国务院国有资产监督管理委员会 中国银行保险监督管理委员会 国家外汇管理局关于进一步优化跨境人民币政策支持稳外贸稳外资的通知",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家发展和改革委员会、商务部、国务院国有资产监督管理委员会、中国银行保险监督管理委员会、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20201231,
+   "effective_date": 20210204,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4158143/index.html"
+  },
+  "PBC-014": {
+   "doc_title": "信用评级业管理暂行办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国人民银行、国家发展和改革委员会、财政部、中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20191126,
+   "effective_date": 20191226,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/2020-03/26/content_5495854.htm"
+  },
+  "PBC-015": {
+   "doc_title": "中国人民银行 国家发展改革委 工业和信息化部 公安部 市场监管总局 金融监管总局 中国证监会 国家外汇局关于进一步防范和处置虚拟货币等相关风险的通知",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行、国家发展和改革委员会、工业和信息化部、公安部、国家市场监督管理总局、国家金融监督管理总局、中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20260206,
+   "effective_date": 20260206,
+   "source_url": null
+  },
+  "PBC-016": {
+   "doc_title": "中国人民银行 国家发展改革委 财政部 银保监会 证监会关于促进债券市场信用评级行业健康发展的通知",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行、国家发展和改革委员会、财政部、中国银行保险监督管理委员会、中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20210806,
+   "effective_date": 20220806,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4311528/index.html"
+  },
+  "PBC-017": {
+   "doc_title": "中国人民银行、国家发展改革委、金融监管总局 公告〔2025〕第29号",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行、国家发展和改革委员会、国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20251127,
+   "effective_date": 20260201,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/2025121910244863317/index.html"
+  },
+  "PBC-018": {
+   "doc_title": "中国人民银行、国家外汇管理局 公告〔2024〕第7号",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20240726,
+   "effective_date": 20240826,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5414633/index.html"
+  },
+  "PBC-019": {
+   "doc_title": "中国人民银行 国家外汇管理局关于印发《境外机构投资者投资中国债券市场资金管理规定》的通知",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20221110,
+   "effective_date": 20230101,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/2022-11/18/content_5727780.htm"
+  },
+  "PBC-020": {
+   "doc_title": "中国人民银行 国家外汇管理局关于境外机构境内发行债券资金管理有关事宜的通知",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家外汇管理局",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": null,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4731493/index.html"
+  },
+  "PBC-021": {
+   "doc_title": "中国人民银行 国家外汇管理局关于提升银行办理资本项目业务数字化服务水平的通知",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20231117,
+   "effective_date": 20231220,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5141067/index.html"
+  },
+  "PBC-022": {
+   "doc_title": "中国人民银行 国家外汇管理局关于支持新型离岸国际贸易发展有关问题的通知",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20211223,
+   "effective_date": 20220124,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/3581332/4435810/index.html"
+  },
+  "PBC-023": {
+   "doc_title": "中国人民银行 国家外汇管理局关于调整银行业金融机构境外贷款业务有关事宜的通知",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20260411,
+   "effective_date": 20260411,
+   "source_url": "https://www.safe.gov.cn/beijing/2026/0514/2752.html"
+  },
+  "PBC-024": {
+   "doc_title": "中国人民银行 国家外汇管理局关于跨国公司本外币跨境资金集中运营业务有关事宜的通知",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20260813,
+   "effective_date": 20260914,
+   "source_url": "https://wuhan.pbc.gov.cn/tiaofasi/144941/3581332/2026081411081241742/index.html"
+  },
+  "PBC-025": {
+   "doc_title": "受益所有人信息管理办法",
+   "doc_type": "部门规章",
+   "domain": "综合",
+   "org": "中国人民银行、国家市场监督管理总局",
+   "status": "有效",
+   "publish_date": 20240429,
+   "effective_date": 20241101,
+   "source_url": "https://zhengzhou.pbc.gov.cn/zhengzhou/124249/5437129/5437254/index.html"
+  },
+  "PBC-026": {
+   "doc_title": "金融机构客户尽职调查和客户身份资料及交易记录保存管理办法",
+   "doc_type": "部门规章",
+   "domain": "综合",
+   "org": "中国人民银行、国家金融监督管理总局、中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20251031,
+   "effective_date": 20260101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/5916164/index.html"
+  },
+  "PBC-027": {
+   "doc_title": "银行卡清算机构管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行、国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20250422,
+   "effective_date": 20251101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/5707093/index.html"
+  },
+  "PBC-028": {
+   "doc_title": "中国人民银行 国家金融监督管理总局关于印发《系统重要性保险公司评估办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "保险",
+   "org": "中国人民银行、国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20231007,
+   "effective_date": 20240101,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202310/content_6910641.htm"
+  },
+  "PBC-029": {
+   "doc_title": "中国人民银行 国家金融监督管理总局印发《关于改革完善房地产信贷管理 推动加快构建房地产发展新模式的意见》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行、国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20260828,
+   "effective_date": 20260828,
+   "source_url": "https://nanjing.pbc.gov.cn/tiaofasi/144941/3581332/2026082817013334439/index.html"
+  },
+  "PBC-030": {
+   "doc_title": "金融产品网络营销管理办法",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行、工业和信息化部、国家市场监督管理总局、国家金融监督管理总局、中国证券监督管理委员会、国家知识产权局、国家互联网信息办公室、国家外汇管理局",
+   "status": "有效",
+   "publish_date": 20260421,
+   "effective_date": 20260930,
+   "source_url": "https://www.gov.cn/gongbao/2026/issue_12806/202606/content_7072469.html"
+  },
+  "PBC-031": {
+   "doc_title": "中国人民银行、市场监管总局 公告〔2026〕第19号",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行、国家市场监督管理总局",
+   "status": "有效",
+   "publish_date": 20260727,
+   "effective_date": 20260901,
+   "source_url": "https://nanjing.pbc.gov.cn/tiaofasi/144941/3581332/2026082110332325339/index.html"
+  },
+  "PBC-032": {
+   "doc_title": "中国人民银行 民政部关于印发《社会组织反恐怖融资管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行、民政部",
+   "status": "有效",
+   "publish_date": 20250328,
+   "effective_date": 20250501,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5670391/index.html"
+  },
+  "PBC-033": {
+   "doc_title": "中国人民银行 财政部 国家税务总局关于跨境税费缴库退库业务管理有关事项的通知",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行、财政部、国家税务总局",
+   "status": "有效",
+   "publish_date": 20240104,
+   "effective_date": 20240218,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5208868/index.html"
+  },
+  "PBC-034": {
+   "doc_title": "中国人民银行 财政部关于印发 《储蓄国债（凭证式）管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行、财政部",
+   "status": "有效",
+   "publish_date": 20210120,
+   "effective_date": 20210301,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4172227/index.html"
+  },
+  "PBC-035": {
+   "doc_title": "中国人民银行 金融监管总局 最高人民法院 国家发展改革委 商务部 市场监管总局关于规范供应链金融业务 引导供应链信息服务机构更好服务中小企业融资有关事宜的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行、国家金融监督管理总局、最高人民法院、国家发展和改革委员会、商务部、国家市场监督管理总局",
+   "status": "有效",
+   "publish_date": 20250426,
+   "effective_date": 20250615,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5697804/index.html"
+  },
+  "PBC-036": {
+   "doc_title": "个人信用信息基础数据库管理暂行办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20050818,
+   "effective_date": 20051001,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/2817105/index.html"
+  },
+  "PBC-037": {
+   "doc_title": "同业拆借管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20070703,
+   "effective_date": 20070806,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/2881277/index.html"
+  },
+  "PBC-038": {
+   "doc_title": "银行办理结售汇业务管理办法",
+   "doc_type": "部门规章",
+   "domain": "外汇",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20140622,
+   "effective_date": 20140801,
+   "source_url": "https://www.gov.cn/gongbao/content/2014/content_2745931.htm"
+  },
+  "PBC-039": {
+   "doc_title": "中国人民银行规章制定程序与管理规定",
+   "doc_type": "部门规章",
+   "domain": "综合",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20180930,
+   "effective_date": 20181101,
+   "source_url": "https://www.gov.cn/gongbao/content/2019/content_5355476.htm"
+  },
+  "PBC-040": {
+   "doc_title": "金融控股公司监督管理试行办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20200911,
+   "effective_date": 20201101,
+   "source_url": "https://www.gov.cn/gongbao/content/2020/content_5565830.htm"
+  },
+  "PBC-041": {
+   "doc_title": "中国人民银行金融消费者权益保护实施办法",
+   "doc_type": "部门规章",
+   "domain": "综合",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20200915,
+   "effective_date": 20201101,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/144957/4099060/index.html"
+  },
+  "PBC-042": {
+   "doc_title": "非银行支付机构客户备付金存管办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20210119,
+   "effective_date": 20210301,
+   "source_url": "https://www.gov.cn/gongbao/content/2021/content_5598124.htm"
+  },
+  "PBC-043": {
+   "doc_title": "征信业务管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20210927,
+   "effective_date": 20220101,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-10/01/content_5640685.htm"
+  },
+  "PBC-044": {
+   "doc_title": "动产和权利担保统一登记办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20211228,
+   "effective_date": 20220201,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/144957/4435867/index.html"
+  },
+  "PBC-045": {
+   "doc_title": "金融控股公司关联交易管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20230201,
+   "effective_date": 20230301,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/144957/4789611/index.html"
+  },
+  "PBC-046": {
+   "doc_title": "非银行支付机构监督管理条例实施细则",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20240709,
+   "effective_date": 20240709,
+   "source_url": "https://www.gov.cn/zhengce/202407/content_6965386.htm"
+  },
+  "PBC-047": {
+   "doc_title": "金融机构客户受益所有人识别管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20251219,
+   "effective_date": 20260120,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/2025121919412749702/index.html"
+  },
+  "PBC-048": {
+   "doc_title": "银行间外汇市场管理规定",
+   "doc_type": "部门规章",
+   "domain": "外汇",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20251216,
+   "effective_date": 20260201,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/2025122610045251946/index.html"
+  },
+  "PBC-049": {
+   "doc_title": "中国人民银行业务领域数据安全管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20250501,
+   "effective_date": 20250630,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/5707110/index.html"
+  },
+  "PBC-050": {
+   "doc_title": "中国人民银行业务领域网络安全事件报告管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20250523,
+   "effective_date": 20250801,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144957/5729954/index.html"
+  },
+  "PBC-051": {
+   "doc_title": "中国人民银行残缺污损人民币兑换办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20260112,
+   "effective_date": 20260331,
+   "source_url": "https://camlmac.pbc.gov.cn/zhengwugongkai/4081330/4406346/4406348/2026030416470967810/index.html"
+  },
+  "PBC-052": {
+   "doc_title": "标准化票据管理办法",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20200624,
+   "effective_date": 20200728,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4046210/index.html"
+  },
+  "PBC-053": {
+   "doc_title": "完善银行间债券市场现券做市商管理有关事宜",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20201223,
+   "effective_date": 20210401,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/3581332/4153344/index.html"
+  },
+  "PBC-054": {
+   "doc_title": "修订银行间债券市场债券交易流通有关公告",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20210402,
+   "effective_date": 20210506,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4223282/index.html"
+  },
+  "PBC-055": {
+   "doc_title": "中国人民银行 公告〔2023〕第19号",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20231201,
+   "effective_date": 20240101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5156741/index.html"
+  },
+  "PBC-056": {
+   "doc_title": "中国人民银行 公告〔2025〕第26号",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20251112,
+   "effective_date": 20260101,
+   "source_url": "https://nanchang.pbc.gov.cn/tiaofasi/144941/3581332/5901060/index.html"
+  },
+  "PBC-057": {
+   "doc_title": "中国人民银行 公告〔2026〕第25号",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "尚未生效",
+   "publish_date": 20261010,
+   "effective_date": 20261115,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/2026101615242728034/index.html"
+  },
+  "PBC-058": {
+   "doc_title": "中国人民银行 公告〔2026〕第8号",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20260402,
+   "effective_date": 20260515,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/2026041016520189316/index.html"
+  },
+  "PBC-059": {
+   "doc_title": "中国人民银行关于加强支付受理终端及相关业务管理的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20211012,
+   "effective_date": 20220301,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4359567/index.html"
+  },
+  "PBC-060": {
+   "doc_title": "中国人民银行关于印发《中央银行存款账户管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": 20230815,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4984829/index.html"
+  },
+  "PBC-061": {
+   "doc_title": "中国人民银行关于印发《人民币跨境支付系统业务规则》的通知",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20251219,
+   "effective_date": 20260201,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/2025122616242010450/index.html"
+  },
+  "PBC-062": {
+   "doc_title": "中国人民银行关于印发《贵金属和宝石从业机构反洗钱和反恐怖融资管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20250622,
+   "effective_date": 20250801,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5764629/index.html"
+  },
+  "PBC-063": {
+   "doc_title": "中国人民银行关于印发《非银行支付机构分类评级管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20251224,
+   "effective_date": 20260201,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/2025123114405412342/index.html"
+  },
+  "PBC-064": {
+   "doc_title": "中国人民银行关于印发《非银行支付机构重大事项报告管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20210720,
+   "effective_date": 20210901,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4301558/index.html"
+  },
+  "PBC-065": {
+   "doc_title": "中国人民银行关于印发假币收缴、鉴定业务专用凭证印章等样式有关事项的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20201118,
+   "effective_date": 20210201,
+   "source_url": "https://camlmac.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693545/4153501/index.html"
+  },
+  "PBC-066": {
+   "doc_title": "中国人民银行关于支持外贸新业态跨境人民币结算的通知",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20220616,
+   "effective_date": 20220721,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/3581332/4581686/index.html"
+  },
+  "PBC-067": {
+   "doc_title": "中国人民银行关于规范代收业务的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": null,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4115130/index.html"
+  },
+  "PBC-068": {
+   "doc_title": "中国人民银行关于银行间债券市场柜台业务有关事项的通知",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20240221,
+   "effective_date": 20240501,
+   "source_url": "https://camlmac.pbc.gov.cn/tiaofasi/144941/3581332/5255590/index.html"
+  },
+  "PBC-069": {
+   "doc_title": "中国人民银行关于非银行支付机构开展大额交易报告工作有关要求的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20180713,
+   "effective_date": 20190101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/3730212/index.html"
+  },
+  "PBC-070": {
+   "doc_title": "中国人民银行办公厅关于印发《黄金租借业务管理暂行办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20220703,
+   "effective_date": 20230109,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4600134/index.html"
+  },
+  "PBC-071": {
+   "doc_title": "全国银行间债券市场债券买断式回购业务管理规定",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20040412,
+   "effective_date": 20040520,
+   "source_url": "https://www.gov.cn/gongbao/content/2005/content_63306.htm"
+  },
+  "PBC-072": {
+   "doc_title": "证券公司短期融资券管理办法",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20210720,
+   "effective_date": 20210901,
+   "source_url": "https://www.gov.cn/gongbao/content/2021/content_5641353.htm"
+  },
+  "PBC-073": {
+   "doc_title": "银行间债券市场债券借贷业务管理办法",
+   "doc_type": "规范性文件",
+   "domain": "证券",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20220130,
+   "effective_date": 20220701,
+   "source_url": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693545/4700849/index.html"
+  },
+  "GOV-010": {
+   "doc_title": "中华人民共和国外资银行管理条例",
+   "doc_type": "行政法规",
+   "domain": "银行",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20190930,
+   "effective_date": 20061211,
+   "source_url": null
+  },
+  "NPC-011": {
+   "doc_title": "中华人民共和国票据法",
+   "doc_type": "法律",
+   "domain": "银行",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20040828,
+   "effective_date": 19960101,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/3667070/index.html"
+  },
+  "NPC-012": {
+   "doc_title": "中华人民共和国银行业监督管理法",
+   "doc_type": "法律",
+   "domain": "银行",
+   "org": "全国人民代表大会及其常务委员会",
+   "status": "有效",
+   "publish_date": 20061031,
+   "effective_date": 20040201,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/3808036/index.html"
+  },
+  "GOV-011": {
+   "doc_title": "储蓄管理条例",
+   "doc_type": "行政法规",
+   "domain": "银行",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20110108,
+   "effective_date": 19930301,
+   "source_url": "https://www.gov.cn/gongbao/content/2011/content_1860842.htm"
+  },
+  "GOV-012": {
+   "doc_title": "农业保险条例",
+   "doc_type": "行政法规",
+   "domain": "保险",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20160206,
+   "effective_date": 20130301,
+   "source_url": "https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE2ZjNjYmIzYzAxNmY0MTE4NWYzNTE2ZGE="
+  },
+  "GOV-013": {
+   "doc_title": "机动车交通事故责任强制保险条例",
+   "doc_type": "行政法规",
+   "domain": "保险",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20190302,
+   "effective_date": 20060701,
+   "source_url": "https://www.gov.cn/gongbao/content/2019/content_5468886.htm"
+  },
+  "GOV-014": {
+   "doc_title": "金融机构撤销条例",
+   "doc_type": "行政法规",
+   "domain": "综合",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20011123,
+   "effective_date": 20011215,
+   "source_url": "https://www.gov.cn/gongbao/content/2002/content_61558.htm"
+  },
+  "GOV-015": {
+   "doc_title": "金融资产管理公司条例",
+   "doc_type": "行政法规",
+   "domain": "银行",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 20001110,
+   "effective_date": 20001110,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144953/2896057/index.html"
+  },
+  "GOV-016": {
+   "doc_title": "金融违法行为处罚办法",
+   "doc_type": "行政法规",
+   "domain": "综合",
+   "org": "国务院",
+   "status": "有效",
+   "publish_date": 19990223,
+   "effective_date": 19990223,
+   "source_url": "https://www.safe.gov.cn/safe/1999/0222/5744.html"
+  },
+  "NFRA-001": {
+   "doc_title": "中国银行保险监督管理委员会关于印发《融资担保公司监督管理条例》四项配套制度的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "中国银行保险监督管理委员会",
+   "status": "有效",
+   "publish_date": 20180402,
+   "effective_date": 20180402,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/2019-11/11/content_5450817.htm"
+  },
+  "NFRA-002": {
+   "doc_title": "国家金融监督管理总局 中国人民银行关于印发《个人住房贷款管理办法(试行)》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20260828,
+   "effective_date": 20260828,
+   "source_url": "https://www.gov.cn/gongbao/2026/issue_13046/202610/content_7083665.html"
+  },
+  "NFRA-003": {
+   "doc_title": "国家金融监督管理总局关于印发《保险公司资本保证金管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "保险",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20250829,
+   "effective_date": 20250829,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202509/content_7039403.htm"
+  },
+  "NFRA-004": {
+   "doc_title": "国家金融监督管理总局关于印发《信托公司开展房地产领域信托业务管理办法(试行)》的通知",
+   "doc_type": "规范性文件",
+   "domain": "综合",
+   "org": "国家金融监督管理总局",
+   "status": "尚未生效",
+   "publish_date": 20260828,
+   "effective_date": 20270301,
+   "source_url": null
+  },
+  "NFRA-005": {
+   "doc_title": "国家金融监督管理总局关于印发《商业地产贷款管理办法(试行)》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20260828,
+   "effective_date": 20260828,
+   "source_url": null
+  },
+  "NFRA-006": {
+   "doc_title": "国家金融监督管理总局关于印发《商业银行并购贷款管理办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20251231,
+   "effective_date": 20251231,
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7053613.htm"
+  },
+  "NFRA-007": {
+   "doc_title": "国家金融监督管理总局关于印发《商品住房开发贷款管理办法(试行)》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20260828,
+   "effective_date": 20260828,
+   "source_url": "https://www.gov.cn/gongbao/2026/issue_13046/202610/content_7083666.html"
+  },
+  "NFRA-008": {
+   "doc_title": "国家金融监督管理总局关于印发《理财公司监管评级暂行办法》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20260306,
+   "effective_date": 20260306,
+   "source_url": null
+  },
+  "NFRA-009": {
+   "doc_title": "国家金融监督管理总局关于印发《财产保险公司保险产品开发管理规定》的通知",
+   "doc_type": "规范性文件",
+   "domain": "保险",
+   "org": "国家金融监督管理总局",
+   "status": "尚未生效",
+   "publish_date": 20260930,
+   "effective_date": 20261101,
+   "source_url": null
+  },
+  "NFRA-010": {
+   "doc_title": "国家金融监督管理总局关于调整保险公司相关业务风险因子的通知",
+   "doc_type": "规范性文件",
+   "domain": "保险",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20251201,
+   "effective_date": 20251201,
+   "source_url": null
+  },
+  "NFRA-011": {
+   "doc_title": "国家金融监督管理总局关于部分规范性文件废止和宣布失效的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20250825,
+   "effective_date": 20250825,
+   "source_url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1223094&itemId=915"
+  },
+  "NFRA-012": {
+   "doc_title": "国家金融监督管理总局关于部分规范性文件废止和宣布失效的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20251016,
+   "effective_date": 20251016,
+   "source_url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1231211&itemId=915&generaltype=0"
+  },
+  "NFRA-013": {
+   "doc_title": "国家金融监督管理总局关于部分规范性文件废止和宣布失效的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20251224,
+   "effective_date": 20251224,
+   "source_url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1240472&itemId=915&generaltype=0"
+  },
+  "NFRA-014": {
+   "doc_title": "地方资产管理公司监督管理暂行办法",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": null,
+   "source_url": "https://www.gov.cn/lianbo/bumen/202507/content_7032229.htm"
+  },
+  "NFRA-015": {
+   "doc_title": "金融监管总局 住房城乡建设部关于印发《城市更新项目贷款管理办法(试行)》的通知",
+   "doc_type": "规范性文件",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20260828,
+   "effective_date": 20260828,
+   "source_url": null
+  },
+  "CSRC-001": {
+   "doc_title": "上市公司信息披露管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": 20250701,
+   "source_url": "https://www.gov.cn/gongbao/2025/issue_12026/202505/content_7022576.html"
+  },
+  "CSRC-002": {
+   "doc_title": "上市公司并购重组财务顾问业务管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20080603,
+   "effective_date": 20080804,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724573.htm"
+  },
+  "CSRC-003": {
+   "doc_title": "上市公司收购管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20250219,
+   "effective_date": 20060901,
+   "source_url": null
+  },
+  "CSRC-004": {
+   "doc_title": "上市公司股权激励管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20250219,
+   "effective_date": 20160813,
+   "source_url": null
+  },
+  "CSRC-005": {
+   "doc_title": "上市公司重大资产重组管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20250516,
+   "effective_date": 20250516,
+   "source_url": "https://www.gov.cn/gongbao/2025/issue_12166/202507/content_7032496.html"
+  },
+  "CSRC-006": {
+   "doc_title": "中国证券监督管理委员会冻结、查封实施办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20200320,
+   "effective_date": 20060101,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724597.htm"
+  },
+  "CSRC-007": {
+   "doc_title": "中国证监会派出机构监管职责规定",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20250418,
+   "effective_date": 20250519,
+   "source_url": "https://www.csrc.gov.cn/csrc/c101953/c7552436/content.shtml"
+  },
+  "CSRC-008": {
+   "doc_title": "全国中小企业股份转让系统有限责任公司管理暂行办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20171207,
+   "effective_date": 20171207,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724580.htm"
+  },
+  "CSRC-009": {
+   "doc_title": "公司债券发行与交易管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": null,
+   "source_url": "https://www.gov.cn/gongbao/2023/issue_10886/202312/content_6921380.html"
+  },
+  "CSRC-010": {
+   "doc_title": "公开募集证券投资基金信息披露管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20200320,
+   "effective_date": 20190901,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724566.htm"
+  },
+  "CSRC-011": {
+   "doc_title": "公开募集证券投资基金运作管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20140707,
+   "effective_date": 20140808,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724611.htm"
+  },
+  "CSRC-012": {
+   "doc_title": "公开募集证券投资基金销售机构监督管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20200828,
+   "effective_date": 20201001,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724602.htm"
+  },
+  "CSRC-013": {
+   "doc_title": "公开募集证券投资基金风险准备金监督管理暂行办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20130924,
+   "effective_date": 20140101,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724614.htm"
+  },
+  "CSRC-014": {
+   "doc_title": "境外交易者和境外经纪机构从事境内特定品种期货交易管理暂行办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20150626,
+   "effective_date": 20150801,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724593.htm"
+  },
+  "CSRC-015": {
+   "doc_title": "境外证券期货交易所驻华代表机构管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20190725,
+   "effective_date": 20190725,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724590.htm"
+  },
+  "CSRC-016": {
+   "doc_title": "外商投资期货公司管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20180824,
+   "effective_date": 20180824,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724547.htm"
+  },
+  "CSRC-017": {
+   "doc_title": "外商投资证券公司管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20250219,
+   "effective_date": 20250219,
+   "source_url": null
+  },
+  "CSRC-018": {
+   "doc_title": "存托凭证发行与交易管理办法（试行）",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20230217,
+   "effective_date": 20230217,
+   "source_url": "https://www.gov.cn/gongbao/2023/issue_10506/202306/content_6885260.html"
+  },
+  "CSRC-019": {
+   "doc_title": "客户交易结算资金管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20210611,
+   "effective_date": 20020101,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724543.htm"
+  },
+  "CAC-001": {
+   "doc_title": "网络安全审查办法",
+   "doc_type": "部门规章",
+   "domain": "综合",
+   "org": "国家互联网信息办公室",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": 20220215,
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm"
+  },
+  "CSRC-020": {
+   "doc_title": "股票期权交易试点管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20150109,
+   "effective_date": 20150109,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724563.htm"
+  },
+  "CSRC-021": {
+   "doc_title": "证券交易所管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20211030,
+   "effective_date": 20211030,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724562.htm"
+  },
+  "CSRC-022": {
+   "doc_title": "证券公司和证券投资基金管理公司合规管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20200320,
+   "effective_date": 20171001,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724544.htm"
+  },
+  "CSRC-023": {
+   "doc_title": "证券公司和证券投资基金管理公司境外设立、收购、参股经营机构管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20210115,
+   "effective_date": 20210115,
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724554.htm"
+  },
+  "CSRC-024": {
+   "doc_title": "证券基金经营机构董事、监事、高级管理人员及从业人员监督管理办法",
+   "doc_type": "部门规章",
+   "domain": "证券",
+   "org": "中国证券监督管理委员会",
+   "status": "有效",
+   "publish_date": 20250219,
+   "effective_date": 20220401,
+   "source_url": null
+  },
+  "SSE-001": {
+   "doc_title": "上海证券交易所上市公司自律监管指引第1号——规范运作",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "上海证券交易所",
+   "status": "有效",
+   "publish_date": 20260424,
+   "effective_date": 20260401,
+   "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/mainipo/c/c_20260424_10816605.shtml"
+  },
+  "SSE-002": {
+   "doc_title": "上海证券交易所交易规则",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "上海证券交易所",
+   "status": "有效",
+   "publish_date": 20260424,
+   "effective_date": 20260706,
+   "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/universal/c/c_20260424_10816492.shtml"
+  },
+  "SSE-003": {
+   "doc_title": "上海证券交易所交易规则（2026年修订）暂缓实施条文",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "上海证券交易所",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": null,
+   "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/universal/c/c_20260424_10816492.shtml"
+  },
+  "SSE-004": {
+   "doc_title": "上海证券交易所债券交易规则",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "上海证券交易所",
+   "status": "有效",
+   "publish_date": null,
+   "effective_date": 20220425,
+   "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/currency/c/c_20250604_10780834.shtml"
+  },
+  "SSE-005": {
+   "doc_title": "上海证券交易所股票上市规则",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "上海证券交易所",
+   "status": "有效",
+   "publish_date": 20260424,
+   "effective_date": 20260401,
+   "source_url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/mainipo/c/c_20260424_10816589.shtml"
+  },
+  "BSE-001": {
+   "doc_title": "北京证券交易所股票上市规则",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "北京证券交易所",
+   "status": "有效",
+   "publish_date": 20260424,
+   "effective_date": 20260424,
+   "source_url": null
+  },
+  "SZSE-001": {
+   "doc_title": "深圳证券交易所交易规则",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "深圳证券交易所",
+   "status": "有效",
+   "publish_date": 20260424,
+   "effective_date": 20260706,
+   "source_url": "https://www.szse.cn/lawrules/rule/allrules/bussiness/t20260424_620190.html"
+  },
+  "SZSE-002": {
+   "doc_title": "深圳证券交易所创业板股票上市规则",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "深圳证券交易所",
+   "status": "有效",
+   "publish_date": 20260424,
+   "effective_date": 20260401,
+   "source_url": "https://www.szse.cn/lawrules/rule/allrules/bussiness/t20260424_620189.html"
+  },
+  "PBC-074": {
+   "doc_title": "个人金融信息保护技术规范",
+   "doc_type": "行业标准",
+   "domain": "综合",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20200213,
+   "effective_date": 20200213,
+   "source_url": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4085091/2020030414554980731.pdf"
+  },
+  "PBC-075": {
+   "doc_title": "金融数据安全 数据安全分级指南",
+   "doc_type": "行业标准",
+   "domain": "银行",
+   "org": "中国人民银行",
+   "status": "有效",
+   "publish_date": 20200923,
+   "effective_date": 20200923,
+   "source_url": "https://cfstc.pbc.gov.cn/bzgk/detail/?id=0&bzId=1873"
+  },
+  "NFRA-016": {
+   "doc_title": "商业银行资本管理办法",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "status": "有效",
+   "publish_date": 20231026,
+   "effective_date": 20240101,
+   "source_url": "https://www.gov.cn/zhengce/202311/content_6913410.htm"
+  }
+ },
+ "filters": {
+  "domain": [
+   {
+    "value": "证券",
+    "label": "证券",
+    "count": 56
+   },
+   {
+    "value": "银行",
+    "label": "银行",
+    "count": 56
+   },
+   {
+    "value": "综合",
+    "label": "综合",
+    "count": 22
+   },
+   {
+    "value": "保险",
+    "label": "保险",
+    "count": 14
+   },
+   {
+    "value": "外汇",
+    "label": "外汇",
+    "count": 11
+   }
+  ],
+  "status": [
+   {
+    "value": "有效",
+    "label": "有效",
+    "count": 155
+   },
+   {
+    "value": "尚未生效",
+    "label": "尚未生效",
+    "count": 3
+   },
+   {
+    "value": "已废止",
+    "label": "已废止",
+    "count": 1
+   }
+  ],
+  "org": [
+   {
+    "value": "中国人民银行",
+    "label": "中国人民银行",
+    "count": 75
+   },
+   {
+    "value": "中国证券监督管理委员会",
+    "label": "中国证券监督管理委员会",
+    "count": 34
+   },
+   {
+    "value": "国家金融监督管理总局",
+    "label": "国家金融监督管理总局",
+    "count": 23
+   },
+   {
+    "value": "国务院",
+    "label": "国务院",
+    "count": 16
+   },
+   {
+    "value": "全国人民代表大会及其常务委员会",
+    "label": "全国人民代表大会及其常务委员会",
+    "count": 12
+   },
+   {
+    "value": "国家外汇管理局",
+    "label": "国家外汇管理局",
+    "count": 11
+   },
+   {
+    "value": "中国银行保险监督管理委员会",
+    "label": "中国银行保险监督管理委员会",
+    "count": 10
+   },
+   {
+    "value": "最高人民法院",
+    "label": "最高人民法院",
+    "count": 9
+   },
+   {
+    "value": "国家发展和改革委员会",
+    "label": "国家发展和改革委员会",
+    "count": 8
+   },
+   {
+    "value": "国家市场监督管理总局",
+    "label": "国家市场监督管理总局",
+    "count": 6
+   },
+   {
+    "value": "上海证券交易所",
+    "label": "上海证券交易所",
+    "count": 5
+   },
+   {
+    "value": "财政部",
+    "label": "财政部",
+    "count": 5
+   },
+   {
+    "value": "国家互联网信息办公室",
+    "label": "国家互联网信息办公室",
+    "count": 3
+   },
+   {
+    "value": "工业和信息化部",
+    "label": "工业和信息化部",
+    "count": 3
+   },
+   {
+    "value": "公安部",
+    "label": "公安部",
+    "count": 2
+   },
+   {
+    "value": "商务部",
+    "label": "商务部",
+    "count": 2
+   },
+   {
+    "value": "深圳证券交易所",
+    "label": "深圳证券交易所",
+    "count": 2
+   },
+   {
+    "value": "北京证券交易所",
+    "label": "北京证券交易所",
+    "count": 1
+   },
+   {
+    "value": "国务院国有资产监督管理委员会",
+    "label": "国务院国有资产监督管理委员会",
+    "count": 1
+   },
+   {
+    "value": "国家知识产权局",
+    "label": "国家知识产权局",
+    "count": 1
+   },
+   {
+    "value": "国家税务总局",
+    "label": "国家税务总局",
+    "count": 1
+   },
+   {
+    "value": "最高人民检察院",
+    "label": "最高人民检察院",
+    "count": 1
+   },
+   {
+    "value": "民政部",
+    "label": "民政部",
+    "count": 1
+   }
+  ],
+  "doc_type": [
+   {
+    "value": "规范性文件",
+    "label": "规范性文件",
+    "count": 63
+   },
+   {
+    "value": "部门规章",
+    "label": "部门规章",
+    "count": 51
+   },
+   {
+    "value": "行政法规",
+    "label": "行政法规",
+    "count": 16
+   },
+   {
+    "value": "法律",
+    "label": "法律",
+    "count": 12
+   },
+   {
+    "value": "自律规则",
+    "label": "自律规则",
+    "count": 8
+   },
+   {
+    "value": "司法解释",
+    "label": "司法解释",
+    "count": 7
+   },
+   {
+    "value": "行业标准",
+    "label": "行业标准",
+    "count": 2
+   }
+  ],
+  "topic_tags": [
+   {
+    "value": "债券市场",
+    "label": "债券市场",
+    "count": 20
+   },
+   {
+    "value": "跨境与外汇",
+    "label": "跨境与外汇",
+    "count": 20
+   },
+   {
+    "value": "证券与基金",
+    "label": "证券与基金",
+    "count": 16
+   },
+   {
+    "value": "金融机构监管与处置",
+    "label": "金融机构监管与处置",
+    "count": 16
+   },
+   {
+    "value": "保险业务",
+    "label": "保险业务",
+    "count": 14
+   },
+   {
+    "value": "支付清算",
+    "label": "支付清算",
+    "count": 12
+   },
+   {
+    "value": "证券期货经营机构",
+    "label": "证券期货经营机构",
+    "count": 11
+   },
+   {
+    "value": "上市公司监管",
+    "label": "上市公司监管",
+    "count": 10
+   },
+   {
+    "value": "期货与衍生品",
+    "label": "期货与衍生品",
+    "count": 10
+   },
+   {
+    "value": "银行信贷",
+    "label": "银行信贷",
+    "count": 10
+   },
+   {
+    "value": "资本与风险监管",
+    "label": "资本与风险监管",
+    "count": 9
+   },
+   {
+    "value": "反洗钱与反恐融资",
+    "label": "反洗钱与反恐融资",
+    "count": 7
+   },
+   {
+    "value": "房地产金融",
+    "label": "房地产金融",
+    "count": 7
+   },
+   {
+    "value": "非法金融活动治理",
+    "label": "非法金融活动治理",
+    "count": 7
+   },
+   {
+    "value": "征信与信用评级",
+    "label": "征信与信用评级",
+    "count": 6
+   },
+   {
+    "value": "数据安全与个人信息保护",
+    "label": "数据安全与个人信息保护",
+    "count": 6
+   },
+   {
+    "value": "信托与资产管理",
+    "label": "信托与资产管理",
+    "count": 5
+   },
+   {
+    "value": "现金与人民币管理",
+    "label": "现金与人民币管理",
+    "count": 5
+   },
+   {
+    "value": "存款与储蓄",
+    "label": "存款与储蓄",
+    "count": 4
+   },
+   {
+    "value": "融资担保与供应链金融",
+    "label": "融资担保与供应链金融",
+    "count": 4
+   },
+   {
+    "value": "金融消费者保护",
+    "label": "金融消费者保护",
+    "count": 4
+   },
+   {
+    "value": "票据业务",
+    "label": "票据业务",
+    "count": 3
+   }
+  ],
+  "date_range": {
+   "min": 19930301,
+   "max": 20270301
+  }
+ },
+ "details": [
+  {
+   "clause_id": "NFRA-016-A26",
+   "doc_id": "NFRA-016",
+   "doc_title": "商业银行资本管理办法",
+   "clause_no": "第二十六条",
+   "clause_index": 26,
+   "chapter": "第二章 资本监管指标计算和监管要求 第三节 资本监管要求",
+   "text": "第二十六条 商业银行各级资本充足率不得低于如下最低要求：\n(一)核心一级资本充足率不得低于5%。\n(二)一级资本充足率不得低于6%。\n(三)资本充足率不得低于8%。",
+   "doc_type": "部门规章",
+   "domain": "银行",
+   "org": "国家金融监督管理总局",
+   "doc_number": "国家金融监督管理总局令2023年第4号",
+   "publish_date": 20231026,
+   "effective_date": 20240101,
+   "expire_date": null,
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/202311/content_6913410.htm",
+   "fetched_at": 20261027
+  },
+  {
+   "clause_id": "NPC-006-A39",
+   "doc_id": "NPC-006",
+   "doc_title": "中华人民共和国商业银行法",
+   "clause_no": "第三十九条",
+   "clause_index": 39,
+   "chapter": "第四章 贷款和其他业务的基本规则",
+   "text": "第三十九条 商业银行贷款，应当遵守下列资产负债比例管理的规定：\n(一)资本充足率不得低于百分之八；\n(二)流动性资产余额与流动性负债余额的比例不得低于百分之二十五；\n(三)对同一借款人的贷款余额与商业银行资本余额的比例不得超过百分之十；\n(四)国务院银行业监督管理机构对资产负债比例管理的其他规定。\n本法施行前设立的商业银行，在本法施行后，其资产负债比例不符合前款规定的，应当在一定的期限内符合前款规定。具体办法由国务院规定。",
+   "doc_type": "法律",
+   "domain": "银行",
+   "org": "全国人民代表大会及其常务委员会",
+   "doc_number": null,
+   "publish_date": 20150829,
+   "effective_date": 20151001,
+   "expire_date": null,
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/2817252/index.html",
+   "fetched_at": 20261019
+  },
+  {
+   "clause_id": "GOV-002-A2",
+   "doc_id": "GOV-002",
+   "doc_title": "征信业管理条例",
+   "clause_no": "第二条",
+   "clause_index": 2,
+   "chapter": "第一章 总 则",
+   "text": "第二条 在中国境内从事征信业务及相关活动，适用本条例。\n 本条例所称征信业务，是指对企业、事业单位等组织(以下统称企业)的信用信息和个人的信用信息进行采集、整理、保存、加工，并向信息使用者提供的活动。\n 国家设立的金融信用信息基础数据库进行信息的采集、整理、保存、加工和提供，适用本条例第五章规定。\n 国家机关以及法律、法规授权的具有管理公共事务职能的组织依照法律、行政法规和国务院的规定，为履行职责进行的企业和个人信息的采集、整理、保存、加工和公布，不适用本条例。",
+   "doc_type": "行政法规",
+   "domain": "银行",
+   "org": "国务院",
+   "doc_number": "国务院令第631号",
+   "publish_date": 20130121,
+   "effective_date": 20130315,
+   "expire_date": null,
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zwgk/2013-01/29/content_2322231.htm",
+   "fetched_at": 20261019
+  },
+  {
+   "clause_id": "BSE-001-1.1",
+   "doc_id": "BSE-001",
+   "doc_title": "北京证券交易所股票上市规则",
+   "clause_no": "1.1",
+   "clause_index": 1,
+   "chapter": "第一章总则 第八节重新上市................................ - 142 -",
+   "text": "1.1 为了规范北京证券交易所(以下简称本所)股票上市和持续监管事宜，维护证券市场公开、公平、公正，保护投资者的合法权益，根据《中华人民共和国公司法》(以下简称《公司法》)、《中华人民共和国证券法》(以下简称《证券法》)、《证券交易所管理办法》以及《北京证券交易所上市公司持续监管办法(试行)》(以下简称《持续监管办法》)等法律法规、部门规章，制定本规则。",
+   "doc_type": "自律规则",
+   "domain": "证券",
+   "org": "北京证券交易所",
+   "doc_number": null,
+   "publish_date": 20260424,
+   "effective_date": 20260424,
+   "expire_date": null,
+   "status": "有效",
+   "source_url": null,
+   "fetched_at": 20261019
+  },
+  {
+   "clause_id": "GOV-012-A1",
+   "doc_id": "GOV-012",
+   "doc_title": "农业保险条例",
+   "clause_no": "第一条",
+   "clause_index": 1,
+   "chapter": "第一章 总 则",
+   "text": "第一条 为了规范农业保险活动,保护农业保险活动当事人的合法权益,提高农业生产抗风险能力,促进农业保险事业健康发展,根据《中华人民共和国保险法》、《中华人民共和国农业法》等法律,制定本条例。",
+   "doc_type": "行政法规",
+   "domain": "保险",
+   "org": "国务院",
+   "doc_number": "国务院令第666号",
+   "publish_date": 20160206,
+   "effective_date": 20130301,
+   "expire_date": null,
+   "status": "有效",
+   "source_url": "https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE2ZjNjYmIzYzAxNmY0MTE4NWYzNTE2ZGE=",
+   "fetched_at": 20261019
+  },
+  {
+   "clause_id": "PBC-018-A1",
+   "doc_id": "PBC-018",
+   "doc_title": "中国人民银行、国家外汇管理局 公告〔2024〕第7号",
+   "clause_no": "第一条",
+   "clause_index": 1,
+   "chapter": "第一章 总则",
+   "text": "第一条为规范境外机构投资者境内证券期货投资管理，根据《中华人民共和国中国人民银行法》《中华人民共和国外汇管理条例》等相关法律法规，制定本规定。",
+   "doc_type": "规范性文件",
+   "domain": "外汇",
+   "org": "中国人民银行、国家外汇管理局",
+   "doc_number": "公告〔2024〕第7号",
+   "publish_date": 20240726,
+   "effective_date": 20240826,
+   "expire_date": null,
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5414633/index.html",
+   "fetched_at": 20261021
+  },
+  {
+   "clause_id": "GOV-009-A2",
+   "doc_id": "GOV-009",
+   "doc_title": "防范和处置非法集资条例",
+   "clause_no": "第二条",
+   "clause_index": 2,
+   "chapter": "第一章 总 则",
+   "text": "第二条\n第二条 本条例所称非法集资，是指未经国务院金融管理部门依法许可或者违反国家金融管理规定，以许诺还本付息或者给予其他投资回报等方式，向不特定对象吸收资金的行为。\n非法集资的防范以及行政机关对非法集资的处置，适用本条例。法律、行政法规对非法从事银行、证券、保险、外汇等金融业务活动另有规定的，适用其规定。\n本条例所称国务院金融管理部门，是指中国人民银行、国务院金融监督管理机构和国务院外汇管理部门。",
+   "doc_type": "行政法规",
+   "domain": "综合",
+   "org": "国务院",
+   "doc_number": "国务院令第737号",
+   "publish_date": 20210126,
+   "effective_date": 20210501,
+   "expire_date": null,
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144953/4199555/index.html",
+   "fetched_at": 20261019
+  }
+ ],
+ "search_items": [
+  {
+   "clause_id": "NFRA-016-A26",
+   "doc_id": "NFRA-016",
+   "doc_title": "商业银行资本管理办法",
+   "clause_no": "第二十六条",
+   "snippet": "第二十六条 商业银行各级资本充足率不得低于如下最低要求：\n(一)核心一级资本充足率不得低于5%。\n(二)一级资本充足率不得低于6%。\n(三)资本充足率不得低于8%。",
+   "highlight": "第二十六条 商业银行各级<em>资本充足率</em>不得低于如下最低要求：\n(一)核心一级<em>资本充足率</em>不得低于5%。\n(二)一级<em>资本充足率</em>不得低于6%。\n(三)<em>资本充足率</em>不得低于8%。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/202311/content_6913410.htm",
+   "score": 0.95
+  },
+  {
+   "clause_id": "NPC-006-A39",
+   "doc_id": "NPC-006",
+   "doc_title": "中华人民共和国商业银行法",
+   "clause_no": "第三十九条",
+   "snippet": "第三十九条 商业银行贷款，应当遵守下列资产负债比例管理的规定：\n(一)资本充足率不得低于百分之八；\n(二)流动性资产余额与流动性负债余额的比例不得低于百分之二十五；\n(三)对同一借款人的贷款余额与商业银行资本余额的比例不得超过百分之十；\n(四)国务院银行业监督管理机构对资产负债比例管理的其他规定。\n本法施行前设立的商业银行，在本法施行后，其资产负债比例不符合前款规定的，应当在一定的期限内符合前款规...",
+   "highlight": "第三十九条 商业银行贷款，应当遵守下列资产负债比例管理的规定：\n(一)<em>资本充足率</em>不得低于百分之八；\n(二)流动性资产余额与流动性负债余额的比例不得低于百分之二十五；\n(三)对同一借款人的贷款余额与商业银行资本余额的比例不得超过百分之十；\n(四)国务院银行业监督管理机构对资产负债比例管理的其他规定。\n本法施行前设立的商业银行，在本法施行后，其资产负债比例不符合前款规定的，应当在一定的期限内符合前款规...",
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/2817252/index.html",
+   "score": 0.938
+  },
+  {
+   "clause_id": "GOV-002-A2",
+   "doc_id": "GOV-002",
+   "doc_title": "征信业管理条例",
+   "clause_no": "第二条",
+   "snippet": "第二条 在中国境内从事征信业务及相关活动，适用本条例。\n 本条例所称征信业务，是指对企业、事业单位等组织(以下统称企业)的信用信息和个人的信用信息进行采集、整理、保存、加工，并向信息使用者提供的活动。\n 国家设立的金融信用信息基础数据库进行信息的采集、整理、保存、加工和提供，适用本条例第五章规定。\n 国家机关以及法律、法规授权的具有管理公共事务职能的组织依照法律、行政法规和国务院的规定，为履行职责...",
+   "highlight": "第二条 在中国境内从事征信业务及相关活动，适用本条例。\n 本条例所称征信业务，是指对企业、事业单位等组织(以下统称企业)的信用信息和个人的信用信息进行采集、整理、保存、加工，并向信息使用者提供的活动。\n 国家设立的金融信用信息基础数据库进行信息的采集、整理、保存、加工和提供，适用本条例第五章规定。\n 国家机关以及法律、法规授权的具有管理公共事务职能的组织依照法律、行政法规和国务院的规定，为履行职责...",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zwgk/2013-01/29/content_2322231.htm",
+   "score": 0.926
+  },
+  {
+   "clause_id": "BSE-001-1.1",
+   "doc_id": "BSE-001",
+   "doc_title": "北京证券交易所股票上市规则",
+   "clause_no": "1.1",
+   "snippet": "1.1 为了规范北京证券交易所(以下简称本所)股票上市和持续监管事宜，维护证券市场公开、公平、公正，保护投资者的合法权益，根据《中华人民共和国公司法》(以下简称《公司法》)、《中华人民共和国证券法》(以下简称《证券法》)、《证券交易所管理办法》以及《北京证券交易所上市公司持续监管办法(试行)》(以下简称《持续监管办法》)等法律法规、部门规章，制定本规则。",
+   "highlight": "1.1 为了规范北京证券交易所(以下简称本所)股票上市和持续监管事宜，维护证券市场公开、公平、公正，保护投资者的合法权益，根据《中华人民共和国公司法》(以下简称《公司法》)、《中华人民共和国证券法》(以下简称《证券法》)、《证券交易所管理办法》以及《北京证券交易所上市公司持续监管办法(试行)》(以下简称《持续监管办法》)等法律法规、部门规章，制定本规则。",
+   "status": "有效",
+   "source_url": null,
+   "score": 0.914
+  },
+  {
+   "clause_id": "GOV-012-A1",
+   "doc_id": "GOV-012",
+   "doc_title": "农业保险条例",
+   "clause_no": "第一条",
+   "snippet": "第一条 为了规范农业保险活动,保护农业保险活动当事人的合法权益,提高农业生产抗风险能力,促进农业保险事业健康发展,根据《中华人民共和国保险法》、《中华人民共和国农业法》等法律,制定本条例。",
+   "highlight": "第一条 为了规范农业保险活动,保护农业保险活动当事人的合法权益,提高农业生产抗风险能力,促进农业保险事业健康发展,根据《中华人民共和国保险法》、《中华人民共和国农业法》等法律,制定本条例。",
+   "status": "有效",
+   "source_url": "https://flk.npc.gov.cn/detail2.html?ZmY4MDgwODE2ZjNjYmIzYzAxNmY0MTE4NWYzNTE2ZGE=",
+   "score": 0.902
+  },
+  {
+   "clause_id": "PBC-018-A1",
+   "doc_id": "PBC-018",
+   "doc_title": "中国人民银行、国家外汇管理局 公告〔2024〕第7号",
+   "clause_no": "第一条",
+   "snippet": "第一条为规范境外机构投资者境内证券期货投资管理，根据《中华人民共和国中国人民银行法》《中华人民共和国外汇管理条例》等相关法律法规，制定本规定。",
+   "highlight": "第一条为规范境外机构投资者境内证券期货投资管理，根据《中华人民共和国中国人民银行法》《中华人民共和国外汇管理条例》等相关法律法规，制定本规定。",
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/5414633/index.html",
+   "score": 0.89
+  },
+  {
+   "clause_id": "GOV-009-A2",
+   "doc_id": "GOV-009",
+   "doc_title": "防范和处置非法集资条例",
+   "clause_no": "第二条",
+   "snippet": "第二条\n第二条 本条例所称非法集资，是指未经国务院金融管理部门依法许可或者违反国家金融管理规定，以许诺还本付息或者给予其他投资回报等方式，向不特定对象吸收资金的行为。\n非法集资的防范以及行政机关对非法集资的处置，适用本条例。法律、行政法规对非法从事银行、证券、保险、外汇等金融业务活动另有规定的，适用其规定。\n本条例所称国务院金融管理部门，是指中国人民银行、国务院金融监督管理机构和国务院外汇管理部门...",
+   "highlight": "第二条\n第二条 本条例所称非法集资，是指未经国务院金融管理部门依法许可或者违反国家金融管理规定，以许诺还本付息或者给予其他投资回报等方式，向不特定对象吸收资金的行为。\n非法集资的防范以及行政机关对非法集资的处置，适用本条例。法律、行政法规对非法从事银行、证券、保险、外汇等金融业务活动另有规定的，适用其规定。\n本条例所称国务院金融管理部门，是指中国人民银行、国务院金融监督管理机构和国务院外汇管理部门...",
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144953/4199555/index.html",
+   "score": 0.878
+  },
+  {
+   "clause_id": "GOV-013-A1",
+   "doc_id": "GOV-013",
+   "doc_title": "机动车交通事故责任强制保险条例",
+   "clause_no": "第一条",
+   "snippet": "第一条 为了保障机动车道路交通事故受害人依法得到赔偿,促进道路交通安全,根据《中华人民共和国道路交通安全法》、《中华人民共和国保险法》,制定本条例。",
+   "highlight": "第一条 为了保障机动车道路交通事故受害人依法得到赔偿,促进道路交通安全,根据《中华人民共和国道路交通安全法》、《中华人民共和国保险法》,制定本条例。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/gongbao/content/2019/content_5468886.htm",
+   "score": 0.866
+  },
+  {
+   "clause_id": "NFRA-003-A1",
+   "doc_id": "NFRA-003",
+   "doc_title": "国家金融监督管理总局关于印发《保险公司资本保证金管理办法》的通知",
+   "clause_no": "第一条",
+   "snippet": "第一条 为加强对保险公司资本保证金的管理,维护保险市场平稳、健康发展,根据《中华人民共和国保险法》(以下简称《保险法》),制定本办法。",
+   "highlight": "第一条 为加强对保险公司资本保证金的管理,维护保险市场平稳、健康发展,根据《中华人民共和国保险法》(以下简称《保险法》),制定本办法。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202509/content_7039403.htm",
+   "score": 0.854
+  },
+  {
+   "clause_id": "NPC-002-A1",
+   "doc_id": "NPC-002",
+   "doc_title": "中华人民共和国保险法",
+   "clause_no": "第一条",
+   "snippet": "第一条 为了规范保险活动，保护保险活动当事人的合法权益，加强对保险业的监督管理，维护社会经济秩序和社会公共利益，促进保险事业的健康发展，制定本法。",
+   "highlight": "第一条 为了规范保险活动，保护保险活动当事人的合法权益，加强对保险业的监督管理，维护社会经济秩序和社会公共利益，促进保险事业的健康发展，制定本法。",
+   "status": "有效",
+   "source_url": "https://flk.npc.gov.cn/detail2.html?MmM5MDlmZGQ2NzhiZjE3OTAxNjc4YmY3YzQwNjA4MTE=",
+   "score": 0.842
+  },
+  {
+   "clause_id": "PBC-002-S1",
+   "doc_id": "PBC-002",
+   "doc_title": "中国人民银行、中国证监会、国家外汇局 公告〔2025〕第21号",
+   "clause_no": "一、",
+   "snippet": "一、本公告所称境外机构投资者，是指可在中国债券市场开展现券交易的境外机构投资者，具体包括：境外中央银行或货币当局、国际金融组织、主权财富基金；在中华人民共和国境外依法注册成立的商业银行、保险公司、证券公司、基金管理公司、期货公司、信托公司及其他资产管理机构等各类金融机构，以及养老基金、慈善基金、捐赠基金等中长期机构投资者。",
+   "highlight": "一、本公告所称境外机构投资者，是指可在中国债券市场开展现券交易的境外机构投资者，具体包括：境外中央银行或货币当局、国际金融组织、主权财富基金；在中华人民共和国境外依法注册成立的商业银行、保险公司、证券公司、基金管理公司、期货公司、信托公司及其他资产管理机构等各类金融机构，以及养老基金、慈善基金、捐赠基金等中长期机构投资者。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202509/content_7042464.htm",
+   "score": 0.83
+  },
+  {
+   "clause_id": "PBC-013-S1",
+   "doc_id": "PBC-013",
+   "doc_title": "中国人民银行 国家发展和改革委员会 商务部 国务院国有资产监督管理委员会 中国银行保险监督管理委员会 国家外汇管理局关于进一步优化跨境人民币政策支持稳外贸稳外资的通知",
+   "clause_no": "一、",
+   "snippet": "一、紧紧围绕实体经济需求，推动更高水平贸易投资人民币结算便利化\n(一)在全国范围内开展更高水平贸易投资便利化试点。境内银行可在“展业三原则”的基础上，凭优质企业提交的《跨境人民币结算收/付款说明》或收付款指令，直接为优质企业办理货物贸易、服务贸易跨境人民币结算，以及资本项目人民币收入(包括外商直接投资资本金、跨境融资及境外上市募集资金调回等)在境内的依法合规使用。\n境内银行开展更高水平贸易投资便利...",
+   "highlight": "一、紧紧围绕实体经济需求，推动更高水平贸易投资人民币结算便利化\n(一)在全国范围内开展更高水平贸易投资便利化试点。境内银行可在“展业三原则”的基础上，凭优质企业提交的《跨境人民币结算收/付款说明》或收付款指令，直接为优质企业办理货物贸易、服务贸易跨境人民币结算，以及资本项目人民币收入(包括外商直接投资资本金、跨境融资及境外上市募集资金调回等)在境内的依法合规使用。\n境内银行开展更高水平贸易投资便利...",
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4158143/index.html",
+   "score": 0.818
+  },
+  {
+   "clause_id": "PBC-020-S1",
+   "doc_id": "PBC-020",
+   "doc_title": "中国人民银行 国家外汇管理局关于境外机构境内发行债券资金管理有关事宜的通知",
+   "clause_no": "一、",
+   "snippet": "一、境外机构基本信息Basic Information of Issuer机构名称Name of issuer中文English机构注册地Domicile ofincorporation特殊机构赋码Special institutional code全球机构识别编码(如有)LEI code (If applicable)首期境内主承销商1Series 1 leadunderwriter金融机构标识...",
+   "highlight": "一、境外机构基本信息Basic Information of Issuer机构名称Name of issuer中文English机构注册地Domicile ofincorporation特殊机构赋码Special institutional code全球机构识别编码(如有)LEI code (If applicable)首期境内主承销商1Series 1 leadunderwriter金融机构标识...",
+   "status": "有效",
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/3581332/4731493/index.html",
+   "score": 0.806
+  },
+  {
+   "clause_id": "CAC-001-A1",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第一条",
+   "snippet": "第一条 为了确保关键信息基础设施供应链安全，保障网络安全和数据安全，维护国家安全，根据《中华人民共和国国家安全法》、《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《关键信息基础设施安全保护条例》，制定本办法。",
+   "highlight": "第一条 为了确保关键信息基础设施供应链安全，保障网络安全和数据安全，维护国家安全，根据《中华人民共和国国家安全法》、《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《关键信息基础设施安全保护条例》，制定本办法。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.794
+  },
+  {
+   "clause_id": "GOV-014-A2",
+   "doc_id": "GOV-014",
+   "doc_title": "金融机构撤销条例",
+   "clause_no": "第二条",
+   "snippet": "第二条 中国人民银行撤销金融机构,依照本条例执行。\n本条例所称撤销,是指中国人民银行对经其批准设立的具有法人资格的金融机构依法采取行政强制措施,终止其经营活动,并予以解散。",
+   "highlight": "第二条 中国人民银行撤销金融机构,依照本条例执行。\n本条例所称撤销,是指中国人民银行对经其批准设立的具有法人资格的金融机构依法采取行政强制措施,终止其经营活动,并予以解散。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/gongbao/content/2002/content_61558.htm",
+   "score": 0.782
+  },
+  {
+   "clause_id": "GOV-016-A2",
+   "doc_id": "GOV-016",
+   "doc_title": "金融违法行为处罚办法",
+   "clause_no": "第二条",
+   "snippet": "第二条 金融机构违反国家有关金融管理的规定,有关法律、行政法规有处罚规定的,依照其规定给予处罚;有关法律、行政法规未作处罚规定或者有关行政法规的处罚规定与本办法不一致的,依照本办法给予处罚。\n本办法所称金融机构,是指在中华人民共和国境内依法设立和经营金融业务的机构,包括银行、信用合作社、财务公司、信托投资公司、金融租赁公司等。",
+   "highlight": "第二条 金融机构违反国家有关金融管理的规定,有关法律、行政法规有处罚规定的,依照其规定给予处罚;有关法律、行政法规未作处罚规定或者有关行政法规的处罚规定与本办法不一致的,依照本办法给予处罚。\n本办法所称金融机构,是指在中华人民共和国境内依法设立和经营金融业务的机构,包括银行、信用合作社、财务公司、信托投资公司、金融租赁公司等。",
+   "status": "有效",
+   "source_url": "https://www.safe.gov.cn/safe/1999/0222/5744.html",
+   "score": 0.77
+  },
+  {
+   "clause_id": "CSRC-001-A1",
+   "doc_id": "CSRC-001",
+   "doc_title": "上市公司信息披露管理办法",
+   "clause_no": "第一条",
+   "snippet": "第一条为了规范上市公司及其他信息披露义务人的信息披露行为，加强信息披露事务管理，保护投资者合法权益，根据《中华人民共和国公司法》(以下简称《公司法》)、《中华人民共和国证券法》(以下简称《证券法》)等法律、行政法规，制定本办法。",
+   "highlight": "第一条为了规范上市公司及其他信息披露义务人的信息披露行为，加强信息披露事务管理，保护投资者合法权益，根据《中华人民共和国公司法》(以下简称《公司法》)、《中华人民共和国证券法》(以下简称《证券法》)等法律、行政法规，制定本办法。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/gongbao/2025/issue_12026/202505/content_7022576.html",
+   "score": 0.758
+  },
+  {
+   "clause_id": "CSRC-002-A1",
+   "doc_id": "CSRC-002",
+   "doc_title": "上市公司并购重组财务顾问业务管理办法",
+   "clause_no": "第一条",
+   "snippet": "第一条 为了规范证券公司、证券投资咨询机构及其他财务顾问机构从事上市公司并购重组财务顾问业务活动，保护投资者的合法权益，促进上市公司规范运作，维护证券市场秩序，根据《证券法》和其他相关法律、行政法规的规定，制定本办法。",
+   "highlight": "第一条 为了规范证券公司、证券投资咨询机构及其他财务顾问机构从事上市公司并购重组财务顾问业务活动，保护投资者的合法权益，促进上市公司规范运作，维护证券市场秩序，根据《证券法》和其他相关法律、行政法规的规定，制定本办法。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724573.htm",
+   "score": 0.746
+  },
+  {
+   "clause_id": "CSRC-005-A1",
+   "doc_id": "CSRC-005",
+   "doc_title": "上市公司重大资产重组管理办法",
+   "clause_no": "第一条",
+   "snippet": "第一条 为了规范上市公司重大资产重组行为，保护上市公司和投资者的合法权益，促进上市公司质量不断提高，维护证券市场秩序和社会公共利益，根据《中华人民共和国公司法》、《中华人民共和国证券法》(以下简称《证券法》)等法律、行政法规的规定，制定本办法。",
+   "highlight": "第一条 为了规范上市公司重大资产重组行为，保护上市公司和投资者的合法权益，促进上市公司质量不断提高，维护证券市场秩序和社会公共利益，根据《中华人民共和国公司法》、《中华人民共和国证券法》(以下简称《证券法》)等法律、行政法规的规定，制定本办法。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/gongbao/2025/issue_12166/202507/content_7032496.html",
+   "score": 0.734
+  },
+  {
+   "clause_id": "CSRC-006-A1",
+   "doc_id": "CSRC-006",
+   "doc_title": "中国证券监督管理委员会冻结、查封实施办法",
+   "clause_no": "第一条",
+   "snippet": "第一条 为了保护投资者和当事人的合法权益，及时有效查处证券违法行为，规范冻结、查封工作，维护市场秩序，根据《中华人民共和国证券法》及相关法律法规，制定本办法。",
+   "highlight": "第一条 为了保护投资者和当事人的合法权益，及时有效查处证券违法行为，规范冻结、查封工作，维护市场秩序，根据《中华人民共和国证券法》及相关法律法规，制定本办法。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2021-12/16/content_5724597.htm",
+   "score": 0.722
+  },
+  {
+   "clause_id": "GOV-001-A1",
+   "doc_id": "GOV-001",
+   "doc_title": "存款保险条例",
+   "clause_no": "第一条",
+   "snippet": "第一条\n第一条 为了建立和规范存款保险制度，依法保护存款人的合法权益，及时防范和化解金融风险，维护金融稳定，制定本条例。",
+   "highlight": "第一条\n第一条 为了建立和规范存款保险制度，依法保护存款人的合法权益，及时防范和化解金融风险，维护金融稳定，制定本条例。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2015-03/31/content_2840827.htm",
+   "score": 0.71
+  },
+  {
+   "clause_id": "GOV-005-A2",
+   "doc_id": "GOV-005",
+   "doc_title": "融资担保公司监督管理条例",
+   "clause_no": "第二条",
+   "snippet": "第二条\n第二条 本条例所称融资担保，是指担保人为被担保人借款、发行债券等债务融资提供担保的行为；所称融资担保公司，是指依法设立、经营融资担保业务的有限责任公司或者股份有限公司。",
+   "highlight": "第二条\n第二条 本条例所称融资担保，是指担保人为被担保人借款、发行债券等债务融资提供担保的行为；所称融资担保公司，是指依法设立、经营融资担保业务的有限责任公司或者股份有限公司。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/2017-08/21/content_5219204.htm",
+   "score": 0.698
+  },
+  {
+   "clause_id": "GOV-011-A3",
+   "doc_id": "GOV-011",
+   "doc_title": "储蓄管理条例",
+   "clause_no": "第三条",
+   "snippet": "第三条 本条例所称储蓄是指个人将属于其所有的人民币或者外币存入储蓄机构,储蓄机构开具存折或者存单作为凭证,个人凭存折或者存单可以支取存款本金和利息,储蓄机构依照规定支付存款本金和利息的活动。\n任何单位和个人不得将公款以个人名义转为储蓄存款。",
+   "highlight": "第三条 本条例所称储蓄是指个人将属于其所有的人民币或者外币存入储蓄机构,储蓄机构开具存折或者存单作为凭证,个人凭存折或者存单可以支取存款本金和利息,储蓄机构依照规定支付存款本金和利息的活动。\n任何单位和个人不得将公款以个人名义转为储蓄存款。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/gongbao/content/2011/content_1860842.htm",
+   "score": 0.686
+  },
+  {
+   "clause_id": "BSE-001-1.2",
+   "doc_id": "BSE-001",
+   "doc_title": "北京证券交易所股票上市规则",
+   "clause_no": "1.2",
+   "snippet": "1.2 股票在本所的上市和持续监管事宜，适用本规则；本规则未作规定的，适用本所其他相关规定。\n可转换为股票的公司债券(以下简称可转换公司债券)、存托凭证、股票或者存托凭证衍生品种的上市和持续监管等事宜，适用本所相关规定；未规定的，参照适用本规则关于股票的相关规定。",
+   "highlight": "1.2 股票在本所的上市和持续监管事宜，适用本规则；本规则未作规定的，适用本所其他相关规定。\n可转换为股票的公司债券(以下简称可转换公司债券)、存托凭证、股票或者存托凭证衍生品种的上市和持续监管等事宜，适用本所相关规定；未规定的，参照适用本规则关于股票的相关规定。",
+   "status": "有效",
+   "source_url": null,
+   "score": 0.674
+  },
+  {
+   "clause_id": "BSE-001-1.3",
+   "doc_id": "BSE-001",
+   "doc_title": "北京证券交易所股票上市规则",
+   "clause_no": "1.3",
+   "snippet": "1.3 发行人申请股票在本所上市，应当经本所审核同意，并在上市前与本所签订上市协议，明确双方的权利、义务和其他有关事项。",
+   "highlight": "1.3 发行人申请股票在本所上市，应当经本所审核同意，并在上市前与本所签订上市协议，明确双方的权利、义务和其他有关事项。",
+   "status": "有效",
+   "source_url": null,
+   "score": 0.662
+  },
+  {
+   "clause_id": "CAC-001-A2",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第二条",
+   "snippet": "第二条 关键信息基础设施运营者采购网络产品和服务，网络平台运营者开展数据处理活动，影响或者可能影响国家安全的，应当按照本办法进行网络安全审查。\n前款规定的关键信息基础设施运营者、网络平台运营者统称为当事人。",
+   "highlight": "第二条 关键信息基础设施运营者采购网络产品和服务，网络平台运营者开展数据处理活动，影响或者可能影响国家安全的，应当按照本办法进行网络安全审查。\n前款规定的关键信息基础设施运营者、网络平台运营者统称为当事人。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.65
+  },
+  {
+   "clause_id": "CAC-001-A3",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第三条",
+   "snippet": "第三条 网络安全审查坚持防范网络安全风险与促进先进技术应用相结合、过程公正透明与知识产权保护相结合、事前审查与持续监管相结合、企业承诺与社会监督相结合，从产品和服务以及数据处理活动安全性、可能带来的国家安全风险等方面进行审查。",
+   "highlight": "第三条 网络安全审查坚持防范网络安全风险与促进先进技术应用相结合、过程公正透明与知识产权保护相结合、事前审查与持续监管相结合、企业承诺与社会监督相结合，从产品和服务以及数据处理活动安全性、可能带来的国家安全风险等方面进行审查。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.638
+  },
+  {
+   "clause_id": "CAC-001-A4",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第四条",
+   "snippet": "第四条 在中央网络安全和信息化委员会领导下，国家互联网信息办公室会同中华人民共和国国家发展和改革委员会、中华人民共和国工业和信息化部、中华人民共和国公安部、中华人民共和国国家安全部、中华人民共和国财政部、中华人民共和国商务部、中国人民银行、国家市场监督管理总局、国家广播电视总局、中国证券监督管理委员会、国家保密局、国家密码管理局建立国家网络安全审查工作机制。\n网络安全审查办公室设在国家互联网信息办...",
+   "highlight": "第四条 在中央网络安全和信息化委员会领导下，国家互联网信息办公室会同中华人民共和国国家发展和改革委员会、中华人民共和国工业和信息化部、中华人民共和国公安部、中华人民共和国国家安全部、中华人民共和国财政部、中华人民共和国商务部、中国人民银行、国家市场监督管理总局、国家广播电视总局、中国证券监督管理委员会、国家保密局、国家密码管理局建立国家网络安全审查工作机制。\n网络安全审查办公室设在国家互联网信息办...",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.626
+  },
+  {
+   "clause_id": "CAC-001-A5",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第五条",
+   "snippet": "第五条 关键信息基础设施运营者采购网络产品和服务的，应当预判该产品和服务投入使用后可能带来的国家安全风险。影响或者可能影响国家安全的，应当向网络安全审查办公室申报网络安全审查。\n关键信息基础设施安全保护工作部门可以制定本行业、本领域预判指南。\n1/4",
+   "highlight": "第五条 关键信息基础设施运营者采购网络产品和服务的，应当预判该产品和服务投入使用后可能带来的国家安全风险。影响或者可能影响国家安全的，应当向网络安全审查办公室申报网络安全审查。\n关键信息基础设施安全保护工作部门可以制定本行业、本领域预判指南。\n1/4",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.614
+  },
+  {
+   "clause_id": "CAC-001-A6",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第六条",
+   "snippet": "第六条 对于申报网络安全审查的采购活动，关键信息基础设施运营者应当通过采购文件、协议等要求产品和服务提供者配合网络安全审查，包括承诺不利用提供产品和服务的便利条件非法获取用户数据、非法控制和操纵用户设备，无正当理由不中断产品供应或者必要的技术支持服务等。",
+   "highlight": "第六条 对于申报网络安全审查的采购活动，关键信息基础设施运营者应当通过采购文件、协议等要求产品和服务提供者配合网络安全审查，包括承诺不利用提供产品和服务的便利条件非法获取用户数据、非法控制和操纵用户设备，无正当理由不中断产品供应或者必要的技术支持服务等。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.602
+  },
+  {
+   "clause_id": "CAC-001-A7",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第七条",
+   "snippet": "第七条 掌握超过100万用户个人信息的网络平台运营者赴国外上市，必须向网络安全审查办公室申报网络安全审查。",
+   "highlight": "第七条 掌握超过100万用户个人信息的网络平台运营者赴国外上市，必须向网络安全审查办公室申报网络安全审查。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.59
+  },
+  {
+   "clause_id": "CAC-001-A8",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第八条",
+   "snippet": "第八条 当事人申报网络安全审查，应当提交以下材料：\n(一)申报书；\n(二)关于影响或者可能影响国家安全的分析报告；\n(三)采购文件、协议、拟签订的合同或者拟提交的首次公开募股(IPO)等上市申请文件；\n(四)网络安全审查工作需要的其他材料。",
+   "highlight": "第八条 当事人申报网络安全审查，应当提交以下材料：\n(一)申报书；\n(二)关于影响或者可能影响国家安全的分析报告；\n(三)采购文件、协议、拟签订的合同或者拟提交的首次公开募股(IPO)等上市申请文件；\n(四)网络安全审查工作需要的其他材料。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.578
+  },
+  {
+   "clause_id": "CAC-001-A9",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第九条",
+   "snippet": "第九条 网络安全审查办公室应当自收到符合本办法第八条规定的审查申报材料起10个工作日内，确定是否需要审查并书面通知当事人。",
+   "highlight": "第九条 网络安全审查办公室应当自收到符合本办法第八条规定的审查申报材料起10个工作日内，确定是否需要审查并书面通知当事人。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.566
+  },
+  {
+   "clause_id": "CAC-001-A10",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第十条",
+   "snippet": "第十条 网络安全审查重点评估相关对象或者情形的以下国家安全风险因素：\n(一)产品和服务使用后带来的关键信息基础设施被非法控制、遭受干扰或者破坏的风险；\n(二)产品和服务供应中断对关键信息基础设施业务连续性的危害；\n(三)产品和服务的安全性、开放性、透明性、来源的多样性，供应渠道的可靠性以及因为政治、外交、贸易等因素导致供应中断的风险；\n(四)产品和服务提供者遵守中国法律、行政法规、部门规章情况；\n...",
+   "highlight": "第十条 网络安全审查重点评估相关对象或者情形的以下国家安全风险因素：\n(一)产品和服务使用后带来的关键信息基础设施被非法控制、遭受干扰或者破坏的风险；\n(二)产品和服务供应中断对关键信息基础设施业务连续性的危害；\n(三)产品和服务的安全性、开放性、透明性、来源的多样性，供应渠道的可靠性以及因为政治、外交、贸易等因素导致供应中断的风险；\n(四)产品和服务提供者遵守中国法律、行政法规、部门规章情况；\n...",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.554
+  },
+  {
+   "clause_id": "CAC-001-A11",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第十一条",
+   "snippet": "第十一条 网络安全审查办公室认为需要开展网络安全审查的，应当自向当事人发出书面通知之日起30个工作日内完成初步审查，包括形成审查结论建议和将审查结论建议发送网络安全审查工作机制成员单位、相关部门征求意见；情况复杂的，可以延长15个工作日。\n2/4",
+   "highlight": "第十一条 网络安全审查办公室认为需要开展网络安全审查的，应当自向当事人发出书面通知之日起30个工作日内完成初步审查，包括形成审查结论建议和将审查结论建议发送网络安全审查工作机制成员单位、相关部门征求意见；情况复杂的，可以延长15个工作日。\n2/4",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.542
+  },
+  {
+   "clause_id": "CAC-001-A12",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第十二条",
+   "snippet": "第十二条 网络安全审查工作机制成员单位和相关部门应当自收到审查结论建议之日起15个工作日内书面回复意见。\n网络安全审查工作机制成员单位、相关部门意见一致的，网络安全审查办公室以书面形式将审查结论通知当事人；意见不一致的，按照特别审查程序处理，并通知当事人。",
+   "highlight": "第十二条 网络安全审查工作机制成员单位和相关部门应当自收到审查结论建议之日起15个工作日内书面回复意见。\n网络安全审查工作机制成员单位、相关部门意见一致的，网络安全审查办公室以书面形式将审查结论通知当事人；意见不一致的，按照特别审查程序处理，并通知当事人。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.53
+  },
+  {
+   "clause_id": "CAC-001-A13",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第十三条",
+   "snippet": "第十三条 按照特别审查程序处理的，网络安全审查办公室应当听取相关单位和部门意见，进行深入分析评估，再次形成审查结论建议，并征求网络安全审查工作机制成员单位和相关部门意见，按程序报中央网络安全和信息化委员会批准后，形成审查结论并书面通知当事人。",
+   "highlight": "第十三条 按照特别审查程序处理的，网络安全审查办公室应当听取相关单位和部门意见，进行深入分析评估，再次形成审查结论建议，并征求网络安全审查工作机制成员单位和相关部门意见，按程序报中央网络安全和信息化委员会批准后，形成审查结论并书面通知当事人。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.518
+  },
+  {
+   "clause_id": "CAC-001-A14",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第十四条",
+   "snippet": "第十四条 特别审查程序一般应当在90个工作日内完成，情况复杂的可以延长。",
+   "highlight": "第十四条 特别审查程序一般应当在90个工作日内完成，情况复杂的可以延长。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.506
+  },
+  {
+   "clause_id": "CAC-001-A15",
+   "doc_id": "CAC-001",
+   "doc_title": "网络安全审查办法",
+   "clause_no": "第十五条",
+   "snippet": "第十五条 网络安全审查办公室要求提供补充材料的，当事人、产品和服务提供者应当予以配合。提交补充材料的时间不计入审查时间。",
+   "highlight": "第十五条 网络安全审查办公室要求提供补充材料的，当事人、产品和服务提供者应当予以配合。提交补充材料的时间不计入审查时间。",
+   "status": "有效",
+   "source_url": "https://www.gov.cn/zhengce/2022-01/04/content_5728942.htm",
+   "score": 0.494
+  },
+  {
+   "clause_id": "MOCK-XSS-1",
+   "doc_id": "MOCK-XSS",
+   "doc_title": "XSS 测试件",
+   "clause_no": "第一条",
+   "snippet": "测试高亮：<script>alert(\"xss\")</script> 资本充足率不得低于百分之八。",
+   "highlight": "测试高亮：<em>资本充足率</em> 不得低于百分之八。",
+   "status": "有效",
+   "source_url": null,
+   "score": 0.482
+  }
+ ],
+ "related": [
+  {
+   "clause_id": "BSE-001-4.3.1-2",
+   "doc_id": "BSE-001",
+   "doc_title": "北京证券交易所股票上市规则",
+   "clause_no": "4.3.1",
+   "clause_index": 120,
+   "chapter": "第四章公司治理 第三节董事会秘书",
+   "snippet": "获得足够的资源和必要的专业意见；\n(十一)关注与公司相关的媒体报道、市场传闻，及时核实相关情况，并向董事会报告，提出澄清等符合规定的处理建议，督促公司等相关主体及时回复本所问询；\n(十二)负责组织和协调公司投资者关系管理工作，增进投资者对公司的了解和认同；协调公司与股东、实际控制人、投资者、董事、中介机构、媒体、证券监管机构等之间的沟通联络，维持联络渠道的畅通；\n(十三)负责公司股票及其衍生品种变...",
+   "score": 0.9,
+   "status": "有效",
+   "effective_date": 20260424,
+   "source_url": null,
+   "relation_type": "同条"
+  },
+  {
+   "clause_id": "NFRA-016-A25",
+   "doc_id": "NFRA-016",
+   "doc_title": "商业银行资本管理办法",
+   "clause_no": "第二十五条",
+   "clause_index": 25,
+   "chapter": "第二章 资本监管指标计算和监管要求 第三节 资本监管要求",
+   "snippet": "第二十五条 资本充足率监管要求包括最低资本要求、储备资本和逆周期资本要求、系统重要性银行附加资本要求以及第二支柱资本要求。",
+   "score": 0.85,
+   "status": "有效",
+   "effective_date": 20240101,
+   "source_url": "https://www.gov.cn/zhengce/202311/content_6913410.htm",
+   "relation_type": "同章"
+  },
+  {
+   "clause_id": "NFRA-016-A27",
+   "doc_id": "NFRA-016",
+   "doc_title": "商业银行资本管理办法",
+   "clause_no": "第二十七条",
+   "clause_index": 27,
+   "chapter": "第二章 资本监管指标计算和监管要求 第三节 资本监管要求",
+   "snippet": "第二十七条 商业银行应在最低资本要求的基础上计提储备资本。储备资本要求为风险加权资产的2.5%，由核心一级资本来满足。国家金融监督管理总局有权根据宏观经济金融形势、银行业整体风险状况以及单家银行经营管理和风险水平等情况，对储备资本要求进行调整。\n商业银行应在最低资本要求和储备资本要求之上计提逆周期资本。逆周期资本的计提与运用规则由中国人民银行会同国家金融监督管理总局另行规定。",
+   "score": 0.8,
+   "status": "有效",
+   "effective_date": 20240101,
+   "source_url": "https://www.gov.cn/zhengce/202311/content_6913410.htm",
+   "relation_type": "同章"
+  },
+  {
+   "clause_id": "NFRA-016-A24",
+   "doc_id": "NFRA-016",
+   "doc_title": "商业银行资本管理办法",
+   "clause_no": "第二十四条",
+   "clause_index": 24,
+   "chapter": "第二章 资本监管指标计算和监管要求 第二节 资本监管指标计算公式",
+   "snippet": "第二十四条 商业银行在计算调整后表内外资产余额时,除本办法附件19另有规定外，不考虑抵质押品、保证和信用衍生工具等信用风险缓释因素。",
+   "score": 0.75,
+   "status": "有效",
+   "effective_date": 20240101,
+   "source_url": "https://www.gov.cn/zhengce/202311/content_6913410.htm",
+   "relation_type": "同章"
+  },
+  {
+   "clause_id": "NPC-006-A39",
+   "doc_id": "NPC-006",
+   "doc_title": "中华人民共和国商业银行法",
+   "clause_no": "第三十九条",
+   "clause_index": 39,
+   "chapter": "第四章 贷款和其他业务的基本规则",
+   "snippet": "第三十九条 商业银行贷款，应当遵守下列资产负债比例管理的规定：\n(一)资本充足率不得低于百分之八；\n(二)流动性资产余额与流动性负债余额的比例不得低于百分之二十五；\n(三)对同一借款人的贷款余额与商业银行资本余额的比例不得超过百分之十；\n(四)国务院银行业监督管理机构对资产负债比例管理的其他规定。\n本法施行前设立的商业银行，在本法施行后，其资产负债比例不符合前款规定的，应当在一定的期限内符合前款规...",
+   "score": 0.7,
+   "status": "有效",
+   "effective_date": 20151001,
+   "source_url": "https://www.pbc.gov.cn/tiaofasi/144941/144951/2817252/index.html",
+   "relation_type": "引用"
+  },
+  {
+   "clause_id": "PBC-001-A1",
+   "doc_id": "PBC-001",
+   "doc_title": "中国人民银行、中华人民共和国国家发展和改革委员会、中国证券监督管理委员会 公告〔2020〕第22号",
+   "clause_no": "第一条",
+   "clause_index": 1,
+   "chapter": "第一章 总 则",
+   "snippet": "第一条为规范公司信用类债券市场信息披露，维护公司信用类债券市场秩序，保护市场参与者合法权益，根据《中华人民共和国中国人民银行法》《中华人民共和国证券法》《中华人民共和国公司法》《企业债券管理条例》等相关法律法规，制定本办法。",
+   "score": 0.65,
+   "status": "有效",
+   "effective_date": 20210501,
+   "source_url": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693545/4210888/index.html",
+   "relation_type": "相似"
+  }
+ ],
+ "history": [
+  {
+   "qa_id": 10241,
+   "question": "商业银行核心一级资本充足率不得低于多少",
+   "answer": "依据《商业银行资本管理办法》第二十六条：第二十六条 商业银行各级资本充足率不得低于如下最低要求：\n(一)核心一级资本充足率不得低于5%。\n(二)一级资本充足率不得低于6%。\n(三)资本充足率不得低于8%。",
+   "score": 0.91,
+   "created_at": 20261109153012,
+   "sources": [
+    {
+     "clause_id": "NFRA-016-A26",
+     "clause_no": "第二十六条",
+     "doc_title": "商业银行资本管理办法"
+    }
+   ]
+  },
+  {
+   "qa_id": 10242,
+   "question": "商业银行贷款应当遵守哪些资产负债比例管理规定",
+   "answer": "依据《中华人民共和国商业银行法》第三十九条：第三十九条 商业银行贷款，应当遵守下列资产负债比例管理的规定：\n(一)资本充足率不得低于百分之八；\n(二)流动性资产余额与流动性负债余额的比例不得低于百分之二十五；\n(三)对同一借款人的贷款余额与商业银行资本余额的比例不得超过百分之十；\n(四)国务院银行业监督管理机构对资产负债比例管理的其他规定。\n本法施行前设立的商业",
+   "score": 0.89,
+   "created_at": 20261109143012,
+   "sources": [
+    {
+     "clause_id": "NPC-006-A39",
+     "clause_no": "第三十九条",
+     "doc_title": "中华人民共和国商业银行法"
+    }
+   ]
+  },
+  {
+   "qa_id": 10243,
+   "question": "资本充足率、一级资本充足率、核心一级资本充足率各是多少",
+   "answer": "依据《征信业管理条例》第二条：第二条 在中国境内从事征信业务及相关活动，适用本条例。\n 本条例所称征信业务，是指对企业、事业单位等组织(以下统称企业)的信用信息和个人的信用信息进行采集、整理、保存、加工，并向信息使用者提供的活动。\n 国家设立的金融信用信息基础数据库进行信息的采集、整理、保存、加工和提供，适用本条例第五章规定。\n 国家机关以及法律、",
+   "score": 0.87,
+   "created_at": 20261109133012,
+   "sources": [
+    {
+     "clause_id": "GOV-002-A2",
+     "clause_no": "第二条",
+     "doc_title": "征信业管理条例"
+    }
+   ]
+  },
+  {
+   "qa_id": 10244,
+   "question": "流动性资产余额与流动性负债余额的比例要求是多少",
+   "answer": "依据《北京证券交易所股票上市规则》1.1：1.1 为了规范北京证券交易所(以下简称本所)股票上市和持续监管事宜，维护证券市场公开、公平、公正，保护投资者的合法权益，根据《中华人民共和国公司法》(以下简称《公司法》)、《中华人民共和国证券法》(以下简称《证券法》)、《证券交易所管理办法》以及《北京证券交易所上市公司持续监管办法(试行)》(以下简称《持续监管办法》",
+   "score": 0.85,
+   "created_at": 20261109123012,
+   "sources": [
+    {
+     "clause_id": "BSE-001-1.1",
+     "clause_no": "1.1",
+     "doc_title": "北京证券交易所股票上市规则"
+    }
+   ]
+  },
+  {
+   "qa_id": 10245,
+   "question": "对同一借款人的贷款余额与商业银行资本余额的比例上限",
+   "answer": "依据《农业保险条例》第一条：第一条 为了规范农业保险活动,保护农业保险活动当事人的合法权益,提高农业生产抗风险能力,促进农业保险事业健康发展,根据《中华人民共和国保险法》、《中华人民共和国农业法》等法律,制定本条例。",
+   "score": 0.83,
+   "created_at": 20261109113012,
+   "sources": [
+    {
+     "clause_id": "GOV-012-A1",
+     "clause_no": "第一条",
+     "doc_title": "农业保险条例"
+    }
+   ]
+  },
+  {
+   "qa_id": 10246,
+   "question": "什么是资本监管指标",
+   "answer": "依据《中国人民银行、国家外汇管理局 公告〔2024〕第7号》第一条：第一条为规范境外机构投资者境内证券期货投资管理，根据《中华人民共和国中国人民银行法》《中华人民共和国外汇管理条例》等相关法律法规，制定本规定。",
+   "score": 0.81,
+   "created_at": 20261109103012,
+   "sources": [
+    {
+     "clause_id": "PBC-018-A1",
+     "clause_no": "第一条",
+     "doc_title": "中国人民银行、国家外汇管理局 公告〔2024〕第7号"
+    }
+   ]
+  },
+  {
+   "qa_id": 10247,
+   "question": "商业银行的资本分为哪几类",
+   "answer": "依据《防范和处置非法集资条例》第二条：第二条\n第二条 本条例所称非法集资，是指未经国务院金融管理部门依法许可或者违反国家金融管理规定，以许诺还本付息或者给予其他投资回报等方式，向不特定对象吸收资金的行为。\n非法集资的防范以及行政机关对非法集资的处置，适用本条例。法律、行政法规对非法从事银行、证券、保险、外汇等金融业务活动另有规定的，适用其规定。\n本条例所称",
+   "score": 0.79,
+   "created_at": 20261109093012,
+   "sources": [
+    {
+     "clause_id": "GOV-009-A2",
+     "clause_no": "第二条",
+     "doc_title": "防范和处置非法集资条例"
+    }
+   ]
+  },
+  {
+   "qa_id": 10248,
+   "question": "风险加权资产怎么计量",
+   "answer": "依据《商业银行资本管理办法》第二十六条：第二十六条 商业银行各级资本充足率不得低于如下最低要求：\n(一)核心一级资本充足率不得低于5%。\n(二)一级资本充足率不得低于6%。\n(三)资本充足率不得低于8%。",
+   "score": 0.77,
+   "created_at": 20261109083012,
+   "sources": [
+    {
+     "clause_id": "NFRA-016-A26",
+     "clause_no": "第二十六条",
+     "doc_title": "商业银行资本管理办法"
+    }
+   ]
+  },
+  {
+   "qa_id": 10249,
+   "question": "保险资金可以投资哪些领域",
+   "answer": "依据《中华人民共和国商业银行法》第三十九条：第三十九条 商业银行贷款，应当遵守下列资产负债比例管理的规定：\n(一)资本充足率不得低于百分之八；\n(二)流动性资产余额与流动性负债余额的比例不得低于百分之二十五；\n(三)对同一借款人的贷款余额与商业银行资本余额的比例不得超过百分之十；\n(四)国务院银行业监督管理机构对资产负债比例管理的其他规定。\n本法施行前设立的商业",
+   "score": 0.75,
+   "created_at": 20261109073012,
+   "sources": [
+    {
+     "clause_id": "NPC-006-A39",
+     "clause_no": "第三十九条",
+     "doc_title": "中华人民共和国商业银行法"
+    }
+   ]
+  },
+  {
+   "qa_id": 10250,
+   "question": "证券公司净资本要求是什么",
+   "answer": "依据《征信业管理条例》第二条：第二条 在中国境内从事征信业务及相关活动，适用本条例。\n 本条例所称征信业务，是指对企业、事业单位等组织(以下统称企业)的信用信息和个人的信用信息进行采集、整理、保存、加工，并向信息使用者提供的活动。\n 国家设立的金融信用信息基础数据库进行信息的采集、整理、保存、加工和提供，适用本条例第五章规定。\n 国家机关以及法律、",
+   "score": 0.73,
+   "created_at": 20261109063012,
+   "sources": [
+    {
+     "clause_id": "GOV-002-A2",
+     "clause_no": "第二条",
+     "doc_title": "征信业管理条例"
+    }
+   ]
+  },
+  {
+   "qa_id": 10251,
+   "question": "跨境资金流动的管理规定",
+   "answer": "依据《北京证券交易所股票上市规则》1.1：1.1 为了规范北京证券交易所(以下简称本所)股票上市和持续监管事宜，维护证券市场公开、公平、公正，保护投资者的合法权益，根据《中华人民共和国公司法》(以下简称《公司法》)、《中华人民共和国证券法》(以下简称《证券法》)、《证券交易所管理办法》以及《北京证券交易所上市公司持续监管办法(试行)》(以下简称《持续监管办法》",
+   "score": 0.71,
+   "created_at": 20261109053012,
+   "sources": [
+    {
+     "clause_id": "BSE-001-1.1",
+     "clause_no": "1.1",
+     "doc_title": "北京证券交易所股票上市规则"
+    }
+   ]
+  },
+  {
+   "qa_id": 10252,
+   "question": "金融数据安全分级怎么划分",
+   "answer": "依据《农业保险条例》第一条：第一条 为了规范农业保险活动,保护农业保险活动当事人的合法权益,提高农业生产抗风险能力,促进农业保险事业健康发展,根据《中华人民共和国保险法》、《中华人民共和国农业法》等法律,制定本条例。",
+   "score": 0.69,
+   "created_at": 20261109043012,
+   "sources": [
+    {
+     "clause_id": "GOV-012-A1",
+     "clause_no": "第一条",
+     "doc_title": "农业保险条例"
+    }
+   ]
+  }
+ ],
+ "favorites": [
+  {
+   "favorite_id": 88,
+   "clause_id": "NFRA-016-A26",
+   "doc_title": "商业银行资本管理办法",
+   "clause_no": "第二十六条",
+   "created_at": 20261101102000
+  },
+  {
+   "favorite_id": 89,
+   "clause_id": "NPC-006-A39",
+   "doc_title": "中华人民共和国商业银行法",
+   "clause_no": "第三十九条",
+   "created_at": 20261101092000
+  },
+  {
+   "favorite_id": 90,
+   "clause_id": "GOV-002-A2",
+   "doc_title": "征信业管理条例",
+   "clause_no": "第二条",
+   "created_at": 20261101082000
+  },
+  {
+   "favorite_id": 91,
+   "clause_id": "BSE-001-1.1",
+   "doc_title": "北京证券交易所股票上市规则",
+   "clause_no": "1.1",
+   "created_at": 20261101072000
+  }
+ ],
+ "health": {
+  "service": "ok",
+  "mysql": {
+   "status": "mock",
+   "latency_ms": 1
+  },
+  "milvus": {
+   "status": "mock",
+   "latency_ms": 1,
+   "collection": "finance_clause",
+   "row_count": 8156
+  },
+  "version": "0.1.0",
+  "mode": "mock"
+ }
+}

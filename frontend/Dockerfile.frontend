@@ -1,0 +1,53 @@
+# 前端镜像：多阶段构建 —— node 编译产物 → nginx 托管静态文件
+# 构建（在 frontend/ 目录下）：
+#   docker build -t rag-frontend -f Dockerfile.frontend .
+# 注意：镜像内 npm install 需要联网；离线演示机请在有网机器上构建后导出镜像。
+
+# 运行期基镜像做成 ARG，默认仍是钉死的 1.25-alpine。
+# 位置必须是**第一个 FROM 之前**：FROM 只认全局（builder 作用域）ARG，
+# 写在两个阶段之间的 ARG 归属上一个阶段，渲染出来是空串，buildkit 直接报
+# "base name (${FINAL_BASE_IMAGE}) should not be blank"（本机踩过）。
+ARG FINAL_BASE_IMAGE=nginx:1.25-alpine
+
+FROM node:20-alpine AS build
+
+WORKDIR /app
+
+# 先只拷依赖清单，利用层缓存。仓库暂无 lockfile，用 npm install；
+# 加 --legacy-peer-deps：Vite 6 与 unplugin-* 的 peer 范围较窄，不加在某些 npm 版本上会 ERESOLVE 直接失败。
+# 一旦生成 package-lock.json，请改成 npm ci。
+#
+# registry 做成 ARG，**默认官方源**，国内机器在 compose 的 build.args 里换成
+# registry.npmmirror.com（直连 npmjs 实测慢到构建像卡死）。
+ARG NPM_REGISTRY=https://registry.npmjs.org
+COPY package.json ./
+RUN npm install --registry=${NPM_REGISTRY} --legacy-peer-deps --no-audit --no-fund
+
+COPY . .
+
+# 构建期注入：生产默认走真实后端
+ARG VITE_USE_MOCK=false
+ARG VITE_API_BASE=/api/v1
+ARG VITE_APP_TITLE=金融制度知识库
+ENV VITE_USE_MOCK=$VITE_USE_MOCK \
+    VITE_API_BASE=$VITE_API_BASE \
+    VITE_APP_TITLE=$VITE_APP_TITLE
+
+# 只跑 vite build，不跑 vue-tsc：类型检查留给 `npm run build:check`。
+# 镜像构建不该被类型告警卡死——那会让 7 个服务的 compose 直接起不来。
+RUN npm run build
+
+# 运行期基镜像也做成 ARG（默认仍是钉死的 1.25-alpine）。
+# 声明必须在 FROM 之前，这才是 buildkit 认可的「跨阶段外」ARG。
+ARG FINAL_BASE_IMAGE=nginx:1.25-alpine
+FROM ${FINAL_BASE_IMAGE}
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget -q -O /dev/null http://127.0.0.1/ || exit 1
+
+CMD ["nginx", "-g", "daemon off;"]
