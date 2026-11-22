@@ -1,10 +1,13 @@
-# 完整部署 compose：7 服务。
-# 来源 契约/DEPLOY.md §2。P2 的最小 compose 是 docker-compose.milvus.yml（只有 3 个容器）。
-#
-# 启动：docker compose up -d
+# 完整部署 compose：7 个服务（契约/DEPLOY.md §2）。
+# 启动：cp .env.example .env（填 LLM_API_KEY / JWT_SECRET）→ docker compose up -d
 # 自检：curl http://localhost/api/v1/health
 #
-# 前置：先 cp .env.example .env 并填入真实 LLM_API_KEY。
+# 与 v1 的差别（见 文档/前后端补齐整改计划.md）：
+#   D2 补 frontend 服务（v1 只有 6 个服务，nginx 的 / 直接 404）
+#   D3 挂载改成 /app/产出（v1 挂的 /output 代码根本不读）
+#   D4 backend 用 requirements-backend.txt（不再装 paddleocr/opencv）
+#   D5 模型权重走 HF_HOME 卷 + 离线开关，避免演示机没网时"健康但一问就超时"
+#   健康检查：nginx 不再用 `/`（404 会判 unhealthy），改用 /nginx-health
 
 services:
   etcd:
@@ -23,6 +26,7 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+    restart: unless-stopped
 
   minio:
     image: bitnamilegacy/minio:2025.7.23-debian-12-r5
@@ -38,6 +42,7 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+    restart: unless-stopped
 
   milvus:
     image: milvusdb/milvus:v2.5.27
@@ -66,6 +71,7 @@ services:
         condition: service_healthy
       minio:
         condition: service_healthy
+    restart: unless-stopped
 
   mysql:
     image: mysql:8.0
@@ -85,6 +91,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    restart: unless-stopped
 
   backend:
     build:
@@ -96,6 +103,7 @@ services:
       MILVUS_HOST: milvus
       MILVUS_PORT: "19530"
       MILVUS_COLLECTION: finance_clause
+      OUTPUT_DIR: /app/产出
       EMBED_MODEL: ${EMBED_MODEL:-BAAI/bge-m3}
       EMBED_DIM: "${EMBED_DIM:-1024}"
       QUERY_PREFIX: ${QUERY_PREFIX:-为这个句子生成表示以用于检索相关文章：}
@@ -103,21 +111,61 @@ services:
       LLM_PROVIDER: ${LLM_PROVIDER:-dashscope}
       LLM_MODEL: ${LLM_MODEL:-qwen-plus}
       LLM_API_KEY: ${LLM_API_KEY:-}
+      # 认证（接口 8→10）；生产务必在 .env 里给真实密钥，缺失会启动失败
+      JWT_SECRET: ${JWT_SECRET:-dev-only-change-me}
+      JWT_EXPIRE_HOURS: ${JWT_EXPIRE_HOURS:-24}
+      APP_ENV: ${APP_ENV:-development}
+      RAG_MODE: ${RAG_MODE:-real}
+      CORS_ORIGINS: ${CORS_ORIGINS:-}
+      # M8 知识图谱：/graph/* 三个接口只读这一份目录（kg/export_serving.py 产出）。
+      # 默认值与 backend/graph_service.py:DEFAULT_DIR 同一个路径口径，容器里指向镜像内副本；
+      # 挂了 ./kg/out/serving 之后改产物不用重建镜像。
+      KG_SERVING_DIR: ${KG_SERVING_DIR:-/app/kg/out/serving}
       TZ: Asia/Shanghai
+      # D5：模型权重放在卷里，容器重建不重新下载。
+      # 国内直连 huggingface.co 常常拉不动，用 HF_ENDPOINT=https://hf-mirror.com 走镜像。
+      HF_HOME: /models
+      HF_ENDPOINT: ${HF_ENDPOINT:-}
+      TRANSFORMERS_OFFLINE: ${TRANSFORMERS_OFFLINE:-0}
+      HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-0}
     ports:
       - "8000:8000"
     volumes:
-      - ./产出:/output:ro
+      - ./产出:/app/产出:ro
+      # 只读挂脚本，用来在容器里跑一次性的 ingest / seed（镜像里不带 脚本/）：
+      #   docker compose exec backend python 脚本/ingest.py --recreate
+      - ./脚本:/app/脚本:ro
+      # 图谱产物只读挂进来：重跑 kg/export_serving.py 后 restart backend 就生效，不用 rebuild。
+      - ./kg/out/serving:/app/kg/out/serving:ro
+      - model_cache:/models
     depends_on:
       mysql:
         condition: service_healthy
       milvus:
         condition: service_healthy
+    # 首次启动要 import torch/sentence-transformers，慢；不设 start_period 会被误判 unhealthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
       interval: 30s
       timeout: 10s
+      retries: 5
+      start_period: 120s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: rag-frontend
+    expose:
+      - "80"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
       retries: 3
+      start_period: 20s
+    restart: unless-stopped
 
   nginx:
     image: nginx:1.25-alpine
@@ -129,14 +177,18 @@ services:
     depends_on:
       backend:
         condition: service_healthy
+      frontend:
+        condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80/"]
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost/nginx-health"]
       interval: 30s
       timeout: 10s
       retries: 3
+    restart: unless-stopped
 
 volumes:
   etcd_data:
   minio_data:
   milvus_data:
   mysql_data:
+  model_cache:
